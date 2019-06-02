@@ -1,91 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>City Trip Planner</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
-    <link rel="stylesheet" href="styles/main.css" type="text/css" />
-</head>
-<body>
-    <header>
-        <div class="title">
-            <h1>City Trip Planner</h1>
-            <h2>Plan your next trip in 5 simple steps!</h2>
-        </div>
-    </header>
-    <section>
-        <div class="step-one">
-            <div class="cities">
-                <hr>
-                <h2>Step 1: Choose your city</h2>
-                <h3>Choose from one of our most popular destinations</h3>
-                <button>Dublin</button>
-                <button>Milan</button>
-                <button>Paris</button>
-                <button>New York</button>
-                <button>Berlin</button>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>City Trip Planner</title>
+        
+        <!–– this is a comment -->
+        
+        <!––<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+        <link rel="stylesheet" href="styles/main.css" type="text/css" />
+        
+        <style>
+            #map {
+                height: 400px;
+                width: 500px;
+                padding: 0 30px 30px;
+                    float: none;
+                    display: table-cell;
+                
+            }
+            
+            html, body, section {
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+            }
+            
+            .step-three {
+                    
+            }
+        </style>
+
+    </head>
+    <body>
+        <header class="container-fluid">
+            <div class="title">
+                <h1>City Trip Planner</h1>
+                <h2>Plan your next trip in 5 simple steps!</h2>
+            </div>
+        </header>
+        <section class="container-fluid">
+            <div class="step-one">
+                <div class="cities">
+                    <hr>
+                    <h2>Step 1: Choose your city</h2>
+                    <h3>Choose from one of our most popular destinations</h3>
+                    <button>Dublin</button>
+                    <button>Milan</button>
+                    <button>Paris</button>
+                    <button>New York</button>
+                    <button>Berlin</button>
+                </div>
+                
+                <div class="search">
+                    <h3>Or search for a particular city</h3>
+                    <p>search bar area</p>
+                <button>Find results in this city</button>
+                </div>
             </div>
             
-            <div class="search">
-                <h3>Or search for a particular city</h3>
-                <p>search bar area</p>
-            <button>Find results in this city</button>
+            <div class="step-two">
+                <div class="search-type">
+                    <hr>
+                    <h2>Step 2: Narrow down your results</h2>
+                    <h3>Choose what results you would like to see</h3>
+                    <p>search type area - squared button with no padding etc</p>
+                    <button>Attractions</button>
+                    <button>Accomodation</button>
+                    <button>Bars & Restaurants</button>
+                    <button>All results</button>
+                </div>
             </div>
-        </div>
-        
-        <div class="step-two">
-            <div class="search-type">
+            
+            <div class="step-three">
+                <div class="google-map">
+                    <hr>
+                    <h2>Step 3: See your results on our map</h2>
+                    <div id="map"></div>
+                </div>
+                
+            </div>
+            
+            <div class="step-four">
+                <div class="results">
+                    <hr>
+                    <h2>Step 4: Read more about your results</h2>
+                    <p>results display area</p>
+                </div>
+            </div>
+            
+            <div class="step-five">
+                <div class="send-results">
+                    <hr>
+                    <h2>Step 5: Send yourself a list of these results</h2>
+                    <p>email js to send results to the cust. add check boxes to be added to the mailing list for trip ideas 
+                    etc and make mandatory to select one</p>
+                </div>
+            </div>
+        </section>
+        <footer class="container-fluid">
+            <div class="footer">
                 <hr>
-                <h2>Step 2: Narrow down your results</h2>
-                <h3>Choose what results you would like to see</h3>
-                <p>search type area - squared button with no padding etc</p>
-                <button>Attractions</button>
-                <button>Accomodation</button>
-                <button>Bars & Restaurants</button>
-                <button>All results</button>
+                <h1>this will be the footer</h1>
+                <p>footer area .. add in the Copyright symbol from lesson and basic footer. not too fancy</p>
             </div>
-        </div>
-        
-        <div class="step-three">
-            <div class="google-map">
-                <hr>
-                <h2>Step 3: See your results on our map</h2>
-                <p>google map area</p>
-                <div id="map"> </div>
-            </div>
-        </div>
-        
-        <div class="step-four">
-            <div class="results">
-                <hr>
-                <h2>Step 4: Read more about your results</h2>
-                <p>results display area</p>
-            </div>
-        </div>
-        
-        <div class="step-five">
-            <div class="send-results">
-                <hr>
-                <h2>Step 5: Send yourself a list of these results</h2>
-                <p>email js to send results to the cust. add check boxes to be added to the mailing list for trip ideas 
-                etc and make mandatory to select one</p>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="footer">
-            <hr>
-            <h1>this will be the footer</h1>
-            <p>footer area .. add in the Copyright symbol from lesson and basic footer. not too fancy</p>
-        </div>
-    </footer>
-    
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDHHyac2SiOYPNYxXMK7rqJjnB8nCaaxE&callback=initMap"></script>
-    <script src="scripts/map.js"></script>
-</body>
+        </footer>
+        <script>
+            var map;
+            function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 3,
+                    center: {lat: 46.619261, lng: -33.134766}
+                });
+            }
+        </script>
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxQwRApZQq4D_0iTu38MwdxUsiKrq4zu8&callback=initMap" async defer></script>
+        <script src="scripts/map.js"></script>
+    </body>
 </html>
