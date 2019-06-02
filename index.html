@@ -8,62 +8,51 @@
         
         <!–– this is a comment -->
         
-        <!––<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
         <link rel="stylesheet" href="styles/main.css" type="text/css" />
         
         <style>
-            #map {
-                height: 400px;
-                width: 500px;
-                padding: 0 30px 30px;
-                    float: none;
-                    display: table-cell;
-                
-            }
             
-            html, body, section {
-                    height: 100%;
-                    margin: 0;
-                    padding: 0;
-            }
-            
-            .step-three {
-                    
-            }
         </style>
 
     </head>
     <body>
         <header class="container-fluid">
-            <div class="title">
-                <h1>City Trip Planner</h1>
-                <h2>Plan your next trip in 5 simple steps!</h2>
+            <div class="row">
+                <div class="col-md-12 title">
+                    <h1>City Trip Planner</h1>
+                    <h2>Plan your next trip in 5 simple steps!</h2>
+                </div>
             </div>
         </header>
+        
         <section class="container-fluid">
-            <div class="step-one">
-                <div class="cities">
+            <div class="row">
+                <div class="col-md-12 step-one">
                     <hr>
                     <h2>Step 1: Choose your city</h2>
-                    <h3>Choose from one of our most popular destinations</h3>
-                    <button>Dublin</button>
-                    <button>Milan</button>
-                    <button>Paris</button>
-                    <button>New York</button>
-                    <button>Berlin</button>
-                </div>
-                
-                <div class="search">
-                    <h3>Or search for a particular city</h3>
-                    <p>search bar area</p>
-                <button>Find results in this city</button>
+                    <div class="col-md-6 cities">
+                        <h3>Choose from one of our most popular destinations</h3>
+                        <button>Dublin</button>
+                        <button>Milan</button>
+                        <button>Paris</button>
+                        <button>New York</button>
+                        <button>Berlin</button>
+                    </div>
+                    
+                    <div class="col-md-6 search">
+                        <h3>Or search for a particular city</h3>
+                        <p>search bar area</p>
+                    <button>Find results in this city</button>
+                    </div>
                 </div>
             </div>
             
-            <div class="step-two">
-                <div class="search-type">
+            
+            <div class="row">
+                <div class="col-md-12 step-two">
                     <hr>
                     <h2>Step 2: Narrow down your results</h2>
                     <h3>Choose what results you would like to see</h3>
@@ -75,25 +64,24 @@
                 </div>
             </div>
             
-            <div class="step-three">
-                <div class="google-map">
+            <div class="row">
+                <div class="col-md-12 step-three">
                     <hr>
                     <h2>Step 3: See your results on our map</h2>
                     <div id="map"></div>
                 </div>
-                
             </div>
             
-            <div class="step-four">
-                <div class="results">
+            <div class="row">
+                <div class="col-md-12 step-four">
                     <hr>
                     <h2>Step 4: Read more about your results</h2>
                     <p>results display area</p>
                 </div>
             </div>
             
-            <div class="step-five">
-                <div class="send-results">
+            <div class="row">
+                <div class="col-md-12 step-five">
                     <hr>
                     <h2>Step 5: Send yourself a list of these results</h2>
                     <p>email js to send results to the cust. add check boxes to be added to the mailing list for trip ideas 
@@ -101,13 +89,17 @@
                 </div>
             </div>
         </section>
+        
         <footer class="container-fluid">
-            <div class="footer">
-                <hr>
-                <h1>this will be the footer</h1>
-                <p>footer area .. add in the Copyright symbol from lesson and basic footer. not too fancy</p>
+            <div class="row">
+                <div class="col-md-12 footer">
+                    <hr>
+                    <h1>this will be the footer</h1>
+                    <p>footer area .. add in the Copyright symbol from lesson and basic footer. not too fancy</p>
+                </div>
             </div>
         </footer>
+        
         <script>
             var map;
             function initMap() {
