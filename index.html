@@ -10,6 +10,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
         <link rel="stylesheet" href="styles/main.css" type="text/css" />
+        <link rel="stylesheet" href="styles/main.css" type="text/css" />
+
+
     </head>
     <body>
         <header class="container-fluid">
@@ -37,8 +40,11 @@
                     
                     <div class="col-sm-12 col-md-6 search">
                         <h3>Or search for a particular city</h3>
-                        <p>search bar area</p>
-                    <button>Find results in this city</button>
+                        
+                        <form action="/search" method="GET">
+                            <input type="text" class="form-control" name="city" id="cityName" placeholder="Search by city name..."/>
+                            <button>Select this city</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -93,13 +99,12 @@
             </div>
         </footer>
         
-        <script>
-            
-        </script>
         
-        
-        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxQwRApZQq4D_0iTu38MwdxUsiKrq4zu8&callback=initMap" async defer></script>
         <script src="scripts/map.js"></script>
+
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxQwRApZQq4D_0iTu38MwdxUsiKrq4zu8&libraries=places&callback=initMap" async defer></script>
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+        
     </body>
 </html>
