@@ -40,9 +40,10 @@
                     <div class="col-sm-12 col-md-6 search">
                         <h3>Or search for a particular city</h3>
                         
-                        <form action="/search" method="GET">
+                        <form id="cityForm" onsubmit="return false">
                             <input type="text" class="form-control" name="city" id="cityName" placeholder="Search by city name..."/>
-                            <button>Select this city</button>
+                            <input type="submit" value="Select this city" class="submit" />
+                            
                         </form>
                     </div>
                 </div>

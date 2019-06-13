@@ -1,7 +1,7 @@
 var map;
 var infowindow;
 var city = {lat: 53.3498, lng: -6.2603};
-
+//can be simply var city; and change it later with buttons
 function initMap() {
     var center = city;
     infowindow = new google.maps.InfoWindow();
@@ -17,11 +17,30 @@ function initMap() {
     var request = {
         location: city,
         radius: 8047, 
-        types: ['cafe']
+        types: ['bar', 'restaurant', 'night_club', 'food']
         };
     
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, callback);
+}
+
+function searchCity() {
+    var typeCity = document.getElementById('cityName');
+    var autocomplete = new google.maps.places.Autocomplete(typeCity);
+    
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        place = autocomplete.getPlace();
+    });
+    
+    cityForm.addEventListener("submit", function() {
+        var updateLatLng = new google.maps.LatLng(place.geometry.location.lat(),place.geometry.location.lng());
+        map.setCenter(updateLatLng);
+        map.setZoom(13);
+        city = updateLatLng;
+            console.log(city);
+
+    });
+    
 }
 
 function callback(results, status) {
@@ -30,11 +49,6 @@ function callback(results, status) {
             createMarker(results[i]);
         }
     } 
-}
-
-function searchCity() {
-            var typeCity = document.getElementById('cityName');
-            var autocomplete = new google.maps.places.Autocomplete(typeCity);
 }
 
 function createMarker(place) {
