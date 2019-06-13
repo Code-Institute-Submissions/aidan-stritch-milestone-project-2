@@ -12,6 +12,8 @@ function initMap() {
         center: center
     });
     
+    searchCity();
+    
     var request = {
         location: city,
         radius: 8047, 
@@ -30,17 +32,22 @@ function callback(results, status) {
     } 
 }
 
- function createMarker(place) {
-        var marker = new google.maps.Marker({
-          map: map,
-          position: place.geometry.location
-        });
+function searchCity() {
+            var typeCity = document.getElementById('cityName');
+            var autocomplete = new google.maps.places.Autocomplete(typeCity);
+}
 
-        google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(`<h1>Example HTML, city name: ${place.name}</h1>`);
-          infowindow.open(map, this);
-        });
-      }
+function createMarker(place) {
+    var marker = new google.maps.Marker({
+      map: map,
+      position: place.geometry.location
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.setContent(`<h1>Example HTML, city name: ${place.name}</h1>`);
+      infowindow.open(map, this);
+    });
+  }
 
 
 
