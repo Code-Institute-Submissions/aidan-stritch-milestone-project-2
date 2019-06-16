@@ -1,9 +1,10 @@
 var map;
 var infowindow;
-var city = {lat: 53.3498, lng: -6.2603};
-//can be simply var city; and change it later with buttons
+var center = {lat: 53.3498, lng: -6.2603};
+var updatedType;
+
 function initMap() {
-    var center = city;
+    
     infowindow = new google.maps.InfoWindow();
     
     map = new google.maps.Map(document.getElementById('map'), {
@@ -12,35 +13,81 @@ function initMap() {
         center: center
     });
     
-    searchCity();
+    searchSelectCity();
+    buttonSelectSearchType();
+    buttonSelectCity();
     
-    var request = {
-        location: city,
-        radius: 8047, 
-        types: ['bar', 'restaurant', 'night_club', 'food']
-        };
     
-    var service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request, callback);
+    
+    
+   
 }
-
-function searchCity() {
+function searchSelectCity() {
     var typeCity = document.getElementById('cityName');
     var autocomplete = new google.maps.places.Autocomplete(typeCity);
+    var updateLatLng;
     
     google.maps.event.addListener(autocomplete, 'place_changed', function () {
         place = autocomplete.getPlace();
     });
     
     cityForm.addEventListener("submit", function() {
-        var updateLatLng = new google.maps.LatLng(place.geometry.location.lat(),place.geometry.location.lng());
+        updateLatLng = new google.maps.LatLng(place.geometry.location.lat(),place.geometry.location.lng());
         map.setCenter(updateLatLng);
         map.setZoom(13);
-        city = updateLatLng;
-            console.log(city);
-
+        requestLocations(updateLatLng);
     });
+}
+function buttonSelectSearchType(){
+    document.getElementById('attraction').onclick = function() {
+        updatedType = ['art_gallery', 'aquarium', 'zoo', 'stadium', 'museum', 'park', 'casino', 'amusement_park', 'point_of_interest'];
+    };
+    document.getElementById('accom').onclick = function() {
+        updatedType = ['campground', 'lodging', 'rv_park', 'room', 'premise'];
+    };
+    document.getElementById('bar').onclick = function() {
+        updatedType = ['bar', 'restaurant', 'night_club', 'food'];
+    };
+    document.getElementById('all').onclick = function() {
+        updatedType = ['bar', 'restaurant', 'night_club', 'food','campground', 'lodging', 'rv_park', 'room', 'premise', 'art_gallery', 
+        'aquarium', 'zoo', 'stadium', 'museum', 'park', 'casino', 'amusement_park', 'point_of_interest'];
+    };
+}
+
+
+function buttonSelectCity(){
+    document.getElementById('dublin').onclick = function() {
+        center = {lat: 53.3498, lng: -6.2603};
+    };
+    document.getElementById('milan').onclick = function() {
+        center = {lat: 45.4642, lng: 9.1900};
+    };
+    document.getElementById('paris').onclick = function() {
+        center = {lat: 48.8566, lng: 2.3522};
+    };
+    document.getElementById('newYork').onclick = function() {
+        center = {lat: 40.7128, lng: -74.0060};
+    };
+    document.getElementById('berlin').onclick = function() {
+        center = {lat: 52.5200, lng: 13.4050};
+    };
+}
+
+function requestLocations(){
+    map.setCenter(center);
+    //use these to 'get' the session variables.. then tell the request to use them for the search
+    //var newLocation;
+    //var newType;
     
+        var request = {
+        location: center,
+        radius: 8047, 
+        //types: ['bar', 'restaurant', 'night_club', 'food']
+        types: updatedType
+        };
+    
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch(request, callback);
 }
 
 function callback(results, status) {
@@ -63,15 +110,15 @@ function createMarker(place) {
     });
   }
 
+function showResults(){
+    requestLocations();
+}
+
+function clearResults(){
+    updatedType = [];
+    createMarker(updatedType);
+
+}
 
 
-
-
-/*
-{lat: 53.3498, lng: -6.2603}; - dublin
-{lat: 45.4642, lng: 9.1900}; - milan
-{lat: 48.8566, lng: 2.3522}; - paris
-{lat: 40.7128, lng: 74.0060}; - new york
-{lat: 52.5200, lng: 13.4050}; - berlin
-*/
-
+    

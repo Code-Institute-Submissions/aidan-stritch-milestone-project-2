@@ -28,7 +28,7 @@
                 <div class="col-md-12 step-one">
                     <hr>
                     <h2>Step 1: Choose your city</h2>
-                    <div id="cityButtons" class="col-sm-12 col-md-6 cities">
+                    <div class="col-sm-12 col-md-6 cities">
                         <h3>Choose from one of our most popular destinations</h3>
                         <button id="dublin">Dublin</button>
                         <button id="milan" >Milan</button>
@@ -56,10 +56,10 @@
                     <h2>Step 2: Narrow down your results</h2>
                     <h3>Choose what results you would like to see</h3>
                     <p>search type area - squared button with no padding etc</p>
-                    <button>Attractions</button>
-                    <button>Accomodation</button>
-                    <button>Bars & Restaurants</button>
-                    <button>All results</button>
+                    <button id="attraction">Attractions</button>
+                    <button id="accom">Accomodation</button>
+                    <button id="bar">Bars & Restaurants</button>
+                    <button id="all">All results</button>
                 </div>
             </div>
             
@@ -67,6 +67,8 @@
                 <div class="col-md-12 step-three">
                     <hr>
                     <h2>Step 3: See your results on our map</h2>
+                    <button id="showResults" onclick="showResults();">Click here to see your results</button>
+                    <button id="clearResults" onclick="clearResults();">Click here to clear your results</button>
                     <div id="map"></div>
                 </div>
             </div>
