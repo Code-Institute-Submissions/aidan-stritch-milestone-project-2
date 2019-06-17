@@ -65,8 +65,11 @@
                     <div class="col-md-6">
                         <div class="currentSelection">
                             <h1>Current Selection</h1>
-                            <h3>Current City:</h3> <h4 id="textCity">None</h4>
+                            <h3>Current City:</h3> 
+                            <h4 id="textCity">None</h4>
                             <h3>Search Type:</h3> <h4 id="textSearchType">None</h4>
+                            <button id=showResults onclick="requestLocations();">Click here to show your results</button>
+                            <button id="clearResults" onclick="clearResults();">Click here to clear your search</button>
                         </div>
                     </div>
                     
@@ -77,8 +80,10 @@
                 <div class="col-md-12 step-three">
                     <hr>
                     <h2>Step 3: See your results on our map</h2>
-                    <button id="clearResults" onclick="clearResults();">Click here to clear your results</button>
+                    
+                    
                     <div id="map"></div>
+                    
                 </div>
             </div>
             

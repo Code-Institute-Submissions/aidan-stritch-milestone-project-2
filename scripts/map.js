@@ -28,17 +28,13 @@ function searchSelectCity() {
     
     google.maps.event.addListener(autocomplete, 'place_changed', function () {
         place = autocomplete.getPlace();
-        document.getElementById('textCity').innerHTML=place.name;
-
+        document.getElementById('textCity').innerHTML=place.adr_address;
     });
     
     cityForm.addEventListener("submit", function() {
         updateLatLng = new google.maps.LatLng(place.geometry.location.lat(),place.geometry.location.lng());
         map.setZoom(13);
         center=updateLatLng;
-
-        requestLocations();
-        
     });
 }
 
@@ -46,44 +42,40 @@ function buttonSelectSearchType(){
     document.getElementById('attraction').onclick = function() {
         document.getElementById('textSearchType').innerHTML="Attractions";
         updatedType = ['art_gallery', 'aquarium', 'zoo', 'stadium', 'museum', 'park', 'casino', 'amusement_park', 'point_of_interest'];
-        requestLocations();
     };
     document.getElementById('accom').onclick = function() {
         document.getElementById('textSearchType').innerHTML="Accomodation";
         updatedType = ['campground', 'lodging', 'rv_park', 'room', 'premise'];
-        requestLocations();
-    };
+        };
     document.getElementById('bar').onclick = function() {
         document.getElementById('textSearchType').innerHTML="Bars & Restaurants";
         updatedType = ['bar', 'restaurant', 'night_club', 'food'];
-        requestLocations();
     };
     document.getElementById('all').onclick = function() {
         document.getElementById('textSearchType').innerHTML="Attractions, Accomodation, Bars & Restaurants";
         updatedType = ['bar', 'restaurant', 'night_club', 'food','campground', 'lodging', 'rv_park', 'room', 'premise', 'art_gallery', 'aquarium', 'zoo', 'stadium', 'museum', 'park', 'casino', 'amusement_park', 'point_of_interest'];
-        requestLocations();
     };
 }
 
 function buttonSelectCity(){
     document.getElementById('dublin').onclick = function() {
-        document.getElementById('textCity').innerHTML="Dublin";
+        document.getElementById('textCity').innerHTML="Dublin, Ireland";
         center = {lat: 53.3498, lng: -6.2603};
     };
     document.getElementById('milan').onclick = function() {
-        document.getElementById('textCity').innerHTML="Milan";
+        document.getElementById('textCity').innerHTML="Milan, Italy";
         center = {lat: 45.4642, lng: 9.1900};
     };
     document.getElementById('paris').onclick = function() {
-        document.getElementById('textCity').innerHTML="Paris";
+        document.getElementById('textCity').innerHTML="Paris, France";
         center = {lat: 48.8566, lng: 2.3522};
     };
     document.getElementById('newYork').onclick = function() {
-        document.getElementById('textCity').innerHTML="New York";
+        document.getElementById('textCity').innerHTML="New York, United States";
         center = {lat: 40.7128, lng: -74.0060};
     };
     document.getElementById('berlin').onclick = function() {
-        document.getElementById('textCity').innerHTML="Berlin";
+        document.getElementById('textCity').innerHTML="Berlin, Germany";
         center = {lat: 52.5200, lng: 13.4050};
     };
 }
@@ -91,6 +83,7 @@ function buttonSelectCity(){
 
 
 function requestLocations(){
+
     map.setCenter(center);
 
         var request = {
@@ -128,15 +121,16 @@ function createMarker(place) {
   }
 
 function clearResults(){
+    //use jquery here to tell map id to "hide" and when working copy to requestLocations() with "show" using display none and display block
+    
+    
+    
     document.getElementById('textCity').innerHTML="None";
     document.getElementById('textSearchType').innerHTML="None";
-
+    updatedType = [0];
 
     for(i=0; i<marker2.length; i++){
         marker2[i].setMap(null);
     }
 
 }
-
-
-    
