@@ -95,10 +95,13 @@ function requestLocations(){
 }
 
 function callback(results, status) {
-    
+    /*var data = results;
+    resultsTextDisplay(data);
+    */
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++){
             createMarker(results[i]);
+            resultsTextDisplay(results[i]);
         }
     } 
 }
@@ -116,6 +119,19 @@ function createMarker(place) {
       infowindow.open(map, this);
     });
   }
+
+function resultsTextDisplay(place){
+    //console.log("test");
+    //console.dir(place);
+    
+    document.getElementById('resultsName').innerHTML+=place.name;
+    document.getElementById('resultsDesc').innerHTML+=place.website;
+        /*var result = place.results;
+        result.forEach(function(item){
+            document.getElementById('resultsName').innerHTML=item.name;
+    });
+    */
+}
 
 function clearResults(){
     document.getElementById('textCity').innerHTML="None";
