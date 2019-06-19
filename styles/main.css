@@ -15,6 +15,9 @@ html, body, section {
     background-color: #CDCDCD;
 }
 
-#showOrHide {
-    display:block;
+#map {
+    display:none;
+}
+#results {
+    display:none;
 }

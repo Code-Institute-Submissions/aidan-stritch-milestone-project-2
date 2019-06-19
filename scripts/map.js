@@ -80,8 +80,6 @@ function buttonSelectCity(){
     };
 }
 
-
-
 function requestLocations(){
 
     map.setCenter(center);
@@ -94,7 +92,6 @@ function requestLocations(){
         
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch(request, callback);
-
 }
 
 function callback(results, status) {
@@ -121,10 +118,6 @@ function createMarker(place) {
   }
 
 function clearResults(){
-    //use jquery here to tell map id to "hide" and when working copy to requestLocations() with "show" using display none and display block
-    
-    
-    
     document.getElementById('textCity').innerHTML="None";
     document.getElementById('textSearchType').innerHTML="None";
     updatedType = [0];
@@ -134,3 +127,14 @@ function clearResults(){
     }
 
 }
+//when the showResults button is clicked - the map and results divs are shown to the user
+$("#showResults").click(function(){ 
+        $('#map').show();
+        $('#results').show();
+    }); 
+    
+//when the clearResults button is clicked - the map and results divs are hidden to the user
+$("#clearResults").click(function(){ 
+    $('#map').hide();
+    $('#results').hide();
+}); 
