@@ -21,3 +21,18 @@ html, body, section {
 #results {
     display:none;
 }
+
+.resultNames{
+    font-weight: bold;
+}
+
+.newResultsCol {
+    border-bottom-color: black;
+    border: 5px;
+    
+}
+.newResultsCol{
+    border-bottom-color: black;
+    border: 5px;
+    
+}

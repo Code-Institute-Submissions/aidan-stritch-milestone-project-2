@@ -11,14 +11,12 @@ function initMap() {
     
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
-        //change this center to be the one we click? hide map until selection made? 
         center: center
     });
     
     searchSelectCity();
     buttonSelectCity();
     buttonSelectSearchType();
-    
 }
 
 function searchSelectCity() {
@@ -28,13 +26,14 @@ function searchSelectCity() {
     
     google.maps.event.addListener(autocomplete, 'place_changed', function () {
         place = autocomplete.getPlace();
-        document.getElementById('textCity').innerHTML=place.adr_address;
     });
     
     cityForm.addEventListener("submit", function() {
         updateLatLng = new google.maps.LatLng(place.geometry.location.lat(),place.geometry.location.lng());
         map.setZoom(13);
         center=updateLatLng;
+        map.setCenter(center);
+        document.getElementById('textCity').innerHTML=place.adr_address;
     });
 }
 
@@ -46,7 +45,7 @@ function buttonSelectSearchType(){
     document.getElementById('accom').onclick = function() {
         document.getElementById('textSearchType').innerHTML="Accomodation";
         updatedType = ['campground', 'lodging', 'rv_park', 'room', 'premise'];
-        };
+    };
     document.getElementById('bar').onclick = function() {
         document.getElementById('textSearchType').innerHTML="Bars & Restaurants";
         updatedType = ['bar', 'restaurant', 'night_club', 'food'];
@@ -61,22 +60,27 @@ function buttonSelectCity(){
     document.getElementById('dublin').onclick = function() {
         document.getElementById('textCity').innerHTML="Dublin, Ireland";
         center = {lat: 53.3498, lng: -6.2603};
+        map.setCenter(center);
     };
     document.getElementById('milan').onclick = function() {
         document.getElementById('textCity').innerHTML="Milan, Italy";
         center = {lat: 45.4642, lng: 9.1900};
+        map.setCenter(center);
     };
     document.getElementById('paris').onclick = function() {
         document.getElementById('textCity').innerHTML="Paris, France";
         center = {lat: 48.8566, lng: 2.3522};
+        map.setCenter(center);
     };
     document.getElementById('newYork').onclick = function() {
         document.getElementById('textCity').innerHTML="New York, United States";
         center = {lat: 40.7128, lng: -74.0060};
+        map.setCenter(center);
     };
     document.getElementById('berlin').onclick = function() {
         document.getElementById('textCity').innerHTML="Berlin, Germany";
         center = {lat: 52.5200, lng: 13.4050};
+        map.setCenter(center);
     };
 }
 
@@ -95,9 +99,7 @@ function requestLocations(){
 }
 
 function callback(results, status) {
-    /*var data = results;
-    resultsTextDisplay(data);
-    */
+  
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++){
             createMarker(results[i]);
@@ -121,16 +123,19 @@ function createMarker(place) {
   }
 
 function resultsTextDisplay(place){
-    //console.log("test");
-    //console.dir(place);
-    
-    document.getElementById('resultsName').innerHTML+=place.name;
-    document.getElementById('resultsDesc').innerHTML+=place.website;
-        /*var result = place.results;
-        result.forEach(function(item){
-            document.getElementById('resultsName').innerHTML=item.name;
+    var newPlace = place.place_id;
+    var service = new google.maps.places.PlacesService(map);
+
+    service.getDetails({ placeId: newPlace }, function(place, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+            if(place) {
+                document.getElementById('resultsRow').innerHTML+= "<div class='row newResultsRow'><div class = 'col-md-4 newResultsCol'>" + "<h4 class='resultNames'>" + place.name + "</h4>" + "<p>" + "Place Rating: " + 
+                place.rating + " Stars" + "</p>" + "</div>" + "<div class = 'col-md-4 newResultsCol'>" + "<p>" + place.formatted_address + "</p>" + "</div>" 
+                + "<div class = 'col-md-4 newResultsCol'>" + "<p>" + "<p>" + "Contact: " + place.formatted_phone_number + "</p>" + "<p>" + "Web: " + place.website + "</p>" + "</p>"+ "</div>" + "</div>";
+            }
+        }
     });
-    */
+     
 }
 
 function clearResults(){

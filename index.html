@@ -62,8 +62,8 @@
                         <button id="bar">Bars & Restaurants</button>
                         <button id="all">All results</button>
                     </div>
-                    <div class="col-md-6">
-                        <div class="currentSelection">
+                    <div class="col-md-6 currentSelection">
+                        <div>
                             <h1>Current Selection</h1>
                             <h3>Current City:</h3> 
                             <h4 id="textCity">None</h4>
@@ -90,21 +90,7 @@
                     <h2>Step 4: Read more about your results</h2>
                     <div id="results">
                         <div class="row">
-                            <div class="col-md-12">
-                                <div class="col-md-2">
-                                    //this is where the image goes
-                                </div>
-                                <div class="col-md-5">
-                                    <h3 id="resultsName"></h3>
-                                    <p id="resultsDesc"></p>
-                                </div>
-                                <div class="col-md-5">
-                                    <p>address</p>
-                                    <p>contact</p>
-                                    <p>website</p>
-                                    <p>opening hours</p>
-                                </div>
-                            </div>
+                            <div class="col-md-12" id ="resultsRow"></div>
                         </div>
                     </div>
                     
@@ -137,6 +123,5 @@
 
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxQwRApZQq4D_0iTu38MwdxUsiKrq4zu8&libraries=places,geometry&callback=initMap" async defer></script>
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-        
     </body>
 </html>
