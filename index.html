@@ -1,127 +1,136 @@
 <!DOCTYPE html>
 <!–– this is a comment -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>City Trip Planner</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
-        <link rel="stylesheet" href="styles/main.css" type="text/css" />
-        <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
-    </head>
-    <body>
-        <header class="container-fluid">
-            <div class="row">
-                <div class="col-md-12 title">
-                    <h1>City Trip Planner</h1>
-                    <h2>Plan your next trip in 5 simple steps!</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>City Trip Planner</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+    <link rel="stylesheet" href="styles/main.css" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script type="text/javascript">
+        (function() { emailjs.init("user_I05a9IAUn6mSc6viL9RFK"); })();
+        emailjs.send("gmail", "city_planner_results",{name:"Aidan", notes:"This is a test"} );
+
+    </script>
+
+</head>
+
+<body>
+    <header class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 title">
+                <h1>City Trip Planner</h1>
+                <h2>Plan your next trip in 5 simple steps!</h2>
+            </div>
+        </div>
+    </header>
+
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 step-one">
+                <hr>
+                <h2>Step 1: Choose your city</h2>
+                <div class="col-sm-12 col-md-6 cities">
+                    <h3>Choose from one of our most popular destinations</h3>
+                    <button id="dublin">Dublin</button>
+                    <button id="milan">Milan</button>
+                    <button id="paris">Paris</button>
+                    <button id="newYork">New York</button>
+                    <button id="berlin">Berlin</button>
+                </div>
+
+                <div class="col-sm-12 col-md-6 search">
+                    <h3>Or search for a particular city</h3>
+
+                    <form id="cityForm" onsubmit="return false">
+                        <input type="text" class="form-control" name="city" id="cityName" placeholder="Search by city name..." />
+                        <input type="submit" value="Select this city" class="submit" />
+
+                    </form>
                 </div>
             </div>
-        </header>
-        
-        <section class="container-fluid">
-            <div class="row">
-                <div class="col-md-12 step-one">
-                    <hr>
-                    <h2>Step 1: Choose your city</h2>
-                    <div class="col-sm-12 col-md-6 cities">
-                        <h3>Choose from one of our most popular destinations</h3>
-                        <button id="dublin">Dublin</button>
-                        <button id="milan" >Milan</button>
-                        <button id="paris" >Paris</button>
-                        <button id="newYork" >New York</button>
-                        <button id="berlin" >Berlin</button>
-                    </div>
-                    
-                    <div class="col-sm-12 col-md-6 search">
-                        <h3>Or search for a particular city</h3>
-                        
-                        <form id="cityForm" onsubmit="return false">
-                            <input type="text" class="form-control" name="city" id="cityName" placeholder="Search by city name..."/>
-                            <input type="submit" value="Select this city" class="submit" />
-                            
-                        </form>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="row">
-                <div class="col-md-12 ">
-                    <hr>
-                    <div class="col-md-6 step-two">
-                        <h2>Step 2: Narrow down your results</h2>
-                        <h3>Choose what results you would like to see</h3>
-                        <p>search type area - squared button with no padding etc</p>
-                        <button id="attraction">Attractions</button>
-                        <button id="accom">Accomodation</button>
-                        <button id="bar">Bars & Restaurants</button>
-                        <button id="all">All results</button>
-                    </div>
-                    <div class="col-md-6 currentSelection">
-                        <div>
-                            <h1>Current Selection</h1>
-                            <h3>Current City:</h3> 
-                            <h4 id="textCity">None</h4>
-                            <h3>Search Type:</h3> <h4 id="textSearchType">None</h4>
-                            <button id=showResults onclick="requestLocations();">Click here to show your results</button>
-                            <button id="clearResults" onclick="clearResults();">Click here to clear your search</button>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-12 step-three">
-                    <hr>
-                    <h2>Step 3: See your results on our map</h2>
-                    <div id="map"></div>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-12 step-four">
-                    <hr>
-                    <h2>Step 4: Read more about your results</h2>
-                    <div id="results">
-                        <div class="row">
-                            <div class="col-md-12" id ="resultsRow"></div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-12 step-five">
-                    <hr>
-                    <h2>Step 5: Send yourself a list of these results</h2>
-                    <p>email js to send results to the cust. add check boxes to be added to the mailing list for trip ideas 
-                    etc and make mandatory to select one</p>
-                </div>
-            </div>
-        </section>
-        
-        <footer class="container-fluid">
-            <div class="row">
-                <div class="col-md-12 footer">
-                    <hr>
-                    <h1>this will be the footer</h1>
-                    <p>footer area .. add in the Copyright symbol from lesson and basic footer. not too fancy</p>
-                </div>
-            </div>
-        </footer>
-        
-        
-        <script src="scripts/map.js"></script>
+        </div>
 
 
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxQwRApZQq4D_0iTu38MwdxUsiKrq4zu8&libraries=places,geometry&callback=initMap" async defer></script>
-        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-    </body>
+        <div class="row">
+            <div class="col-md-12 ">
+                <hr>
+                <div class="col-md-6 step-two">
+                    <h2>Step 2: Narrow down your results</h2>
+                    <h3>Choose what results you would like to see</h3>
+                    <p>search type area - squared button with no padding etc</p>
+                    <button id="attraction">Attractions</button>
+                    <button id="accom">Accomodation</button>
+                    <button id="bar">Bars & Restaurants</button>
+                    <button id="all">All results</button>
+                </div>
+                <div class="col-md-6 currentSelection">
+                    <div>
+                        <h1>Current Selection</h1>
+                        <h3>Current City:</h3>
+                        <h4 id="textCity">None</h4>
+                        <h3>Search Type:</h3>
+                        <h4 id="textSearchType">None</h4>
+                        <button id=showResults onclick="requestLocations();">Click here to show your results</button>
+                        <button id="clearResults" onclick="clearResults();">Click here to clear your search</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 step-three">
+                <hr>
+                <h2>Step 3: See your results on our map</h2>
+                <div id="map"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 step-four">
+                <hr>
+                <h2>Step 4: Read more about your results</h2>
+                <div id="results">
+                    <div class="row">
+                        <div class="col-md-12" id="resultsRow"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 step-five">
+                <hr>
+                <h2>Step 5: Send yourself a list of these results</h2>
+                <p>email js to send results to the cust. add check boxes to be added to the mailing list for trip ideas etc and make mandatory to select one</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 footer">
+                <hr>
+                <h1>this will be the footer</h1>
+                <p>footer area .. add in the Copyright symbol from lesson and basic footer. not too fancy</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="scripts/map.js"></script>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxQwRApZQq4D_0iTu38MwdxUsiKrq4zu8&libraries=places,geometry&callback=initMap" async defer></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+</body>
+
 </html>
