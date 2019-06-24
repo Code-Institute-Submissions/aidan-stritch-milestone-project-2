@@ -15,8 +15,7 @@
     <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
     <script type="text/javascript">
         (function() { emailjs.init("user_I05a9IAUn6mSc6viL9RFK"); })();
-        emailjs.send("gmail", "city_planner_results",{name:"Aidan", notes:"This is a test"} );
-
+        emailjs.send("gmail", "city_planner_results", {"email_address":"","cust_name":"","city_email_results":""})
     </script>
 
 </head>
@@ -127,7 +126,7 @@
 
 
     <script src="scripts/map.js"></script>
-
+    <script src="scripts/sendEmail.js"></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxQwRApZQq4D_0iTu38MwdxUsiKrq4zu8&libraries=places,geometry&callback=initMap" async defer></script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
