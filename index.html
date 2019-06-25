@@ -15,7 +15,13 @@
     <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
     <script type="text/javascript">
         (function() { emailjs.init("user_I05a9IAUn6mSc6viL9RFK"); })();
-        emailjs.send("gmail", "city_planner_results", {"email_address":"","cust_name":"","city_email_results":""})
+        emailjs.send("gmail", "city_planner_results", {
+            "email_address": contactForm.email_address.value,
+            "cust_name": contactForm.cust_name.value,
+            "city_email_results": mainResult, //this part we need to finish
+            "search_city":"test",  //this part we need to finish
+            "search_type":updatedType  //this part we need to finish
+        });
     </script>
 
 </head>
@@ -108,8 +114,15 @@
         <div class="row">
             <div class="col-md-12 step-five">
                 <hr>
-                <h2>Step 5: Send yourself a list of these results</h2>
-                <p>email js to send results to the cust. add check boxes to be added to the mailing list for trip ideas etc and make mandatory to select one</p>
+                <h2>Step 5: Send yourself a summary of your search</h2>
+                <p>Add your details below and click "Send" and check your email for a summary of your City Trip Planner search!</p>
+                <form onsubmit="return sendMail(this);" method="POST">
+                    <label>Your Name:</label>
+                    <input type="text" name="name" class="form-control" id="cust_name" placeholder="Enter Name" required/>
+                    <label>Your Email Address:</label>
+                    <input type="text" name="email" class="form-control" id="email_address" placeholder="Enter Email Address" required/>
+                    <button type="submit" class="form-button">Send</button>
+                </form>
             </div>
         </div>
     </section>
