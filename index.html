@@ -18,9 +18,8 @@
         emailjs.send("gmail", "city_planner_results", {
             "email_address": contactForm.email_address.value,
             "cust_name": contactForm.cust_name.value,
-            "city_email_results": mainResult, //this part we need to finish
-            "search_city":"test",  //this part we need to finish
-            "search_type":updatedType  //this part we need to finish
+            "search_city": contactForm.city_name.value,  
+            "search_type": contactForm.search_type.value,  
         });
     </script>
 
@@ -121,6 +120,13 @@
                     <input type="text" name="name" class="form-control" id="cust_name" placeholder="Enter Name" required/>
                     <label>Your Email Address:</label>
                     <input type="text" name="email" class="form-control" id="email_address" placeholder="Enter Email Address" required/>
+                    <label>Chosen City:</label> 
+                    <input type="text" name="city" class="form-control" id="city_name" placeholder="None Selected" readonly/>
+                    
+                    //or readonly="readonly"
+                    
+                    <label>Chosen Search Type:</label>
+                    <input type="text" name="search" class="form-control" id="search_type" placeholder="None Selected" readonly/>
                     <button type="submit" class="form-button">Send</button>
                 </form>
             </div>

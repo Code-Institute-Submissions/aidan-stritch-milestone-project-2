@@ -40,18 +40,22 @@ function searchSelectCity() {
 function buttonSelectSearchType(){
     document.getElementById('attraction').onclick = function() {
         document.getElementById('textSearchType').innerHTML="Attractions";
+        document.getElementById('search_type').placeholder="Attractions";
         updatedType = ['art_gallery', 'aquarium', 'zoo', 'stadium', 'museum', 'park', 'casino', 'amusement_park', 'point_of_interest'];
     };
     document.getElementById('accom').onclick = function() {
         document.getElementById('textSearchType').innerHTML="Accomodation";
+        document.getElementById('search_type').placeholder="Accomodation";
         updatedType = ['campground', 'lodging', 'rv_park', 'room', 'premise'];
     };
     document.getElementById('bar').onclick = function() {
         document.getElementById('textSearchType').innerHTML="Bars & Restaurants";
+        document.getElementById('search_type').placeholder="Bars & Restaurants";
         updatedType = ['bar', 'restaurant', 'night_club', 'food'];
     };
     document.getElementById('all').onclick = function() {
         document.getElementById('textSearchType').innerHTML="Attractions, Accomodation, Bars & Restaurants";
+        document.getElementById('search_type').placeholder="Attractions, Accomodation, Bars & Restaurants";
         updatedType = ['bar', 'restaurant', 'night_club', 'food','campground', 'lodging', 'rv_park', 'room', 'premise', 'art_gallery', 'aquarium', 'zoo', 'stadium', 'museum', 'park', 'casino', 'amusement_park', 'point_of_interest'];
     };
 }
