@@ -14,13 +14,9 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
     <script type="text/javascript">
-        (function() { emailjs.init("user_I05a9IAUn6mSc6viL9RFK"); })();
-        emailjs.send("gmail", "city_planner_results", {
-            "email_address": contactForm.email_address.value,
-            "cust_name": contactForm.cust_name.value,
-            "search_city": contactForm.city_name.value,  
-            "search_type": contactForm.search_type.value,  
-        });
+        (function() {
+            emailjs.init("user_I05a9IAUn6mSc6viL9RFK");
+        })();
     </script>
 
 </head>
@@ -115,19 +111,16 @@
                 <hr>
                 <h2>Step 5: Send yourself a summary of your search</h2>
                 <p>Add your details below and click "Send" and check your email for a summary of your City Trip Planner search!</p>
-                <form onsubmit="return sendMail(this);" method="POST">
+                <form id="contactForm" onsubmit="return sendMail(this);" method="POST">
                     <label>Your Name:</label>
                     <input type="text" name="name" class="form-control" id="cust_name" placeholder="Enter Name" required/>
                     <label>Your Email Address:</label>
                     <input type="text" name="email" class="form-control" id="email_address" placeholder="Enter Email Address" required/>
                     <label>Chosen City:</label> 
                     <input type="text" name="city" class="form-control" id="city_name" placeholder="None Selected" readonly/>
-                    
-                    //or readonly="readonly"
-                    
                     <label>Chosen Search Type:</label>
                     <input type="text" name="search" class="form-control" id="search_type" placeholder="None Selected" readonly/>
-                    <button type="submit" class="form-button">Send</button>
+                    <button type="submit" class="form-button">Send Email</button>
                 </form>
             </div>
         </div>
@@ -144,7 +137,7 @@
 
     <script src="scripts/map.js"></script>
     <script src="scripts/sendEmail.js"></script>
-
+    
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxQwRApZQq4D_0iTu38MwdxUsiKrq4zu8&libraries=places,geometry&callback=initMap" async defer></script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 </body>

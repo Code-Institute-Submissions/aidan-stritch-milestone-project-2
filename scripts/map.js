@@ -34,28 +34,29 @@ function searchSelectCity() {
         center=updateLatLng;
         map.setCenter(center);
         document.getElementById('textCity').innerHTML=place.adr_address;
+        document.getElementById('city_name').value=document.getElementById('textCity').textContent;
     });
 }
 
 function buttonSelectSearchType(){
     document.getElementById('attraction').onclick = function() {
         document.getElementById('textSearchType').innerHTML="Attractions";
-        document.getElementById('search_type').placeholder="Attractions";
+        document.getElementById('search_type').value="Attractions";
         updatedType = ['art_gallery', 'aquarium', 'zoo', 'stadium', 'museum', 'park', 'casino', 'amusement_park', 'point_of_interest'];
     };
     document.getElementById('accom').onclick = function() {
         document.getElementById('textSearchType').innerHTML="Accomodation";
-        document.getElementById('search_type').placeholder="Accomodation";
+        document.getElementById('search_type').value="Accomodation";
         updatedType = ['campground', 'lodging', 'rv_park', 'room', 'premise'];
     };
     document.getElementById('bar').onclick = function() {
         document.getElementById('textSearchType').innerHTML="Bars & Restaurants";
-        document.getElementById('search_type').placeholder="Bars & Restaurants";
+        document.getElementById('search_type').value="Bars & Restaurants";
         updatedType = ['bar', 'restaurant', 'night_club', 'food'];
     };
     document.getElementById('all').onclick = function() {
         document.getElementById('textSearchType').innerHTML="Attractions, Accomodation, Bars & Restaurants";
-        document.getElementById('search_type').placeholder="Attractions, Accomodation, Bars & Restaurants";
+        document.getElementById('search_type').value="Attractions, Accomodation, Bars & Restaurants";
         updatedType = ['bar', 'restaurant', 'night_club', 'food','campground', 'lodging', 'rv_park', 'room', 'premise', 'art_gallery', 'aquarium', 'zoo', 'stadium', 'museum', 'park', 'casino', 'amusement_park', 'point_of_interest'];
     };
 }
@@ -63,26 +64,31 @@ function buttonSelectSearchType(){
 function buttonSelectCity(){
     document.getElementById('dublin').onclick = function() {
         document.getElementById('textCity').innerHTML="Dublin, Ireland";
+        document.getElementById('city_name').value="Dublin, Ireland";
         center = {lat: 53.3498, lng: -6.2603};
         map.setCenter(center);
     };
     document.getElementById('milan').onclick = function() {
         document.getElementById('textCity').innerHTML="Milan, Italy";
+        document.getElementById('city_name').value="Milan, Italy";
         center = {lat: 45.4642, lng: 9.1900};
         map.setCenter(center);
     };
     document.getElementById('paris').onclick = function() {
         document.getElementById('textCity').innerHTML="Paris, France";
+        document.getElementById('city_name').value="Paris, France";
         center = {lat: 48.8566, lng: 2.3522};
         map.setCenter(center);
     };
     document.getElementById('newYork').onclick = function() {
         document.getElementById('textCity').innerHTML="New York, United States";
+        document.getElementById('city_name').value="New York, United States";
         center = {lat: 40.7128, lng: -74.0060};
         map.setCenter(center);
     };
     document.getElementById('berlin').onclick = function() {
         document.getElementById('textCity').innerHTML="Berlin, Germany";
+        document.getElementById('city_name').value="Berlin, Germany";
         center = {lat: 52.5200, lng: 13.4050};
         map.setCenter(center);
     };
