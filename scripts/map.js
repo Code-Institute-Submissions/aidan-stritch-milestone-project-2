@@ -151,6 +151,10 @@ function resultsTextDisplay(place){
 function clearResults(){
     document.getElementById('textCity').innerHTML="None";
     document.getElementById('textSearchType').innerHTML="None";
+    document.getElementById('city_name').value="None Selected";
+    document.getElementById('search_type').value="None Selected";
+
+    
     updatedType = [0];
 
     for(i=0; i<marker2.length; i++){

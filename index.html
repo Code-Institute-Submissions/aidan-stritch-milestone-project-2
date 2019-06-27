@@ -24,9 +24,18 @@
 <body>
     <header class="container-fluid">
         <div class="row">
-            <div class="col-md-12 title">
+            <div class="col-md-8 title">
                 <h1>City Trip Planner</h1>
                 <h2>Plan your next trip in 5 simple steps!</h2>
+            </div>
+            <div class="col-md-4 title-list">
+                <ul>
+                    <li>Step 1: Choose your city</li>
+                    <li>Step 2: Narrow down your results</li>
+                    <li>Step 3: See your results on our map</li>
+                    <li>Step 4: Read more about your results</li>
+                    <li>Step 5: Send yourself a summary of your search</li>
+                </ul>
             </div>
         </div>
     </header>
@@ -59,30 +68,28 @@
 
 
         <div class="row">
-            <div class="col-md-12 ">
-                <hr>
-                <div class="col-md-6 step-two">
-                    <h2>Step 2: Narrow down your results</h2>
-                    <h3>Choose what results you would like to see</h3>
-                    <p>search type area - squared button with no padding etc</p>
-                    <button id="attraction">Attractions</button>
-                    <button id="accom">Accomodation</button>
-                    <button id="bar">Bars & Restaurants</button>
-                    <button id="all">All results</button>
-                </div>
-                <div class="col-md-6 currentSelection">
-                    <div>
-                        <h1>Current Selection</h1>
-                        <h3>Current City:</h3>
-                        <h4 id="textCity">None</h4>
-                        <h3>Search Type:</h3>
-                        <h4 id="textSearchType">None</h4>
-                        <button id=showResults onclick="requestLocations();">Click here to show your results</button>
-                        <button id="clearResults" onclick="clearResults();">Click here to clear your search</button>
-                    </div>
-                </div>
-
+            <hr>
+            <div class="col-md-6 step-two">
+                <h2>Step 2: Narrow down your results</h2>
+                <h3>Choose what results you would like to see</h3>
+                <p>search type area - squared button with no padding etc</p>
+                <button id="attraction">Attractions</button>
+                <button id="accom">Accomodation</button>
+                <button id="bar">Bars & Restaurants</button>
+                <button id="all">All results</button>
             </div>
+            <div class="col-md-6 currentSelection">
+                <div>
+                    <h1>Current Selection</h1>
+                    <h3>Current City:</h3>
+                    <h4 id="textCity">None</h4>
+                    <h3>Search Type:</h3>
+                    <h4 id="textSearchType">None</h4>
+                    <button id=showResults onclick="requestLocations();">Click here to show your results</button>
+                    <button id="clearResults" onclick="clearResults();">Click here to clear your search</button>
+                </div>
+            </div>
+
         </div>
 
         <div class="row">
@@ -116,7 +123,7 @@
                     <input type="text" name="name" class="form-control" id="cust_name" placeholder="Enter Name" required/>
                     <label>Your Email Address:</label>
                     <input type="text" name="email" class="form-control" id="email_address" placeholder="Enter Email Address" required/>
-                    <label>Chosen City:</label> 
+                    <label>Chosen City:</label>
                     <input type="text" name="city" class="form-control" id="city_name" placeholder="None Selected" readonly/>
                     <label>Chosen Search Type:</label>
                     <input type="text" name="search" class="form-control" id="search_type" placeholder="None Selected" readonly/>
@@ -137,7 +144,7 @@
 
     <script src="scripts/map.js"></script>
     <script src="scripts/sendEmail.js"></script>
-    
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxQwRApZQq4D_0iTu38MwdxUsiKrq4zu8&libraries=places,geometry&callback=initMap" async defer></script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 </body>
