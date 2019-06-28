@@ -2,7 +2,7 @@ var map;
 var infowindow;
 var center;
 var updatedType =[];
-var marker;
+var marker = [];
 var marker2 = [];
 
 function initMap() {
@@ -66,36 +66,32 @@ function buttonSelectCity(){
         document.getElementById('textCity').innerHTML="Dublin, Ireland";
         document.getElementById('city_name').value="Dublin, Ireland";
         center = {lat: 53.3498, lng: -6.2603};
-        map.setCenter(center);
     };
     document.getElementById('milan').onclick = function() {
         document.getElementById('textCity').innerHTML="Milan, Italy";
         document.getElementById('city_name').value="Milan, Italy";
         center = {lat: 45.4642, lng: 9.1900};
-        map.setCenter(center);
     };
     document.getElementById('paris').onclick = function() {
         document.getElementById('textCity').innerHTML="Paris, France";
         document.getElementById('city_name').value="Paris, France";
         center = {lat: 48.8566, lng: 2.3522};
-        map.setCenter(center);
     };
     document.getElementById('newYork').onclick = function() {
         document.getElementById('textCity').innerHTML="New York, United States";
         document.getElementById('city_name').value="New York, United States";
         center = {lat: 40.7128, lng: -74.0060};
-        map.setCenter(center);
     };
     document.getElementById('berlin').onclick = function() {
         document.getElementById('textCity').innerHTML="Berlin, Germany";
         document.getElementById('city_name').value="Berlin, Germany";
         center = {lat: 52.5200, lng: 13.4050};
-        map.setCenter(center);
     };
 }
 
 function requestLocations(){
-
+    document.getElementById('resultsRow').innerHTML= "";
+    
     map.setCenter(center);
 
         var request = {
@@ -109,7 +105,6 @@ function requestLocations(){
 }
 
 function callback(results, status) {
-  
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++){
             createMarker(results[i]);
@@ -153,9 +148,11 @@ function clearResults(){
     document.getElementById('textSearchType').innerHTML="None";
     document.getElementById('city_name').value="None Selected";
     document.getElementById('search_type').value="None Selected";
-
+    document.getElementById('resultsRow').innerHTML= "";
     
-    updatedType = [0];
+    center="";
+
+    updatedType = [null];
 
     for(i=0; i<marker2.length; i++){
         marker2[i].setMap(null);
