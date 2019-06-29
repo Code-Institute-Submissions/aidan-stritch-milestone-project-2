@@ -19,8 +19,65 @@ html, body, section {
 
 .currentSelection h1{
     text-align:center;
-    
 }
+
+.step-one button {
+    border-radius: 12px;
+    border: 1px solid black;
+    width: 110px;
+    margin-top:5px;
+    font-weight: bold;
+    
+    -webkit-transition-duration: 0.2s; 
+    transition-duration: 0.2s;
+}
+
+.step-two button{
+    border-radius: 12px;
+    border: 1px solid black;
+    width: 150px;
+    margin-top:5px;
+    font-weight: bold;
+    
+    
+    -webkit-transition-duration: 0.2s; 
+    transition-duration: 0.2s;
+}
+
+#all {
+    width: 460px;
+}
+
+
+input[type="text"] {
+    width:75%;
+}
+input[type="submit"] {
+    width:150px;
+    position: relative;
+    margin : 10px auto;
+}
+
+
+#cityForm{
+    width: 35%;
+}
+#contactForm{
+    width: 35%;
+    margin-bottom:50px;
+}
+
+.step-one button:hover {
+  background-color: #FFFFFF; /* white */
+  color: black;
+}
+
+.step-two button:hover {
+  background-color: #FFFFFF; /* white */
+  color: black;
+}
+
+
 
 #map {
     display:none;
