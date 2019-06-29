@@ -122,7 +122,7 @@ function createMarker(place) {
     marker2.push(marker);
 
     google.maps.event.addListener(marker, 'click', function() {
-      infowindow.setContent(`<h2>${place.name}</h2> <h3>Rating: ${place.reviews}</h3> <h3>Opening Hours</h3> ${place.opening_hours}`);
+      infowindow.setContent(`<h4>${place.name}</h4> <p><b>Rating:</b> ${place.rating}</p><p><b>Type:</b> ${document.getElementById('textSearchType').innerHTML}</p><p>See results section for more details</p>`);
       infowindow.open(map, this);
     });
   }
@@ -154,10 +154,12 @@ function clearResults(){
 
     updatedType = [null];
 
-    for(i=0; i<marker2.length; i++){
-        marker2[i].setMap(null);
+    for(i=0; i<marker.length; i++){
+        if (markers[i]) {
+            markers[i].setMap(null);
+            delete markers[i]
+        }
     }
-
 }
 //when the showResults button is clicked - the map and results divs are shown to the user
 $("#showResults").click(function(){ 

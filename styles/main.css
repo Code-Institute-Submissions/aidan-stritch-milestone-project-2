@@ -12,7 +12,14 @@ html, body, section {
 }
 
 .currentSelection {
-    background-color: #CDCDCD;
+    background-color: #e3e2df;
+    width:35%;
+    margin-left:15px;
+}
+
+.currentSelection h1{
+    text-align:center;
+    
 }
 
 #map {
@@ -26,13 +33,35 @@ html, body, section {
     font-weight: bold;
 }
 
-.newResultsCol {
-    border-bottom-color: black;
-    border: 5px;
+.header-color{
+    background-color: #5d5c61;
+    color: white;
+}
+
+.step-odd{
+    background-color: ;
+}
+.step-even{
+    background-color: ;
+}
+
+.header-color ul {
+    vertical-align: middle;
+    padding-top: 15px;
+}
+
+.header-color ul li{
+    list-style-type: none;
+    font-size: 13px;
     
 }
-.newResultsRow{
-    border-bottom-color: black;
-    border: 5px;
-    
+
+.footer{
+    background-color: #5d5c61;
+    text-align: center;
+    color:white;
+}
+
+.step-one{
+    padding-bottom: 15px;
 }

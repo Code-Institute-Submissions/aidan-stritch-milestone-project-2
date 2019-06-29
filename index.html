@@ -23,12 +23,12 @@
 
 <body>
     <header class="container-fluid">
-        <div class="row">
-            <div class="col-md-8 title">
+        <div class="row header-color">
+            <div class="col-md-8">
                 <h1>City Trip Planner</h1>
                 <h2>Plan your next trip in 5 simple steps!</h2>
             </div>
-            <div class="col-md-4 title-list">
+            <div class="col-md-4">
                 <ul>
                     <li>Step 1: Choose your city</li>
                     <li>Step 2: Narrow down your results</li>
@@ -42,8 +42,7 @@
 
     <section class="container-fluid">
         <div class="row">
-            <div class="col-md-12 step-one">
-                <hr>
+            <div class="col-md-12 step-one step-odd">
                 <h2>Step 1: Choose your city</h2>
                 <div class="col-sm-12 col-md-6 cities">
                     <h3>Choose from one of our most popular destinations</h3>
@@ -68,8 +67,7 @@
 
 
         <div class="row">
-            <hr>
-            <div class="col-md-6 step-two">
+            <div class="col-md-6 step-two step-even">
                 <h2>Step 2: Narrow down your results</h2>
                 <h3>Choose what results you would like to see</h3>
                 <p>search type area - squared button with no padding etc</p>
@@ -81,9 +79,9 @@
             <div class="col-md-6 currentSelection">
                 <div>
                     <h1>Current Selection</h1>
-                    <h3>Current City:</h3>
+                    <h3>Selected City:</h3>
                     <h4 id="textCity">None</h4>
-                    <h3>Search Type:</h3>
+                    <h3>Selected Search Type:</h3>
                     <h4 id="textSearchType">None</h4>
                     <button id=showResults onclick="requestLocations();">Click here to show your results</button>
                     <button id="clearResults" onclick="clearResults();">Click here to clear your search</button>
@@ -93,16 +91,14 @@
         </div>
 
         <div class="row">
-            <div class="col-md-12 step-three">
-                <hr>
+            <div class="col-md-12 step-three step-odd">
                 <h2>Step 3: See your results on our map</h2>
                 <div id="map"></div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-12 step-four">
-                <hr>
+            <div class="col-md-12 step-four step-even">
                 <h2>Step 4: Read more about your results</h2>
                 <div id="results">
                     <div class="row">
@@ -114,8 +110,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-12 step-five">
-                <hr>
+            <div class="col-md-12 step-five step-odd">
                 <h2>Step 5: Send yourself a summary of your search</h2>
                 <p>Add your details below and click "Send" and check your email for a summary of your City Trip Planner search!</p>
                 <form id="contactForm" onsubmit="return sendMail(this);" method="POST">
@@ -136,7 +131,7 @@
     <footer class="container-fluid">
         <div class="row">
             <div class="col-md-12 footer">
-                <h1>The 5 Step City Trip Planner Copyright 2019</h1>
+                <h4>The 5 Step City Trip Planner Copyright 2019</h4>
             </div>
         </div>
     </footer>
