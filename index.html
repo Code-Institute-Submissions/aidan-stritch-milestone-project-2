@@ -26,7 +26,7 @@
         <div class="row header-color">
             <div class="col-md-8">
                 <h1>City Trip Planner</h1>
-                <h2>Plan your next trip in 5 simple steps!</h2>
+                <h3>Plan your next trip in 5 simple steps!</h3>
             </div>
             <div class="col-md-4">
                 <ul>
@@ -66,7 +66,6 @@
             <div class="col-md-6 step-two step-even">
                 <h2>Step 2: Narrow down your results</h2>
                 <h3>Choose what results you would like to see</h3>
-                <p>search type area - squared button with no padding etc</p>
                 <button id="attraction">Attractions</button>
                 <button id="accom">Accomodation</button>
                 <button id="bar">Bars & Restaurants</button>
@@ -79,8 +78,8 @@
                     <h4 id="textCity">None</h4>
                     <h3>Selected Search Type:</h3>
                     <h4 id="textSearchType">None</h4>
-                    <button id=showResults onclick="requestLocations();">Click here to show your results</button>
-                    <button id="clearResults" onclick="clearResults();">Click here to clear your search</button>
+                    <button id=showResults onclick="requestLocations();">See Results</button>
+                    <button id="clearResults" onclick="clearResults();">Clear Results</button>
                 </div>
             </div>
 
@@ -126,7 +125,7 @@
                     <label>Chosen Search Type:</label>
                     <input type="text" name="search" class="form-control" id="search_type" placeholder="None Selected" readonly/>
                     </p>
-                    <button type="submit" class="form-button">Send Email</button>
+                    <input type="submit" value="Send Email" class="form-button" />
                 </form>
             </div>
         </div>

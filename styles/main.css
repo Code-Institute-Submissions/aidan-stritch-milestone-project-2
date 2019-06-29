@@ -1,14 +1,31 @@
-#map {
-    height: 400px;
-    width: 80%;
-    margin-left:auto; 
-    margin-right:auto;
-}
+/*.....................................Miscellaneous*/
 
 html, body, section {
         height: 100%;
         margin: 0;
         padding: 0;
+}
+
+#results {
+    display:none;
+}
+
+.resultNames{
+    font-weight: bold;
+}
+
+.header-color ul {
+    padding-top: 15px;
+}
+
+.header-color ul li{
+    list-style-type: none;
+    font-size: 13px;
+    
+}
+
+.step-one{
+    padding-bottom: 15px;
 }
 
 .currentSelection {
@@ -21,14 +38,28 @@ html, body, section {
     text-align:center;
 }
 
+
+/*.....................................Map Element*/
+
+#map {
+    height: 400px;
+    width: 80%;
+    margin-left:auto; 
+    margin-right:auto;
+    display:none;
+}
+
+/*.....................................Buttons*/
+
 .step-one button {
     border-radius: 12px;
     border: 1px solid black;
     width: 110px;
     margin-top:5px;
     font-weight: bold;
-    
     -webkit-transition-duration: 0.2s; 
+    -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
     transition-duration: 0.2s;
 }
 
@@ -38,57 +69,24 @@ html, body, section {
     width: 150px;
     margin-top:5px;
     font-weight: bold;
-    
-    
     -webkit-transition-duration: 0.2s; 
+    -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
     transition-duration: 0.2s;
 }
 
 #all {
-    width: 460px;
+    width: 71%;
 }
 
-
-input[type="text"] {
-    width:75%;
-}
-input[type="submit"] {
+.currentSelection button{
     width:150px;
     position: relative;
     margin : 10px auto;
+    left:15%;
 }
 
-
-#cityForm{
-    width: 35%;
-}
-#contactForm{
-    width: 35%;
-    margin-bottom:50px;
-}
-
-.step-one button:hover {
-  background-color: #FFFFFF; /* white */
-  color: black;
-}
-
-.step-two button:hover {
-  background-color: #FFFFFF; /* white */
-  color: black;
-}
-
-
-
-#map {
-    display:none;
-}
-#results {
-    display:none;
-}
-
-.resultNames{
-    font-weight: bold;
-}
+/*.....................................Colors*/
 
 .header-color{
     background-color: #5d5c61;
@@ -102,23 +100,57 @@ input[type="submit"] {
     background-color: ;
 }
 
-.header-color ul {
-    vertical-align: middle;
-    padding-top: 15px;
+/*.....................................Form Elements*/
+
+#cityForm{
+    width: 35%;
 }
 
-.header-color ul li{
-    list-style-type: none;
-    font-size: 13px;
-    
+#contactForm{
+    width: 35%;
+    margin-bottom:50px;
+    margin-left:10%;
 }
+
+input[type="text"] {
+    width:75%;
+}
+
+input[type="submit"] {
+    width:150px;
+    position: relative;
+    margin : 10px auto;
+}
+
+
+/*.....................................Hover Effects*/
+
+.step-one button:hover {
+  background-color: #FFFFFF; /* white */
+  color: black;
+}
+
+.step-two button:hover {
+  background-color: #FFFFFF; /* white */
+  color: black;
+}
+
+input[type="submit"]:hover{
+    background-color: #FFFFFF; /* white */
+    color: black;
+}
+
+.currentSelection button:hover{
+    background-color: #FFFFFF; /* white */
+    color: black;
+}
+
+
+
+/*.....................................Footer*/
 
 .footer{
     background-color: #5d5c61;
     text-align: center;
     color:white;
-}
-
-.step-one{
-    padding-bottom: 15px;
 }
