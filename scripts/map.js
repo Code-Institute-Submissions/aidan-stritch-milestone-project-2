@@ -113,12 +113,13 @@ function callback(results, status) {
     } 
 }
 
+
 function createMarker(place) {
     marker = new google.maps.Marker({
         map: map,
         position: place.geometry.location
     });
-    
+
     marker2.push(marker);
 
     google.maps.event.addListener(marker, 'click', function() {
