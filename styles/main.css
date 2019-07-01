@@ -159,4 +159,8 @@ input[type="submit"]:hover{
     background-color: #5d5c61;
     text-align: center;
     color:white;
+    
+    min-height: 60px;
+    margin:0;
+    position: relative;
 }
