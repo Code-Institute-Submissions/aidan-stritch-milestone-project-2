@@ -26,8 +26,12 @@ function initMap() {
 }
 
 function searchSelectCity() {
+
+    var restrictionSet = {
+        types: ['(cities)'],
+    };
     var typeCity = document.getElementById('cityName');
-    var autocomplete = new google.maps.places.Autocomplete(typeCity);
+    var autocomplete = new google.maps.places.Autocomplete(typeCity, restrictionSet);
     var updateLatLng;
 
     google.maps.event.addListener(autocomplete, 'place_changed', function() {
