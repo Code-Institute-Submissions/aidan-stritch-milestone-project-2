@@ -4,6 +4,7 @@ var center;
 var updatedType = [];
 var marker = [];
 var marker2 = [];
+var place = "";
 var moreResults = document.getElementById('showMoreResults');
 moreResults.onclick = function() {
     moreResults.disabled = true;
@@ -39,12 +40,17 @@ function searchSelectCity() {
     });
 
     cityForm.addEventListener("submit", function() {
-        updateLatLng = new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng());
-        map.setZoom(13);
-        center = updateLatLng;
-        map.setCenter(center);
-        document.getElementById('textCity').innerHTML = place.adr_address;
-        document.getElementById('city_name').value = document.getElementById('textCity').textContent;
+        if (place !== "") {
+            updateLatLng = new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng());
+            map.setZoom(13);
+            center = updateLatLng;
+            map.setCenter(center);
+            document.getElementById('textCity').innerHTML = place.adr_address;
+            document.getElementById('city_name').value = document.getElementById('textCity').textContent;
+        }
+        else {
+            alert("Please enter a city name before clicking select this city button");
+        }
     });
 }
 
@@ -178,6 +184,11 @@ function clearResults() {
     document.getElementById('city_name').value = "None Selected";
     document.getElementById('search_type').value = "None Selected";
     document.getElementById('resultsRow').innerHTML = "";
+    document.getElementById('cityName').value = "Search by city name...";
+    place = "";
+
+
+
 
     center = "";
 
