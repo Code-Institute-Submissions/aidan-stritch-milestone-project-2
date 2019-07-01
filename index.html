@@ -6,27 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>City Trip Planner</title>
-    
+
     <!-- load Bootstrap Framework -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
-    
-    <!-- load Jasmine testing Framework  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.4.0/jasmine.js" integrity="sha256-A1UHgrQzApWh893FP9przUyLCugwbvsLPAEUStp1MKA=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.4.0/jasmine-html.js" integrity="sha256-oxQQkzuwLW+9M6Ko6otgsJr9b5m0rR5V0pTBe/ITvNc=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.4.0/boot.js" integrity="sha256-HG8TKl0T65NyELmbUoo0H7/a1e++smYdXXtuuEsyKok=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.4.0/jasmine.css" integrity="sha256-TTb3c5Z0pxgwRWHzGE700nLTMIOUNgkN2SGXqoflga0=" crossorigin="anonymous" />
-    
-    <!-- load Jasmine scripts -->
-    <script type="text/javascript" src="jasmine-tests/jasmine-script/button.js"></script>
-    
-    <!-- load Jasmine tests -->
-    <script type="text/javascript" src="jasmine-tests/jasmine-spec/buttonSpec.js"></script>
-    
+
     <!-- load JQuery Framework -->
-    
+
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    
+
     <!-- load Email.js Framework and link to account -->
     <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
     <script type="text/javascript">
@@ -34,10 +22,10 @@
             emailjs.init("user_I05a9IAUn6mSc6viL9RFK");
         })();
     </script>
-    
+
     <!-- link to stylesheet -->
     <link rel="stylesheet" href="styles/main.css" type="text/css" />
-    
+
 </head>
 
 <body>
@@ -69,7 +57,7 @@
                 <button id="paris">Paris</button>
                 <button id="newYork">New York</button>
                 <button id="berlin">Berlin</button>
-                
+
                 <h3>Or search for a particular city</h3>
 
                 <form id="cityForm" onsubmit="return false">
@@ -130,20 +118,26 @@
                 <p>Add your details below and click "Send" and check your email for a summary of your City Trip Planner search!</p>
                 <form id="contactForm" onsubmit="return sendMail(this);" method="POST">
                     <p>
-                    <label>Your Name:</label>
-                    <input type="text" name="name" class="form-control" id="cust_name" placeholder="Enter Name" required/>
+                        <label>Your Name:</label>
+                        <p>
+                            <input type="text" name="name" class="form-control" id="cust_name" placeholder="Enter Name" required/>
+                            <label class="requiredField">*required</label>
+                        </p>
                     </p>
                     <p>
-                    <label>Your Email Address:</label>
-                    <input type="text" name="email" class="form-control" id="email_address" placeholder="Enter Email Address" required/>
+                        <label>Your Email Address:</label>
+                        <p>
+                            <input type="text" name="email" class="form-control" id="email_address" placeholder="Enter Email Address" required/>
+                            <label class="requiredField">*required</label>
+                        </p>
                     </p>
                     <p>
-                    <label>Chosen City:</label>
-                    <input type="text" name="city" class="form-control" id="city_name" placeholder="None Selected" readonly/>
+                        <label>Chosen City:</label>
+                        <input type="text" name="city" class="form-control" id="city_name" placeholder="None Selected" readonly/>
                     </p>
                     <p>
-                    <label>Chosen Search Type:</label>
-                    <input type="text" name="search" class="form-control" id="search_type" placeholder="None Selected" readonly/>
+                        <label>Chosen Search Type:</label>
+                        <input type="text" name="search" class="form-control" id="search_type" placeholder="None Selected" readonly/>
                     </p>
                     <input type="submit" value="Send Email" class="form-button" />
                 </form>
@@ -159,10 +153,10 @@
         </div>
     </footer>
 
-     <!-- load scripts -->
+    <!-- load scripts -->
     <script src="scripts/map.js"></script>
     <script src="scripts/sendEmail.js"></script>
-    
+
     <!-- load scripts for map  -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxQwRApZQq4D_0iTu38MwdxUsiKrq4zu8&libraries=places,geometry&callback=initMap" async defer></script>
 </body>

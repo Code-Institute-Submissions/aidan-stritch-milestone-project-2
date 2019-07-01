@@ -147,7 +147,6 @@ function createMarker(place) {
         infowindow.open(map, this);
     });
 
-
     //the map and results divs are shown to the user
     $('#map').show();
     $('#results').show();
@@ -167,7 +166,6 @@ function resultsTextDisplay(place) {
             }
         }
     });
-
 }
 
 function clearResults() {

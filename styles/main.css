@@ -114,12 +114,18 @@ html, body, section {
 
 input[type="text"] {
     width:75%;
+    float: left;
 }
 
 input[type="submit"] {
     width:150px;
     position: relative;
     margin : 10px auto;
+}
+
+.requiredField{
+    float: right;
+    color: red;
 }
 
 
