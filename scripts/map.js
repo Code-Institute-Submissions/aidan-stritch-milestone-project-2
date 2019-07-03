@@ -3,8 +3,9 @@ var infowindow;
 var center;
 var updatedType = [];
 var marker = [];
-var marker2 = [];
+var markersClear =[];
 var place = "";
+var searchResults = [];
 var moreResults = document.getElementById('showMoreResults');
 moreResults.onclick = function() {
     moreResults.disabled = true;
@@ -73,7 +74,7 @@ function buttonSelectSearchType() {
     document.getElementById('all').onclick = function() {
         document.getElementById('textSearchType').innerHTML = "Attractions, Accomodation, Bars & Restaurants";
         document.getElementById('search_type').value = "Attractions, Accomodation, Bars & Restaurants";
-        updatedType = ['bar', 'restaurant', 'night_club', 'food', 'campground', 'lodging', 'rv_park', 'room', 'premise', 'art_gallery', 'aquarium', 'zoo', 'stadium', 'museum', 'park', 'casino', 'amusement_park', 'point_of_interest'];
+        updatedType = ['bar', 'restaurant', 'night_club', 'food', 'art_gallery', 'aquarium', 'zoo', 'stadium', 'museum', 'park', 'casino', 'amusement_park', 'point_of_interest', 'campground', 'lodging', 'rv_park', 'room', 'premise'];
     };
 }
 
@@ -106,6 +107,7 @@ function buttonSelectCity() {
 }
 
 function requestLocations() {
+    clearMap();
     if (document.getElementById('textCity').innerHTML != "None" && document.getElementById('textSearchType').innerHTML != "None") {
 
         document.getElementById('resultsRow').innerHTML = "";
@@ -126,14 +128,14 @@ function requestLocations() {
     }
 }
 
-
-
-
 function callback(results, status, pagination) {
+    searchResults = [];
+    searchResults = results;
+
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-        for (var i = 0; i < results.length; i++) {
-            createMarker(results[i]);
-            resultsTextDisplay(results[i]);
+        for (var i = 0; i < searchResults.length; i++) {
+            createMarker(searchResults[i]);
+            resultsTextDisplay(searchResults[i]);
         }
 
         moreResults.disabled = !pagination.hasNextPage;
@@ -143,14 +145,13 @@ function callback(results, status, pagination) {
     }
 }
 
-
 function createMarker(place) {
     marker = new google.maps.Marker({
         map: map,
         position: place.geometry.location
     });
 
-    marker2.push(marker);
+    markersClear.push(marker);
 
     google.maps.event.addListener(marker, 'click', function() {
         infowindow.setContent(`<h4>${place.name}</h4> <p><b>Rating:</b> ${place.rating}</p><p><b>Type:</b> ${document.getElementById('textSearchType').innerHTML}</p><p>See results section for more details</p>`);
@@ -178,6 +179,14 @@ function resultsTextDisplay(place) {
     });
 }
 
+function clearMap() {
+    
+        for (var i = 0; i < markersClear.length; i++) {
+            markersClear[i].setMap(null);
+        }
+        markersClear = [];
+}
+
 function clearResults() {
     document.getElementById('textCity').innerHTML = "None";
     document.getElementById('textSearchType').innerHTML = "None";
@@ -186,25 +195,16 @@ function clearResults() {
     document.getElementById('resultsRow').innerHTML = "";
     document.getElementById('cityName').value = "Search by city name...";
     place = "";
-
-
-
-
     center = "";
-
     updatedType = [null];
-
-    for (i = 0; i < marker.length; i++) {
-        if (markers[i]) {
-            markers[i].setMap(null);
-            delete markers[i]
-        }
-    }
+    clearMap();
 }
 
 
 //when the clearResults button is clicked - the map and results divs are hidden to the user
+
+/*
 $("#clearResults").click(function() {
     $('#map').hide();
     $('#results').hide();
-});
+});*/
