@@ -1,16 +1,18 @@
 /*.....................................Miscellaneous*/
 
-html, body, section {
-        height: 100%;
-        margin: 0;
-        padding: 0;
+html,
+body,
+section {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 #results {
-    display:none;
+    display: none;
 }
 
-.resultNames{
+.resultNames {
     font-weight: bold;
 }
 
@@ -18,35 +20,42 @@ html, body, section {
     padding-top: 15px;
 }
 
-.header-color ul li{
+.header-color ul li {
     list-style-type: none;
     font-size: 13px;
-    
+
 }
 
-.step-one{
+.step-one {
     padding-bottom: 15px;
 }
 
 .currentSelection {
     background-color: #e3e2df;
-    width:35%;
-    margin-left:15px;
+    width: 35%;
+    margin-left: 15px;
+    padding:0;
 }
 
-.currentSelection h1{
-    text-align:center;
+.currentSelection h1 {
+    text-align: center;
 }
 
+.resultsRow{
+    width:90%;
+}
+.newResultsRow{
+    width:90%;
+}
 
 /*.....................................Map Element*/
 
 #map {
     height: 400px;
     width: 80%;
-    margin-left:auto; 
-    margin-right:auto;
-    display:none;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
 }
 
 /*.....................................Buttons*/
@@ -55,21 +64,21 @@ html, body, section {
     border-radius: 12px;
     border: 1px solid black;
     width: 110px;
-    margin-top:5px;
+    margin-top: 5px;
     font-weight: bold;
-    -webkit-transition-duration: 0.2s; 
+    -webkit-transition-duration: 0.2s;
     -moz-transition-duration: 0.2s;
     -o-transition-duration: 0.2s;
     transition-duration: 0.2s;
 }
 
-.step-two button{
+.step-two button {
     border-radius: 12px;
     border: 1px solid black;
     width: 150px;
-    margin-top:5px;
+    margin-top: 5px;
     font-weight: bold;
-    -webkit-transition-duration: 0.2s; 
+    -webkit-transition-duration: 0.2s;
     -moz-transition-duration: 0.2s;
     -o-transition-duration: 0.2s;
     transition-duration: 0.2s;
@@ -79,88 +88,229 @@ html, body, section {
     width: 71%;
 }
 
-.currentSelection button{
-    width:150px;
+.currentSelection button {
+    width: 150px;
     position: relative;
-    margin : 10px auto;
-    left:15%;
+    margin: 10px auto;
+    left: 15%;
 }
 
 /*.....................................Colors*/
 
-.header-color{
+.header-color {
     background-color: #5d5c61;
     color: white;
 }
 
-.step-odd{
-    background-color: ;
-}
-.step-even{
-    background-color: ;
-}
-
 /*.....................................Form Elements*/
 
-#cityForm{
+#cityForm {
     width: 35%;
 }
 
-#contactForm{
-    width: 35%;
-    margin-bottom:50px;
-    margin-left:10%;
+#contactForm {
+    width: 30%;
+    margin-bottom: 50px;
+    margin-left: 10%;
 }
+
+
+
 
 input[type="text"] {
-    width:75%;
+    width: 75%;
     float: left;
+   
 }
 
 input[type="submit"] {
-    width:150px;
+    width: 150px;
     position: relative;
-    margin : 10px auto;
+    margin: 10px auto;
 }
 
-.requiredField{
-    float: right;
+.requiredField {
     color: red;
+}
+
+.form-control{
+    margin-bottom:25px;
 }
 
 
 /*.....................................Hover Effects*/
 
 .step-one button:hover {
-  background-color: #FFFFFF; /* white */
-  color: black;
+    background-color: #FFFFFF;
+    /* white */
+    color: black;
 }
 
 .step-two button:hover {
-  background-color: #FFFFFF; /* white */
-  color: black;
-}
-
-input[type="submit"]:hover{
-    background-color: #FFFFFF; /* white */
+    background-color: #FFFFFF;
+    /* white */
     color: black;
 }
 
-.currentSelection button:hover{
-    background-color: #FFFFFF; /* white */
+input[type="submit"]:hover {
+    background-color: #FFFFFF;
+    /* white */
     color: black;
+}
+
+.currentSelection button:hover {
+    background-color: #FFFFFF;
+    /* white */
+    color: black;
+}
+
+
+/*.....................................Header*/
+
+.header-style {
+    /*position: fixed;*/
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+/*.....................................section*/
+
+.container-fluid {
+    padding: 0;
+    margin: 0;
+}
+
+.section-style {
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 
 
 /*.....................................Footer*/
 
-.footer{
+.footer-style {
     background-color: #5d5c61;
     text-align: center;
-    color:white;
+    color: white;
+
     
-    min-height: 60px;
-    margin:0;
+    
     position: relative;
+    bottom: 0;
+    padding-top: 15px;
+    margin:0;
+    height:60px;
+
+}
+
+.flex-layout{
+    display:flex;
+}
+
+/*.....................................Media Queries*/
+
+@media (max-width:780px) {
+    /*.....................................Media Queries - Miscellaneous*/
+    .currentSelection {
+        background-color: #e3e2df;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+    
+    h1{
+        font-size:26px;
+        text-align:center;
+    }
+    h2{
+        font-size:20px;
+    }
+    h3{
+        font-size:18px;
+        text-align:center;
+    }
+    h4{
+        font-size:16px;
+    }
+    
+
+
+
+    /*.....................................Media Queries - Header*/
+    .header-list {
+        display: none;
+    }
+
+    /*.....................................Media Queries - Form Elements*/
+    #cityForm {
+        width: 100%;
+    }
+
+    #contactForm {
+        width: 95%;
+        margin-bottom: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    input[type="text"] {
+        width: 75%;
+        float: left;
+        
+    }
+
+    input[type="submit"] {
+        width: 75%;
+        position: relative;
+        margin: 10px auto;
+    }
+
+    .requiredField {
+        color: red;
+    }
+    
+    .form-control{
+        margin-right : auto;
+        margin-left : auto;
+    }
+    
+    /*.....................................Media Queries - Buttons*/
+    .step-one button {
+        border-radius: 12px;
+        border: 1px solid black;
+        width: 150px;
+        margin-top: 5px;
+        font-weight: bold;
+        -webkit-transition-duration: 0.2s;
+        -moz-transition-duration: 0.2s;
+        -o-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+    }
+
+    .step-two button {
+        border-radius: 12px;
+        border: 1px solid black;
+        width: 150px;
+        margin-top: 5px;
+        font-weight: bold;
+        -webkit-transition-duration: 0.2s;
+        -moz-transition-duration: 0.2s;
+        -o-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+    }
+
+    #all {
+        width: 150px;
+    }
+
+    .currentSelection button {
+        width: 150px;
+        position: relative;
+        margin: 10px auto;
+        left: auto;
+        right:auto;
+    }
+
 }

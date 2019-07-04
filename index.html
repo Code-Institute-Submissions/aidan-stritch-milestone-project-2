@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+<head class="container-fluid">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -28,28 +28,31 @@
 
 </head>
 
-<body>
-    <header class="container-fluid">
+<body class="container-fluid">
+
+    <header class="container-fluid header-style">
         <div class="row header-color">
-            <div class="col-md-8">
-                <h1>City Trip Planner</h1>
-                <h3>Plan your next trip in 5 simple steps!</h3>
-            </div>
-            <div class="col-md-4">
-                <ul>
-                    <li>Step 1: Choose your city</li>
-                    <li>Step 2: Narrow down your results</li>
-                    <li>Step 3: See your results on our map</li>
-                    <li>Step 4: Read more about your results</li>
-                    <li>Step 5: Send yourself a summary of your search</li>
-                </ul>
+            <div class="col-md-12">
+                <div class="col-sm-6 col-md-8">
+                    <h1>City Trip Planner</h1>
+                    <h3>Plan your next trip in 5 simple steps!</h3>
+                </div>
+                <div class="col-sm-6 col-md-4 header-list">
+                    <ul>
+                        <li>Step 1: Choose your city</li>
+                        <li>Step 2: Narrow down your results</li>
+                        <li>Step 3: See your results on our map</li>
+                        <li>Step 4: Read more about your results</li>
+                        <li>Step 5: Send yourself a summary of your search</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>
 
-    <section class="container-fluid">
+    <section class="container-fluid section-style">
         <div class="row">
-            <div class="col-md-12 step-one step-odd">
+            <div class="col-md-12 step-one">
                 <h2>Step 1: Choose your city</h2>
                 <h3>Choose from one of our most popular destinations</h3>
                 <button id="dublin">Dublin</button>
@@ -70,7 +73,7 @@
 
 
         <div class="row">
-            <div class="col-md-6 step-two step-even">
+            <div class="col-md-6 step-two">
                 <h2>Step 2: Narrow down your results</h2>
                 <h3>Choose what results you would like to see</h3>
                 <button id="attraction">Attractions</button>
@@ -93,14 +96,14 @@
         </div>
 
         <div class="row">
-            <div class="col-md-12 step-three step-odd">
+            <div class="col-md-12 step-three">
                 <h2>Step 3: See your results on our map</h2>
                 <div id="map"></div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-12 step-four step-even">
+            <div class="col-md-12 step-four">
                 <h2>Step 4: Read more about your results</h2>
                 <div id="results">
                     <div class="row">
@@ -113,41 +116,39 @@
         </div>
 
         <div class="row">
-            <div class="col-md-12 step-five step-odd">
+            <div class="col-md-12 step-five">
                 <h2>Step 5: Send yourself a summary of your search</h2>
                 <p>Add your details below and click "Send" and check your email for a summary of your City Trip Planner search!</p>
                 <form id="contactForm" onsubmit="return sendMail(this);" method="POST">
                     <p>
                         <label>Your Name:</label>
-                        <p>
-                            <input type="text" name="name" class="form-control" id="cust_name" placeholder="Enter Name" required/>
-                            <label class="requiredField">*required</label>
-                        </p>
+                        <label class="requiredField">*required</label>
+                        <input type="text" name="name" class="form-control" id="cust_name" placeholder="Enter Name" required/>
                     </p>
                     <p>
                         <label>Your Email Address:</label>
-                        <p>
-                            <input type="text" name="email" class="form-control" id="email_address" placeholder="Enter Email Address" required/>
-                            <label class="requiredField">*required</label>
-                        </p>
+                        <label class="requiredField">*required</label>
+                        <input type="text" name="email" class="form-control" id="email_address" placeholder="Enter Email Address" required/>
                     </p>
                     <p>
-                        <label>Chosen City:</label>
+                        <label class="test">Chosen City:</label>
                         <input type="text" name="city" class="form-control" id="city_name" placeholder="None Selected" readonly/>
                     </p>
                     <p>
                         <label>Chosen Search Type:</label>
                         <input type="text" name="search" class="form-control" id="search_type" placeholder="None Selected" readonly/>
                     </p>
-                    <input type="submit" value="Send Email" class="form-button" />
+                    <p>
+                        <input type="submit" value="Send Email" class="form-button" />
+                    </p>
                 </form>
             </div>
         </div>
     </section>
 
     <footer class="container-fluid">
-        <div class="row">
-            <div class="col-md-12 footer">
+        <div class="row container-fluid footer-style flex-layout">
+            <div class="col-md-12 ">
                 <h4>The 5 Step City Trip Planner Copyright 2019</h4>
             </div>
         </div>
