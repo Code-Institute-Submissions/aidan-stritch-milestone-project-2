@@ -208,7 +208,7 @@ input[type="submit"]:hover {
     display:flex;
 }
 
-/*.....................................Media Queries*/
+/*.....................................Media Queries...........................*/
 
 @media (max-width:780px) {
     /*.....................................Media Queries - Miscellaneous*/
@@ -220,6 +220,8 @@ input[type="submit"]:hover {
 
     }
     
+    /*.....................................Media Queries - Headings*/
+
     h1{
         font-size:26px;
         text-align:center;
@@ -234,16 +236,15 @@ input[type="submit"]:hover {
     h4{
         font-size:16px;
     }
-    
-
-
 
     /*.....................................Media Queries - Header*/
+    
     .header-list {
         display: none;
     }
 
     /*.....................................Media Queries - Form Elements*/
+    
     #cityForm {
         width: 100%;
     }
@@ -277,6 +278,7 @@ input[type="submit"]:hover {
     }
     
     /*.....................................Media Queries - Buttons*/
+    
     .step-one button {
         border-radius: 12px;
         border: 1px solid black;

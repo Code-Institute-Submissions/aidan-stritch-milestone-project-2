@@ -29,7 +29,7 @@
 </head>
 
 <body class="container-fluid">
-
+    <!-- page header with list of steps -->
     <header class="container-fluid header-style">
         <div class="row header-color">
             <div class="col-md-12">
@@ -52,6 +52,7 @@
 
     <section class="container-fluid section-style">
         <div class="row">
+            <!-- this area allows the customer to select popular cities by button -->
             <div class="col-md-12 step-one">
                 <h2>Step 1: Choose your city</h2>
                 <h3>Choose from one of our most popular destinations</h3>
@@ -62,7 +63,7 @@
                 <button id="berlin">Berlin</button>
 
                 <h3>Or search for a particular city</h3>
-
+                <!-- this area allows the user to type in and select a city using the autocomplete places api -->
                 <form id="cityForm" onsubmit="return false">
                     <input type="text" class="form-control" name="city" id="cityName" placeholder="Search by city name..." />
                     <input type="submit" value="Select this city" class="form-button" />
@@ -74,6 +75,7 @@
 
         <div class="row">
             <div class="col-md-6 step-two">
+                <!-- this area allows the customer to narrow down the results they want to see in the chosen city -->
                 <h2>Step 2: Narrow down your results</h2>
                 <h3>Choose what results you would like to see</h3>
                 <button id="attraction">Attractions</button>
@@ -81,6 +83,7 @@
                 <button id="bar">Bars & Restaurants</button>
                 <button id="all">All results</button>
             </div>
+            <!-- this area shows the currently selected options as well as the search and clear buttons -->
             <div class="col-md-6 currentSelection">
                 <div>
                     <h1>Current Selection</h1>
@@ -97,6 +100,7 @@
 
         <div class="row">
             <div class="col-md-12 step-three">
+                <!-- this area shows the google map with the results for the chosen type and city -->
                 <h2>Step 3: See your results on our map</h2>
                 <div id="map"></div>
             </div>
@@ -104,6 +108,7 @@
 
         <div class="row">
             <div class="col-md-12 step-four">
+                <!-- in this area, the customer sees the text form of the results giving additonal information for each -->
                 <h2>Step 4: Read more about your results</h2>
                 <div id="results">
                     <div class="row">
@@ -117,6 +122,7 @@
 
         <div class="row">
             <div class="col-md-12 step-five">
+                <!-- here the user can enter their details and send themselves a copy of their search options using the email.js Framework -->
                 <h2>Step 5: Send yourself a summary of your search</h2>
                 <p>Add your details below and click "Send" and check your email for a summary of your City Trip Planner search!</p>
                 <form id="contactForm" onsubmit="return sendMail(this);" method="POST">
@@ -147,6 +153,8 @@
     </section>
 
     <footer class="container-fluid">
+        <!-- this is just a simple footer element which can be updated to have links 
+        to other pages once the website is fleshed out in a later project -->
         <div class="row container-fluid footer-style flex-layout">
             <div class="col-md-12 ">
                 <h4>The 5 Step City Trip Planner Copyright 2019</h4>
