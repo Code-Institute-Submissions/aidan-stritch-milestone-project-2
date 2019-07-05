@@ -131,6 +131,8 @@ input[type="submit"] {
 
 .requiredField {
     color: red;
+    font-size:10px;
+    vertical-align: top;
 }
 
 .form-control{

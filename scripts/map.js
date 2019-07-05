@@ -1,3 +1,4 @@
+/* here we are declaring all variables that we need to be global */
 var map;
 var infowindow;
 var center;
@@ -6,13 +7,14 @@ var marker = [];
 var markersClear =[];
 var place = "";
 var searchResults = [];
+/* here we are setting up the required variables for pagination */
 var moreResults = document.getElementById('showMoreResults');
 moreResults.onclick = function() {
     moreResults.disabled = true;
     if (getNextPage) getNextPage();
 };
 
-
+/* this function initiates the map element and displays it*/
 function initMap() {
 
     infowindow = new google.maps.InfoWindow();
@@ -21,12 +23,14 @@ function initMap() {
         zoom: 13,
         center: center
     });
-
+    
+    /* this area calls the functions required to set the city and search type variables */
     searchSelectCity();
     buttonSelectCity();
     buttonSelectSearchType();
 }
 
+/* this function handles the text input and the autocomplete functionality so that the user can select a specific city */
 function searchSelectCity() {
 
     var restrictionSet = {
@@ -39,7 +43,8 @@ function searchSelectCity() {
     google.maps.event.addListener(autocomplete, 'place_changed', function() {
         place = autocomplete.getPlace();
     });
-
+    
+    /* when the submit button is clicked in the cityForm, the map center is changed to this new location and the values are set using the DOM */
     cityForm.addEventListener("submit", function() {
         if (place !== "") {
             updateLatLng = new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng());
@@ -55,6 +60,7 @@ function searchSelectCity() {
     });
 }
 
+/* this function handles button clicks for the search type buttons and updates the neccesary variables and elements to the chosen result*/
 function buttonSelectSearchType() {
     document.getElementById('attraction').onclick = function() {
         document.getElementById('textSearchType').innerHTML = "Attractions";
@@ -78,6 +84,7 @@ function buttonSelectSearchType() {
     };
 }
 
+/* this function handles button clicks for the popular buttons and updates the neccesary variables and elements to the chosen result*/
 function buttonSelectCity() {
     document.getElementById('dublin').onclick = function() {
         document.getElementById('textCity').innerHTML = "Dublin, Ireland";
@@ -105,9 +112,10 @@ function buttonSelectCity() {
         center = { lat: 52.5200, lng: 13.4050 };
     };
 }
-
+/* this function creates the request and passes it to google before calling the callback function*/
 function requestLocations() {
     clearMap();
+    /* city and search type must be chosen for code to continue*/
     if (document.getElementById('textCity').innerHTML != "None" && document.getElementById('textSearchType').innerHTML != "None") {
 
         document.getElementById('resultsRow').innerHTML = "";
@@ -123,11 +131,14 @@ function requestLocations() {
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch(request, callback);
     }
+    /* if either option is not selected, user is prompted to select them before continuing */
     else {
         alert("Please select a city AND a search type before searching");
     }
 }
 
+/* this function takes in the results of the request and adds markers to the map and 
+places the text results using createMarker() and resultsTextDisplay() respectively*/
 function callback(results, status, pagination) {
     searchResults = [];
     searchResults = results;
@@ -145,6 +156,7 @@ function callback(results, status, pagination) {
     }
 }
 
+/* this function adds the markers to the map element and adds an info window to show information for each result when the icon is clicked */
 function createMarker(place) {
     marker = new google.maps.Marker({
         map: map,
@@ -163,6 +175,7 @@ function createMarker(place) {
     $('#results').show();
 }
 
+/* this function displays the written information for each of the results for the user to browse  */
 function resultsTextDisplay(place) {
     var newPlace = place.place_id;
     var service = new google.maps.places.PlacesService(map);
@@ -173,12 +186,12 @@ function resultsTextDisplay(place) {
                 document.getElementById('resultsRow').innerHTML += "<div class='row newResultsRow'><div class = 'col-md-4 newResultsCol'>" + "<h4 class='resultNames'>" + place.name + "</h4>" + "<p>" + "Place Rating: " +
                     place.rating + " Stars" + "</p>" + "</div>" + "<div class = 'col-md-4 newResultsCol'>" + "<p>" + place.formatted_address + "</p>" + "</div>" +
                     "<div class = 'col-md-4 newResultsCol'>" + "<p>" + "<p>" + "Contact: " + place.formatted_phone_number + "</p>" + "<p>" + "Web: " + place.website + "</p>" + "</p>" + "</div>" + "</div>";
-
             }
         }
     });
 }
 
+/* this function removes the map markers from the map element when the clear button is clicked*/
 function clearMap() {
     
         for (var i = 0; i < markersClear.length; i++) {
@@ -187,6 +200,8 @@ function clearMap() {
         markersClear = [];
 }
 
+/* this function resets the input fields and values to their inital values and 
+clears the variables for a new search to take place and callsthe clearMap () function*/
 function clearResults() {
     document.getElementById('textCity').innerHTML = "None";
     document.getElementById('textSearchType').innerHTML = "None";
@@ -202,9 +217,7 @@ function clearResults() {
 
 
 //when the clearResults button is clicked - the map and results divs are hidden to the user
-
-/*
 $("#clearResults").click(function() {
     $('#map').hide();
     $('#results').hide();
-});*/
+});
