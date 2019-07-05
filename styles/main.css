@@ -23,22 +23,17 @@ section {
 .header-color ul li {
     list-style-type: none;
     font-size: 13px;
-
 }
 
 .step-one {
     padding-bottom: 15px;
 }
 
-.currentSelection {
+.current-selection {
     background-color: #e3e2df;
     width: 35%;
     margin-left: 15px;
     padding:0;
-}
-
-.currentSelection h1 {
-    text-align: center;
 }
 
 .resultsRow{
@@ -88,7 +83,7 @@ section {
     width: 71%;
 }
 
-.currentSelection button {
+.current-selection button {
     width: 150px;
     position: relative;
     margin: 10px auto;
@@ -113,9 +108,6 @@ section {
     margin-bottom: 50px;
     margin-left: 10%;
 }
-
-
-
 
 input[type="text"] {
     width: 75%;
@@ -144,25 +136,21 @@ input[type="submit"] {
 
 .step-one button:hover {
     background-color: #FFFFFF;
-    /* white */
     color: black;
 }
 
 .step-two button:hover {
     background-color: #FFFFFF;
-    /* white */
     color: black;
 }
 
 input[type="submit"]:hover {
     background-color: #FFFFFF;
-    /* white */
     color: black;
 }
 
-.currentSelection button:hover {
+.current-selection button:hover {
     background-color: #FFFFFF;
-    /* white */
     color: black;
 }
 
@@ -170,9 +158,33 @@ input[type="submit"]:hover {
 /*.....................................Header*/
 
 .header-style {
-    /*position: fixed;*/
     width: 100%;
     padding-bottom: 20px;
+}
+
+
+/*.....................................Headings*/
+
+.step-one,
+.step-two,
+.step-three,
+.step-four,
+.step-five, 
+h2{
+    left: 5%;
+    padding-bottom: 15px;
+}
+
+.current-selection h1 {
+    text-align: center;
+}
+
+.current-selection h3{
+    left:25%;
+}
+
+.current-selection h4{
+    left:30%;
 }
 
 /*.....................................section*/
@@ -187,6 +199,11 @@ input[type="submit"]:hover {
     padding-bottom: 15px;
 }
 
+.select-city, 
+.narrow-results {
+    padding-left: 5%;
+}
+
 
 
 /*.....................................Footer*/
@@ -195,14 +212,12 @@ input[type="submit"]:hover {
     background-color: #5d5c61;
     text-align: center;
     color: white;
-
-    
-    
     position: relative;
+    width: 100% ;
     bottom: 0;
     padding-top: 15px;
     margin:0;
-    height:60px;
+    min-height:60px;
 
 }
 
@@ -214,8 +229,7 @@ input[type="submit"]:hover {
 
 @media (max-width:780px) {
     /*.....................................Media Queries - Miscellaneous*/
-    .currentSelection {
-        background-color: #e3e2df;
+    .current-selection {
         width: 80%;
         margin-left: auto;
         margin-right: auto;
@@ -309,7 +323,7 @@ input[type="submit"]:hover {
         width: 150px;
     }
 
-    .currentSelection button {
+    .current-selection button {
         width: 150px;
         position: relative;
         margin: 10px auto;

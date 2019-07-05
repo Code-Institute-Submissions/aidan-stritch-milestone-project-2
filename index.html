@@ -55,45 +55,48 @@
             <!-- this area allows the customer to select popular cities by button -->
             <div class="col-md-12 step-one">
                 <h2>Step 1: Choose your city</h2>
-                <h3>Choose from one of our most popular destinations</h3>
-                <button id="dublin">Dublin</button>
-                <button id="milan">Milan</button>
-                <button id="paris">Paris</button>
-                <button id="newYork">New York</button>
-                <button id="berlin">Berlin</button>
+                <div class="select-city">
+                    <h3>Choose from one of our most popular destinations</h3>
+                    <button id="dublin">Dublin</button>
+                    <button id="milan">Milan</button>
+                    <button id="paris">Paris</button>
+                    <button id="newYork">New York</button>
+                    <button id="berlin">Berlin</button>
 
-                <h3>Or search for a particular city</h3>
-                <!-- this area allows the user to type in and select a city using the autocomplete places api -->
-                <form id="cityForm" onsubmit="return false">
-                    <input type="text" class="form-control" name="city" id="cityName" placeholder="Search by city name..." />
-                    <input type="submit" value="Select this city" class="form-button" />
+                    <h3>Or search for a particular city</h3>
+                    <!-- this area allows the user to type in and select a city using the autocomplete places api -->
+                    <form id="cityForm" onsubmit="return false">
+                        <input type="text" class="form-control" name="city" id="cityName" placeholder="Search by city name..." />
+                        <input type="submit" value="Select this city" class="form-button" />
 
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
 
 
         <div class="row">
             <div class="col-md-6 step-two">
-                <!-- this area allows the customer to narrow down the results they want to see in the chosen city -->
                 <h2>Step 2: Narrow down your results</h2>
-                <h3>Choose what results you would like to see</h3>
-                <button id="attraction">Attractions</button>
-                <button id="accom">Accomodation</button>
-                <button id="bar">Bars & Restaurants</button>
-                <button id="all">All results</button>
+                <!-- this area allows the customer to narrow down the results they want to see in the chosen city -->
+                <div class="narrow-results">
+                    <h3>Choose what results you would like to see</h3>
+                    <button id="attraction">Attractions</button>
+                    <button id="accom">Accomodation</button>
+                    <button id="bar">Bars & Restaurants</button>
+                    <button id="all">All results</button>
+                </div>
             </div>
             <!-- this area shows the currently selected options as well as the search and clear buttons -->
-            <div class="col-md-6 currentSelection">
-                <div>
-                    <h1>Current Selection</h1>
-                    <h3>Selected City:</h3>
-                    <h4 id="textCity">None</h4>
-                    <h3>Selected Search Type:</h3>
-                    <h4 id="textSearchType">None</h4>
-                    <button id=showResults onclick="requestLocations();">See Results</button>
-                    <button id="clearResults" onclick="clearResults();">Clear Results</button>
-                </div>
+            <div class="col-md-6 current-selection">
+                <h1>Current Selection</h1>
+                <h3>Selected City:</h3>
+                <h4 id="textCity">None</h4>
+                <h3>Selected Search Type:</h3>
+                <h4 id="textSearchType">None</h4>
+                <button id=showResults onclick="requestLocations();">See Results</button>
+                <button id="clearResults" onclick="clearResults();">Clear Results</button>
+
             </div>
 
         </div>

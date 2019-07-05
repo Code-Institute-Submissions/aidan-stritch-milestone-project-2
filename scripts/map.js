@@ -142,6 +142,8 @@ places the text results using createMarker() and resultsTextDisplay() respective
 function callback(results, status, pagination) {
     searchResults = [];
     searchResults = results;
+    
+    console.log(status);
 
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < searchResults.length; i++) {
@@ -185,7 +187,7 @@ function resultsTextDisplay(place) {
             if (place) {
                 document.getElementById('resultsRow').innerHTML += "<div class='row newResultsRow'><div class = 'col-md-4 newResultsCol'>" + "<h4 class='resultNames'>" + place.name + "</h4>" + "<p>" + "Place Rating: " +
                     place.rating + " Stars" + "</p>" + "</div>" + "<div class = 'col-md-4 newResultsCol'>" + "<p>" + place.formatted_address + "</p>" + "</div>" +
-                    "<div class = 'col-md-4 newResultsCol'>" + "<p>" + "<p>" + "Contact: " + place.formatted_phone_number + "</p>" + "<p>" + "Web: " + place.website + "</p>" + "</p>" + "</div>" + "</div>";
+                    "<div class = 'col-md-4 newResultsCol'>" + "<p>" + "Contact: " + place.formatted_phone_number + "</p>" + "<p>" + "Web: " + place.website + "</p>" + "</p>" + "</div>" + "</div>";
             }
         }
     });
