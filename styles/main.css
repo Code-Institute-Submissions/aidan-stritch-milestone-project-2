@@ -4,6 +4,7 @@ html,
 body,
 section {
     height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
 }
@@ -32,15 +33,15 @@ section {
 .current-selection {
     background-color: #e3e2df;
     width: 35%;
-    margin-left: 15px;
-    padding:0;
+    padding: 0;
 }
 
-.resultsRow{
-    width:90%;
+.resultsRow {
+    width: 90%;
 }
-.newResultsRow{
-    width:90%;
+
+.newResultsRow {
+    width: 90%;
 }
 
 /*.....................................Map Element*/
@@ -112,7 +113,7 @@ section {
 input[type="text"] {
     width: 75%;
     float: left;
-   
+
 }
 
 input[type="submit"] {
@@ -123,12 +124,12 @@ input[type="submit"] {
 
 .requiredField {
     color: red;
-    font-size:10px;
+    font-size: 10px;
     vertical-align: top;
 }
 
-.form-control{
-    margin-bottom:25px;
+.form-control {
+    margin-bottom: 25px;
 }
 
 
@@ -169,8 +170,8 @@ input[type="submit"]:hover {
 .step-two,
 .step-three,
 .step-four,
-.step-five, 
-h2{
+.step-five,
+h2 {
     left: 5%;
     padding-bottom: 15px;
 }
@@ -179,12 +180,12 @@ h2{
     text-align: center;
 }
 
-.current-selection h3{
-    left:25%;
+.current-selection h3 {
+    padding-left: 5%;
 }
 
-.current-selection h4{
-    left:30%;
+.current-selection h4 {
+    padding-left: 15%;
 }
 
 /*.....................................section*/
@@ -199,12 +200,22 @@ h2{
     padding-bottom: 15px;
 }
 
-.select-city, 
+.select-city,
 .narrow-results {
     padding-left: 5%;
 }
 
+#results {
+    padding-left: 5%;
+}
 
+.step-five form {
+    padding-left: 5%;
+}
+
+.step-five p {
+    padding-left: 5%;
+}
 
 /*.....................................Footer*/
 
@@ -213,16 +224,16 @@ h2{
     text-align: center;
     color: white;
     position: relative;
-    width: 100% ;
+    width: 100%;
     bottom: 0;
     padding-top: 15px;
-    margin:0;
-    min-height:60px;
+    margin: 0;
+    min-height: 60px;
 
 }
 
-.flex-layout{
-    display:flex;
+.flex-layout {
+    display: flex;
 }
 
 /*.....................................Media Queries...........................*/
@@ -235,34 +246,38 @@ h2{
         margin-right: auto;
 
     }
-    
-    /*.....................................Media Queries - Headings*/
 
-    h1{
-        font-size:26px;
-        text-align:center;
+    /*.....................................Media Queries - Headings*/
+    h1 {
+        font-size: 26px;
+        text-align: center;
     }
-    h2{
-        font-size:20px;
+    h2 {
+        font-size: 20px;
     }
-    h3{
-        font-size:18px;
-        text-align:center;
+    h3 {
+        font-size: 18px;
+        text-align: center;
     }
-    h4{
-        font-size:16px;
+    h4 {
+        font-size: 16px;
     }
+
+    .current-selection h3 {
+        padding-left: 5%;
+        text-align: left;
+    }
+
 
     /*.....................................Media Queries - Header*/
-    
     .header-list {
         display: none;
     }
 
     /*.....................................Media Queries - Form Elements*/
-    
     #cityForm {
-        width: 100%;
+        width: 95%;
+        padding-left: 25%;
     }
 
     #contactForm {
@@ -275,7 +290,7 @@ h2{
     input[type="text"] {
         width: 75%;
         float: left;
-        
+
     }
 
     input[type="submit"] {
@@ -287,14 +302,13 @@ h2{
     .requiredField {
         color: red;
     }
-    
-    .form-control{
-        margin-right : auto;
-        margin-left : auto;
+
+    .form-control {
+        margin-right: auto;
+        margin-left: auto;
     }
-    
+
     /*.....................................Media Queries - Buttons*/
-    
     .step-one button {
         border-radius: 12px;
         border: 1px solid black;
@@ -327,8 +341,8 @@ h2{
         width: 150px;
         position: relative;
         margin: 10px auto;
-        left: auto;
-        right:auto;
+        left: 22%;
+        right: auto;
     }
 
 }
