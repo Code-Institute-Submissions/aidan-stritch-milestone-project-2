@@ -156,6 +156,13 @@ function callback(results, status, pagination) {
             pagination.nextPage();
         };
     }
+    
+    if(searchResults.length == 0){
+        alert("There are no results for the currrent selection");
+        $('#map').hide();
+        $('#results').hide();
+    }
+    
 }
 
 /* this function adds the markers to the map element and adds an info window to show information for each result when the icon is clicked */
@@ -188,6 +195,9 @@ function resultsTextDisplay(place) {
                 document.getElementById('resultsRow').innerHTML += "<div class='row newResultsRow'><div class = 'col-md-4 newResultsCol'>" + "<h4 class='resultNames'>" + place.name + "</h4>" + "<p>" + "Place Rating: " +
                     place.rating + " Stars" + "</p>" + "</div>" + "<div class = 'col-md-4 newResultsCol'>" + "<p>" + place.formatted_address + "</p>" + "</div>" +
                     "<div class = 'col-md-4 newResultsCol'>" + "<p>" + "Contact: " + place.formatted_phone_number + "</p>" + "<p>" + "Web: " + place.website + "</p>" + "</p>" + "</div>" + "</div>";
+                
+                
+                
             }
         }
     });
