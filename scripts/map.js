@@ -192,9 +192,9 @@ function resultsTextDisplay(place) {
     service.getDetails({ placeId: newPlace }, function(place, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
             if (place) {
-                document.getElementById('resultsRow').innerHTML += "<div class='row newResultsRow'><div class = 'col-md-4 newResultsCol'>" + "<h4 class='resultNames'>" + place.name + "</h4>" + "<p>" + "Place Rating: " +
-                    place.rating + " Stars" + "</p>" + "</div>" + "<div class = 'col-md-4 newResultsCol'>" + "<p>" + place.formatted_address + "</p>" + "</div>" +
-                    "<div class = 'col-md-4 newResultsCol'>" + "<p>" + "Contact: " + place.formatted_phone_number + "</p>" + "<p>" + "Web: " + place.website + "</p>" + "</p>" + "</div>" + "</div>";
+                document.getElementById('resultsRow').innerHTML += "<div class='row newResultsRow'><div class = 'col-md-4 newResultsCol'>" + "<h4 class='resultNames'>" + place.name + "</h4>" + "<p>" + "<b>" + "Place Rating: " + "</b>" + 
+                    place.rating + " Stars" + "</p>" + "</div>" + "<div class = 'col-md-4'>" + "<p>" + "<h5 class='resultNames'>" + "Address: " + "</h5>" + place.formatted_address + "</p>" + "</div>" +
+                    "<div class = 'col-md-4 newResultsCol'>" + "<p>" + "<b>" + "Contact: " + "</b>" + place.formatted_phone_number + "</p>" + "<p>" + "<b>" + "Web: " + "</b>" + place.website + "</p>" + "</p>" + "</div>" + "</div>";
                 
                 
                 
