@@ -107,6 +107,14 @@ section {
     color: white;
 }
 
+/*.....................................Font Awesome*/
+
+
+.step-one-tick, .step-two-tick {
+    color: green;
+    display: none;
+}
+
 /*.....................................Form Elements*/
 
 #cityForm {

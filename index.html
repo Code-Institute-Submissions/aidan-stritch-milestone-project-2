@@ -10,6 +10,7 @@
     <!-- load Bootstrap Framework -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
 
     <!-- load JQuery Framework -->
 
@@ -71,7 +72,9 @@
         <div class="row">
             <!-- this area allows the customer to select popular cities by button -->
             <div class="col-sm-12 col-md-6 step-one">
-                <h2>Step 1: Choose your city</h2>
+                <h2>Step 1: Choose your city <i class="fa fa-check-circle step-one-tick"></i></h2>
+                
+                
                 <div class="select-city">
                     <h3>Choose from one of our most popular destinations</h3>
                     <button id="dublin">Dublin</button>
@@ -92,7 +95,7 @@
             </div>
             <!-- this area allows the customer to narrow down the results they want to see in the chosen city -->
             <div class="col-sm-12 col-md-6 step-two">
-                <h2>Step 2: Narrow down your results</h2>
+                <h2>Step 2: Narrow down your results <i class="fa fa-check-circle step-two-tick"></i></h2>
                 <div class="narrow-results">
                     <h3>Choose what results you would like to see</h3>
                     <button id="attraction">Attractions</button>
