@@ -13,6 +13,10 @@ section {
     display: none;
 }
 
+.email-form-area {
+    display: none;
+}
+
 .resultNames {
     font-weight: bold;
 }
@@ -32,21 +36,23 @@ section {
 
 .current-selection {
     background-color: #e3e2df;
-    width: 35%;
+    width: 80%;
     padding: 0;
+    left: 10%;
 }
 
-.resultsRow {
-    width: 90%;
-}
+
 
 .newResultsRow {
-    width: 90%;
     border-bottom: 1px solid;
     border-bottom-color: #989898;
     margin-bottom: 10px;
 }
 
+
+.intro-area {
+    left:5%;
+}
 /*.....................................Map Element*/
 
 #map {
@@ -121,9 +127,8 @@ input[type="text"] {
 }
 
 input[type="submit"] {
-    width: 150px;
+    width: 200px;
     position: relative;
-    margin: 10px auto;
 }
 
 .requiredField {
@@ -136,7 +141,9 @@ input[type="submit"] {
     margin-bottom: 25px;
 }
 
-
+.city-form-button {
+    float:right;
+}
 
 /*.....................................Hover Effects*/
 
@@ -190,7 +197,7 @@ h2 {
 }
 
 .current-selection h4 {
-    padding-left: 15%;
+    padding-left: 5%;
 }
 
 /*.....................................section*/
@@ -210,9 +217,7 @@ h2 {
     padding-left: 5%;
 }
 
-#results {
-    padding-left: 5%;
-}
+
 
 .step-five form {
     padding-left: 5%;

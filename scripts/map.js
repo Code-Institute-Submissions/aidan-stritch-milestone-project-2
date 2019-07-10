@@ -182,6 +182,8 @@ function createMarker(place) {
     //the map and results divs are shown to the user
     $('#map').show();
     $('#results').show();
+    $('.email-form-area').show();
+    
 }
 
 /* this function displays the written information for each of the results for the user to browse  */
@@ -193,7 +195,7 @@ function resultsTextDisplay(place) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
             if (place) {
                 document.getElementById('resultsRow').innerHTML += "<div class='row newResultsRow'><div class = 'col-md-4 newResultsCol'>" + "<h4 class='resultNames'>" + place.name + "</h4>" + "<p>" + "<b>" + "Place Rating: " + "</b>" + 
-                    place.rating + " Stars" + "</p>" + "</div>" + "<div class = 'col-md-4'>" + "<p>" + "<h5 class='resultNames'>" + "Address: " + "</h5>" + place.formatted_address + "</p>" + "</div>" +
+                    place.rating + " Stars" + "</p>" + "</div>" + "<div class = 'col-md-4'>" + "<p>" + place.formatted_address + "</p>" + "</div>" +
                     "<div class = 'col-md-4 newResultsCol'>" + "<p>" + "<b>" + "Contact: " + "</b>" + place.formatted_phone_number + "</p>" + "<p>" + "<b>" + "Web: " + "</b>" + place.website + "</p>" + "</p>" + "</div>" + "</div>";
                 
                 
@@ -232,4 +234,5 @@ function clearResults() {
 $("#clearResults").click(function() {
     $('#map').hide();
     $('#results').hide();
+    $('.email-form-area').hide();
 });

@@ -52,8 +52,25 @@
 
     <section class="container-fluid section-style">
         <div class="row">
+            <div class="col-md-12 intro-area">
+                <h3>'How To' Guide</h3>
+
+                <p>
+                    <or>
+                        <li>Use step 1 and 2 below to select the city and results you want to see</li>
+                        <li>Double check these in our current selection area</li>
+                        <li>Click "See Results" to load the results</li>
+                        <li>Check out your results in steps 3 and 4</li>
+                        <li>Send a summary of this search to yourself using the form in step 5</li>
+                        <li>Click the "Clear Results" button to reset the search and start again</li>
+                    </or>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
             <!-- this area allows the customer to select popular cities by button -->
-            <div class="col-md-12 step-one">
+            <div class="col-sm-12 col-md-6 step-one">
                 <h2>Step 1: Choose your city</h2>
                 <div class="select-city">
                     <h3>Choose from one of our most popular destinations</h3>
@@ -66,19 +83,16 @@
                     <h3>Or search for a particular city</h3>
                     <!-- this area allows the user to type in and select a city using the autocomplete places api -->
                     <form id="cityForm" onsubmit="return false">
-                        <input type="text" class="form-control" name="city" id="cityName" placeholder="Search by city name..." />
-                        <input type="submit" value="Select this city" class="form-button" />
+                        <div><input type="text" class="form-control" name="city" id="cityName" placeholder="Search by city name..." /></div>
+                        <div><input type="submit" value="Select this city" class="city-form-button" /></div>
+                        
 
                     </form>
                 </div>
             </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-md-6 step-two">
+            <!-- this area allows the customer to narrow down the results they want to see in the chosen city -->
+            <div class="col-sm-12 col-md-6 step-two">
                 <h2>Step 2: Narrow down your results</h2>
-                <!-- this area allows the customer to narrow down the results they want to see in the chosen city -->
                 <div class="narrow-results">
                     <h3>Choose what results you would like to see</h3>
                     <button id="attraction">Attractions</button>
@@ -87,15 +101,29 @@
                     <button id="all">All results</button>
                 </div>
             </div>
+        </div>
+
+
+        <div class="row">
+
             <!-- this area shows the currently selected options as well as the search and clear buttons -->
-            <div class="col-md-6 current-selection">
+            <div class="col-md-12 current-selection">
                 <h1>Current Selection</h1>
-                <h3>Selected City:</h3>
-                <h4 id="textCity">None</h4>
-                <h3>Selected Search Type:</h3>
-                <h4 id="textSearchType">None</h4>
-                <button id=showResults onclick="requestLocations();">See Results</button>
-                <button id="clearResults" onclick="clearResults();">Clear Results</button>
+                <div class="col-md-6">
+                    <h3>Selected City:</h3>
+                    <h4 id="textCity">None</h4>
+                    <button id=showResults onclick="requestLocations();">See Results</button>
+                </div>
+                <div class="col-md-6">
+                    <h3>Selected Search Type:</h3>
+                    <h4 id="textSearchType">None</h4>
+                    <button id="clearResults" onclick="clearResults();">Clear Results</button>
+                </div>
+
+
+
+
+
 
             </div>
 
@@ -113,6 +141,18 @@
             <div class="col-md-12 step-four">
                 <!-- in this area, the customer sees the text form of the results giving additonal information for each -->
                 <h2>Step 4: Read more about your results</h2>
+                <div class="result-headings">
+                    <div class="col-md-4">
+                        <h3>Name</h3>
+                    </div>
+                    <div class='col-md-4'>
+                        <h3>Address</h3>
+                    </div>
+
+                    <div class='col-md-4'>
+                        <h3>Contact Information</h3>
+                    </div>
+                </div>
                 <div id="results">
                     <div class="row">
                         <div class="col-md-12" id="resultsRow"></div>
@@ -124,33 +164,36 @@
         </div>
 
         <div class="row">
-            <div class="col-md-12 step-five">
-                <!-- here the user can enter their details and send themselves a copy of their search options using the email.js Framework -->
+            <div class="step-five">
                 <h2>Step 5: Send yourself a summary of your search</h2>
-                <p>Add your details below and click "Send" and check your email for a summary of your City Trip Planner search!</p>
-                <form id="contactForm" onsubmit="return sendMail(this);" method="POST">
-                    <p>
-                        <label>Your Name:</label>
-                        <label class="requiredField">*required</label>
-                        <input type="text" name="name" class="form-control" id="cust_name" placeholder="Enter Name" required/>
-                    </p>
-                    <p>
-                        <label>Your Email Address:</label>
-                        <label class="requiredField">*required</label>
-                        <input type="text" name="email" class="form-control" id="email_address" placeholder="Enter Email Address" required/>
-                    </p>
-                    <p>
-                        <label>Your Chosen City:</label>
-                        <input type="text" name="city" class="form-control" id="city_name" placeholder="None Selected" readonly/>
-                    </p>
-                    <p>
-                        <label>Your Chosen Search Type:</label>
-                        <input type="text" name="search" class="form-control" id="search_type" placeholder="None Selected" readonly/>
-                    </p>
-                    <p>
-                        <input type="submit" value="Send Email" class="form-button" />
-                    </p>
-                </form>
+                <div class="col-md-12 email-form-area">
+                    <!-- here the user can enter their details and send themselves a copy of their search options using the email.js Framework -->
+
+                    <p>Add your details below and click "Send" and check your email for a summary of your City Trip Planner search!</p>
+                    <form id="contactForm" onsubmit="return sendMail(this);" method="POST">
+                        <p>
+                            <label>Your Name:</label>
+                            <label class="requiredField">*required</label>
+                            <input type="text" name="name" class="form-control" id="cust_name" placeholder="Enter Name" required/>
+                        </p>
+                        <p>
+                            <label>Your Email Address:</label>
+                            <label class="requiredField">*required</label>
+                            <input type="text" name="email" class="form-control" id="email_address" placeholder="Enter Email Address" required/>
+                        </p>
+                        <p>
+                            <label>Your Chosen City:</label>
+                            <input type="text" name="city" class="form-control" id="city_name" placeholder="None Selected" readonly/>
+                        </p>
+                        <p>
+                            <label>Your Chosen Search Type:</label>
+                            <input type="text" name="search" class="form-control" id="search_type" placeholder="None Selected" readonly/>
+                        </p>
+                        <p>
+                            <input type="submit" value="Send Email" />
+                        </p>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
