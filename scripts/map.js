@@ -193,6 +193,7 @@ function createMarker(place) {
     $('#map').show();
     $('#results').show();
     $('.email-form-area').show();
+    $('.result-headings').show();
     
 }
 
@@ -204,7 +205,7 @@ function resultsTextDisplay(place) {
     service.getDetails({ placeId: newPlace }, function(place, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
             if (place) {
-                document.getElementById('resultsRow').innerHTML += "<div class='row newResultsRow'><div class = 'col-md-4 newResultsCol'>" + "<h4 class='resultNames'>" + place.name + "</h4>" + "<p>" + "<b>" + "Place Rating: " + "</b>" + 
+                document.getElementById('resultsRow').innerHTML += "<div class='row newResultsRow'><div class = 'col-md-4 newResultsCol'>" + "<h4 class='resultNames'>" + place.name + "</h4>" + "<p>" + "<b>" + "Rating: " + "</b>" + 
                     place.rating + " Stars" + "</p>" + "</div>" + "<div class = 'col-md-4'>" + "<p>" + place.formatted_address + "</p>" + "</div>" +
                     "<div class = 'col-md-4 newResultsCol'>" + "<p>" + "<b>" + "Contact: " + "</b>" + place.formatted_phone_number + "</p>" + "<p>" + "<b>" + "Web: " + "</b>" + place.website + "</p>" + "</p>" + "</div>" + "</div>";
                 
@@ -247,4 +248,5 @@ $("#clearResults").click(function() {
     $('.email-form-area').hide();
     $('.step-one-tick').hide();
     $('.step-two-tick').hide();
+    $('.result-headings').hide();
 });

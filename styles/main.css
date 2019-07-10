@@ -13,6 +13,10 @@ section {
     display: none;
 }
 
+.result-headings{
+    display: none;
+}
+
 .email-form-area {
     display: none;
 }
@@ -208,6 +212,11 @@ h2 {
     padding-left: 5%;
 }
 
+.result-headings h3{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 /*.....................................section*/
 
 .container-fluid {
@@ -224,8 +233,6 @@ h2 {
 .narrow-results {
     padding-left: 5%;
 }
-
-
 
 .step-five form {
     padding-left: 5%;
@@ -255,6 +262,12 @@ h2 {
 }
 
 /*.....................................Media Queries...........................*/
+
+@media (min-width:995px) {
+    .result-headings{
+        display: none;
+    }
+}
 
 @media (max-width:780px) {
     /*.....................................Media Queries - Miscellaneous*/
