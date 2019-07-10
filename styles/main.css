@@ -94,7 +94,7 @@ section {
 }
 
 #all {
-    width: 71%;
+    width: 73%;
 }
 
 .current-selection button {
@@ -153,10 +153,15 @@ input[type="submit"] {
     margin-bottom: 25px;
 }
 
-.city-form-button {
-    float:right;
+
+#cityName{
+    width:300px;
+    float:left;
 }
 
+.form-control {
+    margin-bottom: 0;
+}
 /*.....................................Hover Effects*/
 
 .step-one button:hover {
