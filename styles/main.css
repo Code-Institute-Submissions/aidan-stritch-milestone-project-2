@@ -104,11 +104,31 @@ section {
     left: 15%;
 }
 
+
+#showResults{
+    width:200px;
+    height:50px;
+}
+#clearResults{
+    width:200px;
+    height:50px;
+}
+
+
+
 /*.....................................Colors*/
 
 .header-color {
-    background-color: #5d5c61;
+    background-color: #a8d0e6;
     color: white;
+}
+
+.body-style{
+    background-color: #FFFAFA;
+}
+
+.footer-style {
+    background-color: #5d5c61;
 }
 
 /*.....................................Font Awesome*/
@@ -250,7 +270,6 @@ h2 {
 /*.....................................Footer*/
 
 .footer-style {
-    background-color: #5d5c61;
     text-align: center;
     color: white;
     position: relative;
