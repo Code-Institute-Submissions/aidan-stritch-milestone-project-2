@@ -77,17 +77,13 @@
 .step-two button {
     border-radius: 12px;
     border: 1px solid black;
-    width: 150px;
+    width: 35%;
     margin-top: 5px;
     font-weight: bold;
     -webkit-transition-duration: 0.2s;
     -moz-transition-duration: 0.2s;
     -o-transition-duration: 0.2s;
     transition-duration: 0.2s;
-}
-
-#all {
-    width: 75%;
 }
 
 .current-selection button {
