@@ -5,11 +5,7 @@
     margin-left: 0px;
 }
 
-#results {
-    display: none;
-}
-
-.result-headings {
+.results-area {
     display: none;
 }
 
@@ -19,6 +15,7 @@
 
 .resultNames {
     font-weight: bold;
+    padding-left:0;
 }
 
 .header-color ul {
@@ -38,10 +35,8 @@
     background-color: #e3e2df;
     width: 80%;
     padding: 0;
-    left: 10%;
+    left: 8%;
 }
-
-
 
 .newResultsRow {
     border-bottom: 1px solid;
@@ -62,6 +57,7 @@
     margin-left: auto;
     margin-right: auto;
     display: none;
+    left: -5%;
 }
 
 /*.....................................Buttons*/
@@ -230,11 +226,6 @@ h1 {
 }
 
 .current-selection,
-h3 {
-    padding-left: 5%;
-}
-
-.current-selection,
 h4 {
     padding-left: 5%;
 }
@@ -287,17 +278,10 @@ h4 {
 
 /*.....................................Media Queries...........................*/
 
-@media (min-width:995px) {
-    .result-headings {
-        display: none;
-    }
-}
-
 @media (max-width:780px) {
     /*.....................................Media Queries - Miscellaneous*/
     .current-selection {
         width: 80%;
-        margin-left: 5%;
     }
 
     .intro-area {
@@ -315,13 +299,14 @@ h4 {
     }
     h3 {
         font-size: 18px;
-        text-align: center;
+        text-align: left;
     }
     h4 {
         font-size: 16px;
     }
 
-    .current-selection h3 {
+    .current-selection h3,
+    h4 {
         text-align: left;
     }
     .current-selection h1 {
@@ -335,7 +320,9 @@ h4 {
     h2 {
         left: 0%;
     }
-
+    .result-headings {
+        display: none;
+    }
     /*.....................................Media Queries - Header*/
     .header-list {
         display: none;
@@ -381,11 +368,19 @@ h4 {
         float: left;
     }
 
+    .narrow-results {
+        text-align: center;
+    }
+    /*.....................................Media Queries - Map Element*/
+    #map {
+        left: 0%;
+    }
+
     /*.....................................Media Queries - Buttons*/
     .step-one button {
         border-radius: 12px;
         border: 1px solid black;
-        width: 150px;
+        width: 130px;
         margin-top: 5px;
         font-weight: bold;
         -webkit-transition-duration: 0.2s;
@@ -414,7 +409,7 @@ h4 {
         width: 150px;
         position: relative;
         margin: 10px auto;
-        left: 10%;
+        left: -4%;
         right: auto;
     }
 

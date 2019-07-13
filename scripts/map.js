@@ -174,9 +174,8 @@ function callback(results, status, pagination) {
     if(searchResults.length == 0){
         alert("There are no results for the currrent selection");
         $('#map').hide();
-        $('#results').hide();
+        $('.results-area').hide();
         $('.email-form-area').hide();
-        $('.result-headings').hide();
 
     }
     
@@ -198,10 +197,9 @@ function createMarker(place) {
 
     //the map and results divs are shown to the user
     $('#map').show();
-    $('#results').show();
+    $('.results-area').show();
     $('.email-form-area').show();
-    $('.result-headings').show();
-    
+
 }
 
 /* this function displays the written information for each of the results for the user to browse  */
@@ -251,9 +249,8 @@ function clearResults() {
 //when the clearResults button is clicked - these divs and classes are hidden to the user
 $("#clearResults").click(function() {
     $('#map').hide();
-    $('#results').hide();
+    $('.results-area').hide();
     $('.email-form-area').hide();
     $('.step-one-tick').hide();
     $('.step-two-tick').hide();
-    $('.result-headings').hide();
 });
