@@ -1,6 +1,5 @@
 /*.....................................Miscellaneous*/
 
-
 .row {
     margin-right: 0px;
     margin-left: 0px;
@@ -225,15 +224,18 @@ h2 {
     padding-bottom: 15px;
 }
 
-.current-selection h1 {
+.current-selection,
+h1 {
     text-align: center;
 }
 
-.current-selection h3 {
+.current-selection,
+h3 {
     padding-left: 5%;
 }
 
-.current-selection h4 {
+.current-selection,
+h4 {
     padding-left: 5%;
 }
 
@@ -296,8 +298,11 @@ h2 {
     .current-selection {
         width: 80%;
         margin-left: 5%;
-       
+    }
 
+    .intro-area {
+        width: 95%;
+        font-size: 11px;
     }
 
     /*.....................................Media Queries - Headings*/
@@ -317,11 +322,18 @@ h2 {
     }
 
     .current-selection h3 {
-        padding-left: 5%;
         text-align: left;
     }
     .current-selection h1 {
         padding-top: 10px;
+    }
+    .step-one,
+    .step-two,
+    .step-three,
+    .step-four,
+    .step-five,
+    h2 {
+        left: 0%;
     }
 
     /*.....................................Media Queries - Header*/
