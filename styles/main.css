@@ -87,7 +87,7 @@
 }
 
 #all {
-    width: 73%;
+    width: 75%;
 }
 
 .current-selection button {
@@ -282,6 +282,7 @@ h4 {
     /*.....................................Media Queries - Miscellaneous*/
     .current-selection {
         width: 80%;
+        left:10%;
     }
 
     .intro-area {
@@ -392,7 +393,7 @@ h4 {
     .step-two button {
         border-radius: 12px;
         border: 1px solid black;
-        width: 150px;
+        width: 250px;
         margin-top: 5px;
         font-weight: bold;
         -webkit-transition-duration: 0.2s;
@@ -402,7 +403,7 @@ h4 {
     }
 
     #all {
-        width: 150px;
+        width: 250px;
     }
 
     .current-selection button {
