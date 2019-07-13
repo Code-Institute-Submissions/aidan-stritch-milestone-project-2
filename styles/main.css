@@ -95,6 +95,8 @@ section{
     position: relative;
     margin: 10px auto;
     left: 15%;
+    font-size:24px;
+    font-weight:bold;
 }
 
 
@@ -235,7 +237,9 @@ h4 {
     font-weight: bold;
     text-decoration: underline;
 }
-
+.header-color h1{
+    text-align:left;
+}
 /*.....................................section*/
 
 .container-fluid {
