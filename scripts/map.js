@@ -199,6 +199,8 @@ function createMarker(place) {
     $('#map').show();
     $('.results-area').show();
     $('.email-form-area').show();
+    $('.select-city').hide();
+    $('.narrow-results').hide();
 
 }
 
@@ -213,9 +215,6 @@ function resultsTextDisplay(place) {
                 document.getElementById('resultsRow').innerHTML += "<div class='row newResultsRow'><div class = 'col-md-4 newResultsCol'>" + "<h4 class='resultNames'>" + place.name + "</h4>" + "<p>" + "<b>" + "Rating: " + "</b>" + 
                     place.rating + " Stars" + "</p>" + "</div>" + "<div class = 'col-md-4'>" + "<p>" + place.formatted_address + "</p>" + "</div>" +
                     "<div class = 'col-md-4 newResultsCol'>" + "<p>" + "<b>" + "Contact: " + "</b>" + place.formatted_phone_number + "</p>" + "<p>" + "<b>" + "Web: " + "</b>" + place.website + "</p>" + "</p>" + "</div>" + "</div>";
-                
-                
-                
             }
         }
     });
@@ -253,4 +252,6 @@ $("#clearResults").click(function() {
     $('.email-form-area').hide();
     $('.step-one-tick').hide();
     $('.step-two-tick').hide();
+    $('.select-city').show();
+    $('.narrow-results').show();
 });
