@@ -10,12 +10,15 @@ function sendMail(contactForm) {
                 "search_type": contactForm.search_type.value
             })
             .then(
-                /* if successful, a sucess message is displayed on the console for developers reference. If not, a failed message shows*/
+                /* if successful, a success message is displayed on the console for developers reference and a popup alert for the user.
+                If not, a failed message shows in the console*/
                 function(response) {
                     console.log("SUCCESS", response);
+                    alert("Thank you, your email will be with you shortly");
                 },
                 function(error) {
                     console.log("FAILED", error);
+                    alert("Unfortunately, there has been an error in sending this email. Please try again.");
                 }
             );
         return false;
