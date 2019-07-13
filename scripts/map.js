@@ -82,9 +82,11 @@ function buttonSelectSearchType() {
         $('.step-two-tick').show();
     };
     document.getElementById('all').onclick = function() {
+        console.log("test");
         document.getElementById('textSearchType').innerHTML = "Attractions, Accomodation, Bars & Restaurants";
         document.getElementById('search_type').value = "Attractions, Accomodation, Bars & Restaurants";
         updatedType = ['bar', 'restaurant', 'night_club', 'food', 'art_gallery', 'aquarium', 'zoo', 'stadium', 'museum', 'park', 'casino', 'amusement_park', 'point_of_interest', 'campground', 'lodging', 'rv_park', 'room', 'premise'];
+        
         $('.step-two-tick').show();
     };
 }
@@ -138,6 +140,8 @@ function requestLocations() {
             types: updatedType
         };
 
+
+        console.log(updatedType);
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch(request, callback);
     }
@@ -171,6 +175,9 @@ function callback(results, status, pagination) {
         alert("There are no results for the currrent selection");
         $('#map').hide();
         $('#results').hide();
+        $('.email-form-area').hide();
+        $('.result-headings').hide();
+
     }
     
 }

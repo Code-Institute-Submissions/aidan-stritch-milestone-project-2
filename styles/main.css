@@ -1,19 +1,13 @@
 /*.....................................Miscellaneous*/
 
-html,
-body,
-section {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
+
+
 
 #results {
     display: none;
 }
 
-.result-headings{
+.result-headings {
     display: none;
 }
 
@@ -55,8 +49,9 @@ section {
 
 
 .intro-area {
-    left:5%;
+    left: 5%;
 }
+
 /*.....................................Map Element*/
 
 #map {
@@ -105,13 +100,14 @@ section {
 }
 
 
-#showResults{
-    width:200px;
-    height:50px;
+#showResults {
+    width: 200px;
+    height: 50px;
 }
-#clearResults{
-    width:200px;
-    height:50px;
+
+#clearResults {
+    width: 200px;
+    height: 50px;
 }
 
 
@@ -123,7 +119,7 @@ section {
     color: white;
 }
 
-.body-style{
+.body-style {
     background-color: #FFFAFA;
 }
 
@@ -133,8 +129,8 @@ section {
 
 /*.....................................Font Awesome*/
 
-
-.step-one-tick, .step-two-tick {
+.step-one-tick,
+.step-two-tick {
     color: green;
     display: none;
 }
@@ -174,14 +170,15 @@ input[type="submit"] {
 }
 
 
-#cityName{
-    width:300px;
-    float:left;
+#cityName {
+    width: 300px;
+    float: left;
 }
 
 .form-control {
     margin-bottom: 0;
 }
+
 /*.....................................Hover Effects*/
 
 .step-one button:hover {
@@ -237,7 +234,7 @@ h2 {
     padding-left: 5%;
 }
 
-.result-headings h3{
+.result-headings h3 {
     font-weight: bold;
     text-decoration: underline;
 }
@@ -281,14 +278,12 @@ h2 {
 
 }
 
-.flex-layout {
-    display: flex;
-}
+
 
 /*.....................................Media Queries...........................*/
 
 @media (min-width:995px) {
-    .result-headings{
+    .result-headings {
         display: none;
     }
 }
@@ -297,8 +292,8 @@ h2 {
     /*.....................................Media Queries - Miscellaneous*/
     .current-selection {
         width: 80%;
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: 5%;
+       
 
     }
 
@@ -322,7 +317,9 @@ h2 {
         padding-left: 5%;
         text-align: left;
     }
-
+    .current-selection h1 {
+        padding-top: 10px;
+    }
 
     /*.....................................Media Queries - Header*/
     .header-list {
@@ -332,7 +329,7 @@ h2 {
     /*.....................................Media Queries - Form Elements*/
     #cityForm {
         width: 95%;
-        padding-left: 25%;
+        padding-left: 2%;
     }
 
     #contactForm {
@@ -346,7 +343,7 @@ h2 {
     input[type="text"] {
         width: 75%;
         float: left;
-        clear:right;
+        clear: right;
     }
 
     input[type="submit"] {
@@ -362,6 +359,11 @@ h2 {
     .form-control {
         margin-right: auto;
         margin-left: auto;
+    }
+
+    #cityName {
+        width: 250px;
+        float: left;
     }
 
     /*.....................................Media Queries - Buttons*/
@@ -397,7 +399,7 @@ h2 {
         width: 150px;
         position: relative;
         margin: 10px auto;
-        left: 22%;
+        left: 10%;
         right: auto;
     }
 
