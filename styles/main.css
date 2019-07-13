@@ -1,5 +1,9 @@
 /*.....................................Miscellaneous*/
 
+section{
+    overflow-x: hidden;
+}
+
 .row {
     margin-right: 0px;
     margin-left: 0px;
@@ -33,9 +37,9 @@
 
 .current-selection {
     background-color: #e3e2df;
-    width: 80%;
+    width: 70%;
     padding: 0;
-    left: 8%;
+    left: 10%;
 }
 
 .newResultsRow {
@@ -212,7 +216,7 @@ input[type="submit"]:hover {
 .step-four,
 .step-five,
 h2 {
-    left: 5%;
+    left: 1%;
     padding-bottom: 15px;
 }
 
@@ -224,6 +228,7 @@ h1 {
 .current-selection,
 h4 {
     padding-left: 5%;
+    text-align:left;
 }
 
 .result-headings h3 {
