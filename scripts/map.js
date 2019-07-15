@@ -203,7 +203,6 @@ function createMarker(place) {
     $('.select-city').hide();
     $('.narrow-results').hide();
     $('#second-clear-button').show();
-
 }
 
 /* this function displays the written information for each of the results for the user to browse  */
@@ -250,7 +249,7 @@ function clearResults() {
 
 
 
-$("#clearResults").click(function() {
+$("#clearResults, #clearResultsBottonTwo").click(function() {
     //when the clearResults button is clicked - these divs and classes are hidden to the user
     $('#map').hide();
     $('.results-area').hide();

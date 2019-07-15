@@ -95,9 +95,7 @@ section {
     margin: 10px auto;
 }
 
-
-
-#clearResults, .city-form-button{
+#clearResults {
     width: 200px;
     height: 50px;
     font-weight: bold;
@@ -106,7 +104,8 @@ section {
 
 #showResults,
 #showTextResults,
-#sendEmail {
+#sendEmail,
+#clearResultsBottonTwo {
     width: 55px;
     height: 30px;
     font-weight: bold;
@@ -114,7 +113,7 @@ section {
 
 }
 
-#second-clear-button{
+#second-clear-button {
     display: none;
 }
 
@@ -166,8 +165,12 @@ input[type="text"] {
 }
 
 input[type="submit"] {
-    width: 200px;
+    width: 115px;
     position: relative;
+    height: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 10px;
 }
 
 .requiredField {
@@ -434,7 +437,8 @@ h4 {
     }
 
 
-    #clearResults, .city-form-button {
+    #clearResults,
+    .city-form-button {
         width: 150px;
         height: 35px;
         font-size: 16px;
@@ -443,7 +447,8 @@ h4 {
 
     #showResults,
     #showTextResults,
-    #sendEmail {
+    #sendEmail,
+    #clearResultsBottonTwo {
         width: 50px;
         height: 25px;
         font-size: 12px;
@@ -455,4 +460,3 @@ h4 {
     }
 
 }
-
