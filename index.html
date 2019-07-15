@@ -60,10 +60,10 @@
                     <or>
                         <li>Use step 1 and 2 below to select the city and results you want to see</li>
                         <li>Double check these in our current selection area</li>
-                        <li>Click "See Results" to load the results</li>
-                        <li>Check out your results in steps 3 and 4</li>
-                        <li>Send a summary of this search to yourself using the form in step 5</li>
-                        <li>Click the "Clear Results" button to reset the search and start again</li>
+                        <li>Click "Show" in step 3 to see your results on a google map</li>
+                        <li>Click "Show" in step 4 to see more details for your results</li>
+                        <li>Click "Show" in step 5 to send a summary of this search to yourself using the form</li>
+                        <li>Click the "Reset Search" button to reset the fields and start again</li>
                     </or>
                 </p>
             </div>
@@ -109,19 +109,22 @@
         <div class="row">
 
             <!-- this area shows the currently selected options as well as the search and clear buttons -->
-            <div class="col-md-12 current-selection">
+            <div class="col-md-12 current-selection mainButtons">
                 <h1>Current Selection</h1>
-                <div class="col-md-6">
-                    <h3>Selected City:</h3>
-                    <h4 id="textCity">None</h4>
-                    <button id=showResults onclick="requestLocations();">See Results</button>
-                </div>
-                <div class="col-md-6">
-                    <h3>Selected Search Type:</h3>
-                    <h4 id="textSearchType">None</h4>
-                    <button id="clearResults" onclick="clearResults();">Clear Results</button>
-                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Selected City:</h3>
+                        <h4 id="textCity">None</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Selected Search Type:</h3>
+                        <h4 id="textSearchType">None</h4>
 
+                    </div>
+                </div>
+                <div class="row">
+                    <button id="clearResults" onclick="clearResults();">Reset Search</button>
+                </div>
             </div>
 
         </div>
@@ -129,72 +132,78 @@
         <div class="row">
             <div class="col-md-12 step-three">
                 <!-- this area shows the google map with the results for the chosen type and city -->
-                <h2>Step 3: See your results on our map</h2>
+                <h2>Step 3: See your results on our map <i class="fa fa-check-circle step-three-tick"></i><button id="showResults" onclick="requestLocations();" class="mainButtons">Show</button></h2>
                 <div id="map"></div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-12 step-four">
-                <!-- in this area, the customer sees the text form of the results giving additonal information for each -->
-                <h2>Step 4: Read more about your results</h2>
-                <div class="results-area">
-                    <div class="result-headings">
-                        <div class="col-md-4">
-                            <h3>Name</h3>
-                        </div>
-                        <div class='col-md-4'>
-                            <h3>Address</h3>
-                        </div>
+            <div class="row">
+                <div class="col-md-12 step-four">
+                    <!-- in this area, the customer sees the text form of the results giving additonal information for each -->
+                    <h2>Step 4: Read more about your results <i class="fa fa-check-circle step-four-tick"></i><button id="showTextResults" onclick="requestLocations();" class="mainButtons">Show</button></h2>
+                    
+                    <div class="results-area">
+                        <div class="result-headings">
+                            <div class="col-md-4">
+                                <h3>Name</h3>
+                            </div>
+                            <div class='col-md-4'>
+                                <h3>Address</h3>
+                            </div>
 
-                        <div class='col-md-4'>
-                            <h3>Contact Information</h3>
+                            <div class='col-md-4'>
+                                <h3>Contact Information</h3>
+                            </div>
+                        </div>
+                        <div id="results">
+                            <div class="row">
+                                <div class="col-md-12" id="resultsRow"></div>
+                                <button id="showMoreResults" class="mainButtons">Show More Results</button>
+                            </div>
                         </div>
                     </div>
-                    <div id="results">
-                        <div class="row">
-                            <div class="col-md-12" id="resultsRow"></div>
-                            <button id="showMoreResults">Show More Results</button>
-                        </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 step-five">
+                    <h2>Step 5: Send yourself a summary of your search <i class="fa fa-check-circle step-five-tick"></i><button id="sendEmail" class="mainButtons">Show</button></h2>
+                    
+                    <div class="col-md-12 email-form-area">
+                        <!-- here the user can enter their details and send themselves a copy of their search options using the email.js Framework -->
+
+                        <p>Add your details below and click "Send" and check your email for a summary of your City Trip Planner search!</p>
+                        <form id="contactForm" onsubmit="return sendMail(this);" method="POST">
+                            <p>
+                                <label>Your Name:</label>
+                                <label class="requiredField">*required</label>
+                                <input type="text" name="name" class="form-control" id="cust_name" placeholder="Enter Name" required/>
+                            </p>
+                            <p>
+                                <label>Your Email Address:</label>
+                                <label class="requiredField">*required</label>
+                                <input type="text" name="email" class="form-control" id="email_address" placeholder="Enter Email Address" required/>
+                            </p>
+                            <p>
+                                <label>Your Chosen City:</label>
+                                <input type="text" name="city" class="form-control" id="city_name" placeholder="None Selected" readonly/>
+                            </p>
+                            <p>
+                                <label>Your Chosen Search Type:</label>
+                                <input type="text" name="search" class="form-control" id="search_type" placeholder="None Selected" readonly/>
+                            </p>
+                            <p>
+                                <input type="submit" value="Send Email" />
+                            </p>
+                        </form>
                     </div>
                 </div>
-
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12 step-five">
-                <h2>Step 5: Send yourself a summary of your search</h2>
-                <div class="col-md-12 email-form-area">
-                    <!-- here the user can enter their details and send themselves a copy of their search options using the email.js Framework -->
-
-                    <p>Add your details below and click "Send" and check your email for a summary of your City Trip Planner search!</p>
-                    <form id="contactForm" onsubmit="return sendMail(this);" method="POST">
-                        <p>
-                            <label>Your Name:</label>
-                            <label class="requiredField">*required</label>
-                            <input type="text" name="name" class="form-control" id="cust_name" placeholder="Enter Name" required/>
-                        </p>
-                        <p>
-                            <label>Your Email Address:</label>
-                            <label class="requiredField">*required</label>
-                            <input type="text" name="email" class="form-control" id="email_address" placeholder="Enter Email Address" required/>
-                        </p>
-                        <p>
-                            <label>Your Chosen City:</label>
-                            <input type="text" name="city" class="form-control" id="city_name" placeholder="None Selected" readonly/>
-                        </p>
-                        <p>
-                            <label>Your Chosen Search Type:</label>
-                            <input type="text" name="search" class="form-control" id="search_type" placeholder="None Selected" readonly/>
-                        </p>
-                        <p>
-                            <input type="submit" value="Send Email" />
-                        </p>
-                    </form>
+            <div class="row">
+                <div class="col-md-12 mainButtons current-selection" id="second-clear-button">
+                    <button id="clearResults" onclick="clearResults();">Reset Search</button>
                 </div>
             </div>
-        </div>
     </section>
 
     <footer class="container-fluid footer-style">

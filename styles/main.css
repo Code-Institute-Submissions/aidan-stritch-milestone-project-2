@@ -1,6 +1,6 @@
 /*.....................................Miscellaneous*/
 
-section{
+section {
     overflow-x: hidden;
 }
 
@@ -19,7 +19,7 @@ section{
 
 .resultNames {
     font-weight: bold;
-    padding-left:0;
+    padding-left: 0;
 }
 
 .header-color ul {
@@ -91,23 +91,31 @@ section{
 }
 
 .current-selection button {
-    width: 150px;
     position: relative;
     margin: 10px auto;
-    left: 15%;
-    font-size:24px;
-    font-weight:bold;
 }
 
 
-#showResults {
+
+#clearResults, .city-form-button{
     width: 200px;
     height: 50px;
+    font-weight: bold;
+    font-size: 20px;
 }
 
-#clearResults {
-    width: 200px;
-    height: 50px;
+#showResults,
+#showTextResults,
+#sendEmail {
+    width: 55px;
+    height: 30px;
+    font-weight: bold;
+    font-size: 14px;
+
+}
+
+#second-clear-button{
+    display: none;
 }
 
 
@@ -130,7 +138,10 @@ section{
 /*.....................................Font Awesome*/
 
 .step-one-tick,
-.step-two-tick {
+.step-two-tick,
+.step-three-tick,
+.step-four-tick,
+.step-five-tick {
     color: green;
     display: none;
 }
@@ -230,16 +241,18 @@ h1 {
 .current-selection,
 h4 {
     padding-left: 5%;
-    text-align:left;
+    text-align: left;
 }
 
 .result-headings h3 {
     font-weight: bold;
     text-decoration: underline;
 }
-.header-color h1{
-    text-align:left;
+
+.header-color h1 {
+    text-align: left;
 }
+
 /*.....................................section*/
 
 .container-fluid {
@@ -287,7 +300,7 @@ h4 {
     /*.....................................Media Queries - Miscellaneous*/
     .current-selection {
         width: 80%;
-        left:10%;
+        left: 10%;
     }
 
     .intro-area {
@@ -377,6 +390,8 @@ h4 {
     .narrow-results {
         text-align: center;
     }
+
+
     /*.....................................Media Queries - Map Element*/
     #map {
         left: 0%;
@@ -412,11 +427,32 @@ h4 {
     }
 
     .current-selection button {
-        width: 150px;
         position: relative;
         margin: 10px auto;
         left: -4%;
         right: auto;
     }
 
+
+    #clearResults, .city-form-button {
+        width: 150px;
+        height: 35px;
+        font-size: 16px;
+
+    }
+
+    #showResults,
+    #showTextResults,
+    #sendEmail {
+        width: 50px;
+        height: 25px;
+        font-size: 12px;
+
+    }
+
+    .mainButtons {
+        text-align: center;
+    }
+
 }
+
