@@ -88,7 +88,7 @@ function buttonSelectSearchType() {
         console.log("test");
         document.getElementById('textSearchType').innerHTML = "Attractions, Accomodation, Bars & Restaurants";
         document.getElementById('search_type').value = "Attractions, Accomodation, Bars & Restaurants";
-        updatedType = ['bar', 'restaurant', 'night_club', 'food', 'art_gallery', 'aquarium', 'zoo', 'stadium', 'museum', 'park', 'casino', 'amusement_park', 'point_of_interest', 'campground', 'lodging', 'rv_park', 'room', 'premise'];
+        updatedType = ['bar', 'food', 'art_gallery', 'zoo', 'stadium', 'museum','amusement_park', 'point_of_interest', 'lodging', 'premise'];
 
         $('.step-two-tick').show();
     };
