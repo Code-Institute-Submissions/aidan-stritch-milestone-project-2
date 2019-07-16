@@ -110,7 +110,6 @@ section {
     height: 30px;
     font-weight: bold;
     font-size: 14px;
-
 }
 
 #second-clear-button {
@@ -143,6 +142,7 @@ section {
 .step-five-tick {
     color: green;
     display: none;
+    padding-right: 10px;
 }
 
 /*.....................................Form Elements*/
@@ -236,8 +236,7 @@ h2 {
     padding-bottom: 15px;
 }
 
-.current-selection,
-h1 {
+.current-selection h2 {
     text-align: center;
 }
 
@@ -299,6 +298,13 @@ h4 {
 
 /*.....................................Media Queries...........................*/
 
+@media (max-width:991px) {
+    /*.....................................Media Queries - Miscellaneous*/
+    .result-headings {
+        display: none;
+    }
+}
+
 @media (max-width:780px) {
     /*.....................................Media Queries - Miscellaneous*/
     .current-selection {
@@ -342,9 +348,7 @@ h4 {
     h2 {
         left: 0%;
     }
-    .result-headings {
-        display: none;
-    }
+    
     /*.....................................Media Queries - Header*/
     .header-list {
         display: none;
