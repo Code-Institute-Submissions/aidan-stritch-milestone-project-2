@@ -224,17 +224,6 @@
     <!-- load scripts for map  -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxQwRApZQq4D_0iTu38MwdxUsiKrq4zu8&libraries=places,geometry&callback=initMap" async defer></script>
 
-    <!-- disable the enter key from being pressed so that user cannot try to use enter to select autocomplete result -->
-    <script>
-        $('html').bind('keypress', function(enterKeyPress) {
-            if (enterKeyPress.keyCode == 13) {
-                return false;
-            }
-            if (enterKeyPress.keyCode == 176) {
-                return false;
-            }
-        });
-    </script>
 </body>
 
 </html>

@@ -72,3 +72,13 @@ function resetFields() {
     $("#cityForm")[0].reset();
     $('#second-clear-button').hide();
 }
+
+//disable the enter key from being pressed so that user cannot try to use enter to select autocomplete result
+$('html').bind('keypress', function(enterKeyPress) {
+    if (enterKeyPress.keyCode == 13) {
+        return false;
+    }
+    if (enterKeyPress.keyCode == 176) {
+        return false;
+    }
+});
