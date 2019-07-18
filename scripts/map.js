@@ -7,6 +7,7 @@ var marker = [];
 var markersClear = [];
 var place = "";
 var searchResults = [];
+
 /* here we are setting up the required variables for pagination */
 var moreResults = document.getElementById('showMoreResults');
 moreResults.onclick = function() {
@@ -29,8 +30,6 @@ function initMap() {
     searchSelectCity();
     buttonSelectCity();
     buttonSelectSearchType();
-
-
 }
 
 /* this function handles the text input and the autocomplete functionality so that the user can select a specific city */
@@ -89,7 +88,6 @@ function buttonSelectSearchType() {
         document.getElementById('textSearchType').innerHTML = "Attractions, Accomodation, Bars & Restaurants";
         document.getElementById('search_type').value = "Attractions, Accomodation, Bars & Restaurants";
         updatedType = ['bar', 'food', 'art_gallery', 'zoo', 'stadium', 'museum','amusement_park', 'point_of_interest', 'lodging', 'premise'];
-
         $('.step-two-tick').show();
     };
 }
@@ -233,14 +231,7 @@ function clearMap() {
 /* this function resets the input fields and values to their inital values and 
 clears the variables for a new search to take place and callsthe clearMap () function*/
 function clearResults() {
-    document.getElementById('textCity').innerHTML = "None";
-    document.getElementById('textSearchType').innerHTML = "None";
-    document.getElementById('city_name').value = "None Selected";
-    document.getElementById('search_type').value = "None Selected";
-    document.getElementById('resultsRow').innerHTML = "";
-    $("#cityForm")[0].reset();
-    $('#second-clear-button').hide();
-    
+    resetFields();
     place = "";
     center = "";
     updatedType = [null];
@@ -249,66 +240,6 @@ function clearResults() {
 
 
 
-$("#clearResults, #clearResultsBottonTwo").click(function() {
-    //when the clearResults button is clicked - these divs and classes are hidden to the user
-    $('#map').hide();
-    $('.results-area').hide();
-    $('.email-form-area').hide();
-    $('.step-one-tick').hide();
-    $('.step-two-tick').hide();
-    $('.step-three-tick').hide();
-    $('.step-four-tick').hide();
-    $('.step-five-tick').hide();
-
-    //these are shown to the user again
-    $('.select-city').show();
-    $('.narrow-results').show();
-    $('#showResults').show();
-    $('#showTextResults').show();
-    $('#sendEmail').show();
-
-});
-
-$('#showResults, #showTextResults, #sendEmail').click(function() {
-    if (document.getElementById('textCity').innerHTML != "None" && document.getElementById('textSearchType').innerHTML != "None") {
-        if (this.id == 'showResults') {
-
-            //when the showResults button is clicked, the map area is shown and results and email area divs are hidden tick is shown
-            $('.results-area').hide();
-            $('.email-form-area').hide();
-            $('.step-three-tick').show();
-            $('#map').show();
-
-            //when this button is clicked, the button is hidden from view to neaten view space and other buttons are made visible
-            $('#showResults').hide();
-            $('#showTextResults').show();
-            $('#sendEmail').show();
-        }
 
 
-        else if (this.id == 'showTextResults') {
-            //when the showTextResults button is clicked, the map and email area divs are hidden and the results area shown and tick is shown
-            $('#map').hide();
-            $('.email-form-area').hide();
-            $('.results-area').show();
-            $('.step-four-tick').show();
 
-            //when this button is clicked, the button is hidden from view to neaten view space and other buttons are made visible
-            $('#showResults').show();
-            $('#showTextResults').hide();
-            $('#sendEmail').show();
-        }
-        else if (this.id == 'sendEmail') {
-            //when the sendEmail button is clicked, the map and results area divs are hidden and the email area shown and tick is shown
-            $('#map').hide();
-            $('.results-area').hide();
-            $('.email-form-area').show();
-            $('.step-five-tick').show();
-
-            //when this button is clicked, the button is hidden from view to neaten view space and other buttons are made visible
-            $('#showResults').show();
-            $('#showTextResults').show();
-            $('#sendEmail').hide();
-        }
-    }
-});
