@@ -125,6 +125,7 @@ function buttonSelectCity() {
         $('.step-one-tick').show();
     };
 }
+
 /* this function creates the request and passes it to google before calling the callback function*/
 function requestLocations() {
     clearMap();
@@ -140,8 +141,7 @@ function requestLocations() {
             radius: 8047,
             types: updatedType
         };
-
-
+        
         console.log(updatedType);
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch(request, callback);
@@ -150,9 +150,6 @@ function requestLocations() {
     else {
         alert("Please select a city AND a search type before searching");
     }
-
-
-
 }
 
 /* this function takes in the results of the request and adds markers to the map and 
@@ -189,9 +186,11 @@ function createMarker(place) {
         map: map,
         position: place.geometry.location
     });
-
+    
+    //adds each place item to  the markersClear array
     markersClear.push(marker);
-
+    
+    //adds the infowindow to each marker as a popup when the marker is clicked
     google.maps.event.addListener(marker, 'click', function() {
         infowindow.setContent(`<h4>${place.name}</h4> <p><b>Rating:</b> ${place.rating}</p><p><b>Type:</b> ${document.getElementById('textSearchType').innerHTML}</p><p>See results section for more details</p>`);
         infowindow.open(map, this);
@@ -229,13 +228,14 @@ function clearMap() {
 }
 
 /* this function resets the input fields and values to their inital values and 
-clears the variables for a new search to take place and callsthe clearMap () function*/
+clears the variables for a new search to take place and calls the clearMap() and resetFields() functions*/
 function clearResults() {
-    resetFields();
     place = "";
     center = "";
     updatedType = [null];
+    
     clearMap();
+    resetFields();
 }
 
 
