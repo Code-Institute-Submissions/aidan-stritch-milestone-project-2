@@ -84,10 +84,11 @@ still visually appealing and easy to navigate and use.
 
 ### Wireframes / Templates
 #### Desktop Wireframe
-![desktop view index.html](Wireframes-and-templates/City-Trip-Planner-Wireframe-Desktop-View.png "index.html page for desktop view")
+![desktop view index.html](Wireframes-and-templates/City-Trip-Planner-Wireframe-Desktop-View.png "desktop view for index.html page")
 #### Mobile Wireframe
-![desktop view index.html](/Wireframes-and-templates/City-Trip-Planner-Wireframe-Mobile-View.png "index.html page for desktop view")
+![mobile view index.html](Wireframes-and-templates/City-Trip-Planner-Wireframe-Mobile-View.png "mobile view for index.html page")
 #### Email.js Email Template
+![Email.js email template](Wireframes-and-templates/Email-js-Template.png "template for email sent by Email.js")
 
 ## Features
 ### Existing Features
