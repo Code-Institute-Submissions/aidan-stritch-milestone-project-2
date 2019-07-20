@@ -32,36 +32,6 @@ function initMap() {
     buttonSelectSearchType();
 }
 
-/* this function handles the text input and the autocomplete functionality so that the user can select a specific city */
-function searchSelectCity() {
-
-    var restrictionSet = {
-        types: ['(cities)'],
-    };
-    var typeCity = document.getElementById('cityName');
-    var autocomplete = new google.maps.places.Autocomplete(typeCity, restrictionSet);
-    var updateLatLng;
-
-    google.maps.event.addListener(autocomplete, 'place_changed', function() {
-        place = autocomplete.getPlace();
-    });
-
-    /* when the submit button is clicked in the cityForm, the map center is changed to this new location and the values are set using the DOM */
-    cityForm.addEventListener("submit", function() {
-        if (place !== "") {
-            updateLatLng = new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng());
-            map.setZoom(13);
-            center = updateLatLng;
-            map.setCenter(center);
-            document.getElementById('textCity').innerHTML = place.adr_address;
-            document.getElementById('city_name').value = document.getElementById('textCity').textContent;
-            $('.step-one-tick').show();
-        }
-        else {
-            alert("Please enter a city name before clicking select this city button");
-        }
-    });
-}
 
 /* this function handles button clicks for the search type buttons and updates the neccesary variables and elements to the chosen result*/
 function buttonSelectSearchType() {
@@ -124,6 +94,37 @@ function buttonSelectCity() {
         center = { lat: 52.5200, lng: 13.4050 };
         $('.step-one-tick').show();
     };
+}
+
+/* this function handles the text input and the autocomplete functionality so that the user can select a specific city */
+function searchSelectCity() {
+
+    var restrictionSet = {
+        types: ['(cities)'],
+    };
+    var typeCity = document.getElementById('cityName');
+    var autocomplete = new google.maps.places.Autocomplete(typeCity, restrictionSet);
+    var updateLatLng;
+
+    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+        place = autocomplete.getPlace();
+    });
+
+    /* when the submit button is clicked in the cityForm, the map center is changed to this new location and the values are set using the DOM */
+    cityForm.addEventListener("submit", function() {
+        if (place !== "") {
+            updateLatLng = new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng());
+            map.setZoom(13);
+            center = updateLatLng;
+            map.setCenter(center);
+            document.getElementById('textCity').innerHTML = place.adr_address;
+            document.getElementById('city_name').value = document.getElementById('textCity').textContent;
+            $('.step-one-tick').show();
+        }
+        else {
+            alert("Please enter a city name before clicking select this city button");
+        }
+    });
 }
 
 /* this function creates the request and passes it to google before calling the callback function*/
@@ -192,7 +193,7 @@ function createMarker(place) {
     
     //adds the infowindow to each marker as a popup when the marker is clicked
     google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent(`<h4>${place.name}</h4> <p><b>Rating:</b> ${place.rating}</p><p><b>Type:</b> ${document.getElementById('textSearchType').innerHTML}</p><p>See results section for more details</p>`);
+        infowindow.setContent(`<h4>${place.name}</h4> <p><b>Rating:</b> ${place.rating}</p><p><b>Type:</b> ${document.getElementById('textSearchType').innerHTML}</p><p>See step 4 area for more details</p>`);
         infowindow.open(map, this);
     });
 
