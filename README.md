@@ -68,8 +68,23 @@ UX on any screen size. When viewed on the smallest screen sizes, the website is
 still visually appealing and easy to navigate and use. 
 
 ### User Stories
+#### New Customers
+- As a new customer, I would like to search for bars and restaurants in my area so that I can plan a night out
+- As a new customer, I would like to find accommodation options in paris for when I visit this summer
+- As a new customer, I would like to find locations in a specific area so that I can plan an upcoming trip
+- As a new customer, I would like to search for attractions in a city I plan on visiting this month and make a list of addreses and contact information for them. 
+- As a new customer, I would like to send a summary of my search criteria to myself by email so I can keep a record in case I need to search again
+
+#### Returning Customers
+- As a returning customer, I would like to go to the email I received and click to go back to the website to have another look at my search results
+- As a returning customer, I would like to double check an address for one of the results so that I can make note of it for my trip
+- As a returning customer, I would like to check on the map how far my accommodation is from one of the attractions that I want to visit so I can plan my trip better
+- As a returning customer, I would like to search for more results in the paris to see if I can get more attractions visited on my upcoming trip
+- As a returning customer, I would like to email myself a summary of the search results as I did not do that the first time and would like a record of what criteria I searched for
+
 ### Wireframes / Templates
 #### Desktop Wireframe
+![desktop view index.html](Wireframes-and-templates/City Trip Planner Wireframe - Desktop View .pdf "index.html page for desktop view")
 #### Mobile Wireframe
 #### Email.js Email Template
 
