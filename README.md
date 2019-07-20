@@ -84,7 +84,7 @@ still visually appealing and easy to navigate and use.
 
 ### Wireframes / Templates
 #### Desktop Wireframe
-![desktop view index.html](Wireframes-and-templates/City Trip Planner Wireframe - Desktop View .pdf "index.html page for desktop view")
+![desktop view index.html](Wireframes-and-templates/City Trip Planner Wireframe - Desktop View .png "index.html page for desktop view")
 #### Mobile Wireframe
 #### Email.js Email Template
 
