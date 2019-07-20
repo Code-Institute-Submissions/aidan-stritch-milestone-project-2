@@ -13,3 +13,14 @@ an email address and their name, and have the options searched for emailed to th
 In essence, this website allows the user to find results they are actually interested
 in and plan their next trip away in 5 easy steps. 
 
+# UX
+# Features
+## Existing Features
+## Features Left to Implement
+# Technologies Used
+# Testing
+# Deployment
+# Credits
+## Content
+## Media
+## Acknowledgements
