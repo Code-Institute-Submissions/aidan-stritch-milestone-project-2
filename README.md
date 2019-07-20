@@ -92,7 +92,29 @@ still visually appealing and easy to navigate and use.
 
 ## Features
 ### Existing Features
+- 'How To' Section - allows users to quickly see how the website works by reading the 'How To' guide 
+- Step 1 Popular City Buttons - allows users to quickly select from one of the most popular locations by having them click on the desired city
+- Step 1 Autocomplete City Search Input - allows users to find a specific location to use for their search by typing into the input field, clicking on the desired city and clicking on the "select this city" button
+- Step 2 Search Type Buttons - allows users to select what results they would like to see in the chosen city by clicking on the button for the option they desire
+- Current Selection Area - allows the user to keep track of what choices they have made by viewing this section
+- Reset Search Buttons (in Current Selection area and at bottom of page) - allows the user to quickly and easily reset the website fields so that they can make a new search
+- Step 3 Google Map - allows the users to view the results as markers on a Google map by clicking on the "show" button on Step 3 and viewing the map
+- Google Map Info Window - allows the user to view more information of a specific result by clicking on the marker icon
+- Step 4 Results Area - allows the user to read through the full list of results from their search to see more infomation textually by clicking on the "show" button in Step 4
+- Show More Results Button - allows the user to view more results via pagination by clicking on the "more results" button
+- Step 5 Email.js Form - allows the user to send themselves an email summary of their search criteria by clicking the "show" button in Step 5, filling in the form and clicking the "send email" button 
+
+
+
 ### Features Left to Implement
+- Full Results List Email- 
+- Membership Section - 
+- Save Results - 
+- Multi-trip Function - 
+- Images of Results - 
+
+Feature 1 - allows users X to achieve Y, by having them fill out Z
+
 
 ## Technologies Used
 
