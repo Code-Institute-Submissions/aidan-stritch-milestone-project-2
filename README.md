@@ -104,21 +104,29 @@ still visually appealing and easy to navigate and use.
 - Show More Results Button - allows the user to view more results via pagination by clicking on the "more results" button
 - Step 5 Email.js Form - allows the user to send themselves an email summary of their search criteria by clicking the "show" button in Step 5, filling in the form and clicking the "send email" button 
 
-
-
 ### Features Left to Implement
-- Full Results List Email- 
-- Membership Section - 
-- Save Results - 
-- Multi-trip Function - 
-- Images of Results - 
-
-Feature 1 - allows users X to achieve Y, by having them fill out Z
-
+- Full Results List Email- allows the user to choose whether or not to include a full list of the results in the email that they have sent to themselves by clicking on a radio button on the email.js form
+- Membership Section - allows the user to create and account so that they can keep track of their searches by having them create an account and logging in
+- Save Results - allows the user to save their results so that they can automatically bring up the results by clicking on a save button, saving the code, and entering the code in an input field on their next visit
+- Multi-trip Function - allows the user to search for multiple cities and search types and collate the data so that they can plan a trip to more than 1 city at a time for their next city trip plan
+- Images of Results - allows the user to view images of the results in step 4 by clicking on a "view images" button and scrolling through an image viewer
 
 ## Technologies Used
+- HTML - this site uses HTML to instruct the browser how to interprit the code correctly and arrange the layout
+- CSS - this site uses CSS to aid in the style, and overall theme of the website
+- Bootstrap - this site uses Bootstrap elements to help design the framework of the site
+- Balsamiq - this was used to create the wireframes in the design phase
+- Email.js - this was used to link the contact form to email.js so that the customer could send the search summary to themselves
+- Javascript - this was used to program most of the features on this site
+- Jasmine - this was used to test the sites functionality
+- JQuery - this was used within the site to aid in visual elements
+- FontAwesome - this was used to add images to help make the site more visually appealing
 
 ## Testing
+
+#### Responsiveness
+#### Bugs Found 
+if any
 
 ## Deployment
 
