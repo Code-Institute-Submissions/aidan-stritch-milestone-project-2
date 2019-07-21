@@ -149,5 +149,8 @@ This project was deployed to GitHub Pages at the address https://aidan-stritch.g
 
 ## Credits
 ### Content
-### Media
+- Font icons imported from Font Awesome
+
 ### Acknowledgements
+- I would like to acknowledge my mentor Anthony Ngene for all of his help and advice with this project
+- I would also like to thank my friends and family for their testing help and advice with this project
