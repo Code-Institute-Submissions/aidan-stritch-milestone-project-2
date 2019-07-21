@@ -123,6 +123,46 @@ still visually appealing and easy to navigate and use.
 - FontAwesome - this was used to add images to help make the site more visually appealing
 
 ## Testing
+The following testing was done to ensure that the website had no bugs or layout issues and that all links and media worked correctly.
+
+#### Step 1
+- go to step 1
+- try to click the "select this city" button without entering any details in the input and verify that an error message about the required field appears
+- type paris into the input field and click on the enter key to verify that it does not submit the request
+- type paris into the input field, click on the first result and click on the "select this city" button and verify that the selected city label updates in the current selection area
+- type paris into the input field, click on the first result and click on the "select this city" button, then click on the "dublin" button and verify that the selected city label updates in the current selection area to the last chosen option
+- click on the "dublin" button and click on the "show" button in step 3 to verify that an error message about the required fields appears
+- click on the "paris" button and click on the "show" button in step 4 to verify that an error message about the required fields appears
+- click on the "milan" button and click on the "show" button in step 5 to verify that it does not show the form in step 5
+
+#### Step 2
+- go to step 2
+- click on the "attractions" button and click on the "show" button in step 3 to verify that an error message about the required fields appears
+- click on the "accommodation" button and click on the "show" button in step 4 to verify that an error message about the required fields appears
+- click on the "all results" button and click on the "show" button in step 5 to verify that it does not show the form in step 5
+
+#### Current Selection
+- click on the "dublin" button in step 1 and click on the "all results" button in step 2 and verify that the "selected city" and "selected search type" labels update to the correct labels
+- click on the "reset search" button and verify that the "selected city" and "selected search type" labels reset to "none"
+- in step 1, type paris into the input field, click on the first result and click on the "select this city" button and verify that the "selected city" label updates, then click on the "reset search" button and verify that the "selected city" label and step 1 input field reset to "none", and empty respectively
+
+#### Step 3
+- click on the "dublin" button in step 1 and click on the "all results" button in step 2, then click on the "show" button in step 3 and verify that the map appears and shows the markers for the search in the correct city
+    - once the map is visible, click on a map marker icon to verify that an infowindow appears 
+    - once the map is visible, click on the "show" button in step 4 to verify that the step 3 div is hidden and the step 4 div is shown
+
+#### Step 4
+- click on the "dublin" button in step 1 and click on the "all results" button in step 2. Then click on the "show" button in step 4 to verify that the results area is shown with a full list of results for the search
+    - once the results area is visible, click on the "show more results" button to verify that more results are shown for this search via pagination
+    - once the results area is visible, click on the "show" button in step 5 to verify that the step 4 div is hidden and the step 5 div is shown
+
+#### Step 5
+- click on the "dublin" button in step 1 and click on the "all results" button in step 2 and click on the "show" button in step 5 to verify that the email form is shown
+    -  without entering your name or email address, click on the "send email" button and verify that an error message about the required fields appears
+    -  without entering your name, enter your correct email address and click on the "send email" button and verify that an error message about the required field appears
+    -  enter your name correctly and do not enter an email address, click on the "send email" button and verify that an error message about the required field appears
+    -  enter your name correctly and your email incorrectly, click on the "send email" button and verify that an error message about the required field appears
+    -  enter your name and email address correctly and click on the "send email" button and verify that a success message appears 
 
 #### Responsiveness
 
