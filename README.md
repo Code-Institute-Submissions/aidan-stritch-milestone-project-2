@@ -165,9 +165,27 @@ The following testing was done to ensure that the website had no bugs or layout 
     -  enter your name and email address correctly and click on the "send email" button and verify that a success message appears 
 
 #### Responsiveness
+This website has been designed to scale correctly to different screen sizes with no issues on layout. In order to ensure that the view was pleasant to the user,
+certain divs and items had to be arranged differently or hidden/shown depending on screen size. This was handled using CSS media queries. These changes can be seen 
+listed in the section below. 
+
+##### Desktop View v Mobile View
+- Nav Bars
+    - in desktop view, the nav bar has two divs. One for the title and one for a list of the 5 steps for the city trip planner
+    - in mobile view, the second div is hidden as this is not essential and it improves visibility and functionality
+- Step 1 & 2 divs
+    - the divs for step 1 and step 2 are in the same row for desktop view as these are both required for the search and therefore are grouped together
+    - in mobile view, this would not be visually appealing and therefore they are moved to one on top of the other. 
+- Step 4 div
+    - in desktop view the headings are visible and the content is layout out horizontally in a row as the space is available to lay the information out visually for the customer 
+    - in mobile view, horizontal space is more limited so the headings are hidden and the content is layed out in a vertical way to improve its visualisation
 
 #### Bugs Found 
-if any
+Throughout the testing phase, several issues had been found which have since been corrected. Examples of these are as follows;
+- the "reset search" button in the current selection section did not reset the input field in step 1 
+- when a search had been made and the city or search type changed, the arrray was not being emptied and the new results would be added to the previous search results and displayed together
+- when the email form was submitted with an incorrect email address, it did not request an email formatted entry as the input field had been set to type 'text' rather than 'email'.
+- when the screen size was reduced, the horizontal scroll appeared with white space
 
 ## Deployment
 This project was deployed to GitHub Pages at the address https://aidan-stritch.github.io/milestone-project-2/ using the following steps
