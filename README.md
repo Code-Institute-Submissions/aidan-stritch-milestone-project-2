@@ -125,10 +125,27 @@ still visually appealing and easy to navigate and use.
 ## Testing
 
 #### Responsiveness
+
 #### Bugs Found 
 if any
 
 ## Deployment
+This project was deployed to GitHub Pages at the address https://aidan-stritch.github.io/milestone-project-2/ using the following steps
+
+- create a GitHub account
+- create a new project on GitHub
+- copy the code for pushing to a GitHub repository and paste in the terminal of your project on cloud9 (git remote add origin 'link')
+- to commit the code on cloud9 to GitHub
+    - in the terminal, type "git add ." to add all new changes to the code to staging area
+    - next, type "git status" to see which files are ready to be commited
+    - commit these by typing "git commit -m" and adding a detailed description of the commit in ""
+    - next, push the code commit to GitHub Pages by typing "git push -u origin master"
+    - you will be prompted to add your login details, once this is done, the code will be pushed to GitHub and you will see the results
+- this was done after every new feature or when code was changed to fix any bugs or layout issues
+- once the project was ready, it was deployed to GitHub pages as follows
+    - click on settings 
+    - scroll to "GitHub" pages section
+    - click on dropdown under "source" and select "master branch"
 
 ## Credits
 ### Content
