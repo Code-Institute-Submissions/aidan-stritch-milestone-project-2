@@ -123,7 +123,7 @@ still visually appealing and easy to navigate and use.
 - FontAwesome - this was used to add images to help make the site more visually appealing
 
 ## Testing
-The following testing was done to ensure that the website had no bugs or layout issues and that all links and media worked correctly.
+The following manual testing was done to ensure that the website had no bugs or layout issues and that all links and media worked correctly. Jasmine automated testing was also used to test the submitted buttons.
 
 #### Step 1
 - go to step 1
