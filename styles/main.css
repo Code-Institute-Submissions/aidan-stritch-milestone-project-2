@@ -36,7 +36,7 @@ section {
 }
 
 .current-selection {
-    background-color: #e3e2df;
+    background-color: #11385D;
     width: 70%;
     padding: 0;
     left: 10%;
@@ -52,6 +52,13 @@ section {
 .intro-area {
     left: 5%;
 }
+
+/*.....................................Images*/
+
+.logo-image {
+    padding-top: 10px;
+}
+
 
 /*.....................................Map Element*/
 
@@ -93,6 +100,7 @@ section {
 .current-selection button {
     position: relative;
     margin: 10px auto;
+    color: black;
 }
 
 #clearResults {
@@ -100,6 +108,8 @@ section {
     height: 30px;
     font-weight: bold;
     font-size: 18px;
+    text-align: center;
+    left: 40%;
 }
 
 #showResults,
@@ -121,16 +131,16 @@ section {
 /*.....................................Colors*/
 
 .header-color {
-    background-color: #a8d0e6;
+    background-color: #11385D;
     color: white;
 }
 
 .body-style {
-    background-color: #FFFAFA;
+    background-color: #def2f1;
 }
 
 .footer-style {
-    background-color: #5d5c61;
+    background-color: #11385D;
 }
 
 /*.....................................Font Awesome*/
@@ -191,6 +201,14 @@ input[type="submit"] {
 #cityName {
     width: 300px;
     float: left;
+    clear:right;
+    margin-right: 500px;
+}
+
+.cityForm-button {
+    max-width: 200px;
+    clear: left;
+    
 }
 
 .form-control {
@@ -216,7 +234,6 @@ input[type="submit"]:hover {
 
 .current-selection button:hover {
     background-color: #FFFFFF;
-    color: black;
 }
 
 
@@ -241,14 +258,23 @@ h2 {
 }
 
 .current-selection h2 {
+    padding-left: 5%;
     text-align: center;
+    color: white;
 }
 
-.current-selection,
-h4 {
+.current-selection h3 {
     padding-left: 5%;
     text-align: left;
+    color: white;
 }
+
+.current-selection h4 {
+    padding-left: 5%;
+    text-align: left;
+    color: white;
+}
+
 
 .result-headings h3 {
     font-weight: bold;
@@ -257,6 +283,10 @@ h4 {
 
 .header-color h1 {
     text-align: left;
+}
+
+.intro-area h4 {
+    color: black;
 }
 
 /*.....................................section*/
@@ -327,6 +357,7 @@ h4 {
         text-align: center;
     }
     h2 {
+        padding-top: 10px;
         font-size: 20px;
     }
     h3 {
@@ -352,7 +383,7 @@ h4 {
     h2 {
         left: 0%;
     }
-    
+
     /*.....................................Media Queries - Header*/
     .header-list {
         display: none;
@@ -377,7 +408,7 @@ h4 {
         float: left;
         clear: right;
     }
-    
+
     input[type="email"] {
         width: 75%;
         float: left;
@@ -408,6 +439,10 @@ h4 {
         text-align: center;
     }
 
+    /*.....................................Media Queries - Images*/
+    .logo-image {
+        width: 75%;
+    }
 
     /*.....................................Media Queries - Map Element*/
     #map {
@@ -456,7 +491,10 @@ h4 {
         width: 150px;
         height: 35px;
         font-size: 16px;
+    }
 
+    #clearResults {
+        left: 0%;
     }
 
     #showResults,

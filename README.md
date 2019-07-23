@@ -208,6 +208,7 @@ This project was deployed to GitHub Pages at the address https://aidan-stritch.g
 ## Credits
 ### Content
 - Font icons imported from Font Awesome
+- Logo image created on Looka.com's free logo creator
 
 ### Acknowledgements
 - I would like to acknowledge my mentor Anthony Ngene for all of his help and advice with this project
