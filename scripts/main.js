@@ -31,6 +31,10 @@ $('#showResults, #showTextResults, #sendEmail, #showMap').click(function() {
             $('#showResults').hide();
             $('#showTextResults').show();
             $('#sendEmail').show();
+            
+            
+            //when this button is clicked, it invokes the requestLocations() function in maps.js file
+            requestLocations();
         }
         else if (this.id == 'showMap') {
             //when the showMap button is clicked, the map area is shown and results and email area divs are hidden tick is shown
@@ -43,6 +47,9 @@ $('#showResults, #showTextResults, #sendEmail, #showMap').click(function() {
             $('#showResults').hide();
             $('#showTextResults').show();
             $('#sendEmail').show();
+            
+            //when this button is clicked, it invokes the requestLocations() function in maps.js file
+            requestLocations();
         }
         else if (this.id == 'showTextResults') {
             //when the showTextResults button is clicked, the map and email area divs are hidden and the results area shown and tick is shown
@@ -55,6 +62,9 @@ $('#showResults, #showTextResults, #sendEmail, #showMap').click(function() {
             $('#showResults').show();
             $('#showTextResults').hide();
             $('#sendEmail').show();
+            
+            //when this button is clicked, it invokes the requestLocations() function in maps.js file
+            requestLocations();
         }
         else if (this.id == 'sendEmail') {
             //when the sendEmail button is clicked, the map and results area divs are hidden and the email area shown and tick is shown
@@ -95,9 +105,4 @@ $('html').bind('keypress', function(enterKeyPress) {
 //when either of the clear/reset buttons are clicked, it invokes the clearResults() function in maps.js file
 document.getElementById('clearResultsBottonTwo'|| 'clearResults').onclick = function() {
     clearResults();
-};
-
-//when either of the 'show' buttons for the maps or results areas or the 'showMap' button are clicked, it invokes the requestLocations() function in maps.js file
-document.getElementById('showResults'|| 'showTextResults' || 'showMap').onclick = function() {
-    requestLocations();
 };

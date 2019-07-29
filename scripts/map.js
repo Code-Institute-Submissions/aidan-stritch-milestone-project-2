@@ -7,6 +7,26 @@ var marker = [];
 var markersClear = [];
 var place = "";
 var searchResults = [];
+var city = [];
+var search = [];
+
+//create objects for the popular cities
+var cityOne = { id: "dublin", Location: "Dublin, Ireland", latlng: { lat: 53.3498, lng: -6.2603 } };
+var cityTwo = { id: "milan", Location: "Milan, Italy", latlng: { lat: 45.4642, lng: 9.1900 } };
+var cityThree = { id: "paris", Location: "Paris, France", latlng: { lat: 48.8566, lng: 2.3522 } };
+var cityFour = { id: "newYork", Location: "New York, United States", latlng: { lat: 40.7128, lng: -74.0060 } };
+var cityFive = { id: "berlin", Location: "Berlin, Germany", latlng: { lat: 52.5200, lng: 13.4050 } };
+
+//create objects for the search types
+var searchOne = { id: "attraction", title: "Attractions", typeList: ['art_gallery', 'aquarium', 'zoo', 'stadium', 'museum', 'park', 'casino', 'amusement_park', 'point_of_interest'] };
+var searchTwo = { id: "accom", title: "Accomodation", typeList: ['campground', 'lodging', 'rv_park', 'room', 'premise'] };
+var searchThree = { id: "bar", title: "Bars & Restaurants", typeList: ['bar', 'restaurant', 'night_club', 'food'] };
+var searchFour = { id: "all", title: "Attractions, Accomodation, Bars & Restaurants", typeList: ['bar', 'food', 'art_gallery', 'zoo', 'stadium', 'museum', 'amusement_park', 'point_of_interest', 'lodging', 'premise'] };
+
+//push the ohjects into the city and search arrays 
+city.push(cityOne, cityTwo, cityThree, cityFour, cityFive);
+search.push(searchOne, searchTwo, searchThree, searchFour);
+
 
 /* here we are setting up the required variables for pagination */
 var moreResults = document.getElementById('showMoreResults');
@@ -34,7 +54,26 @@ function initMap() {
 
 /* this function handles button clicks for the search type buttons and updates the neccesary variables and elements to the chosen result*/
 function buttonSelectSearchType() {
-    document.getElementById('attraction').onclick = function() {
+
+    document.getElementById('attraction' || 'accom' || 'bar' || 'all').onclick = function() {
+        var i = 0;
+        
+        for (i = 0; i < search.length; i++) {
+            console.log(search[i].id, search[i].title);
+            
+            //if statement ... if element clicked id = search[i].id then
+            document.getElementById('textSearchType').innerHTML = search[i].title;
+            document.getElementById('search_type').value = search[i].title;
+            updatedType = search[i].typeList;
+            $('.step-two-tick').show();
+        }
+
+    };
+
+
+
+    /*
+    document.getElementById('attraction' || 'accom' || 'bar' || 'all').onclick = function() {
         document.getElementById('textSearchType').innerHTML = "Attractions";
         document.getElementById('search_type').value = "Attractions";
         updatedType = ['art_gallery', 'aquarium', 'zoo', 'stadium', 'museum', 'park', 'casino', 'amusement_park', 'point_of_interest'];
@@ -53,12 +92,13 @@ function buttonSelectSearchType() {
         $('.step-two-tick').show();
     };
     document.getElementById('all').onclick = function() {
-        console.log("test");
         document.getElementById('textSearchType').innerHTML = "Attractions, Accomodation, Bars & Restaurants";
         document.getElementById('search_type').value = "Attractions, Accomodation, Bars & Restaurants";
-        updatedType = ['bar', 'food', 'art_gallery', 'zoo', 'stadium', 'museum','amusement_park', 'point_of_interest', 'lodging', 'premise'];
+        updatedType = ['bar', 'food', 'art_gallery', 'zoo', 'stadium', 'museum', 'amusement_park', 'point_of_interest', 'lodging', 'premise'];
         $('.step-two-tick').show();
     };
+    
+    */
 }
 
 /* this function handles button clicks for the popular buttons and updates the neccesary variables and elements to the chosen result*/
@@ -141,7 +181,7 @@ function requestLocations() {
             radius: 8047,
             types: updatedType
         };
-        
+
         console.log(updatedType);
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch(request, callback);
@@ -186,10 +226,10 @@ function createMarker(place) {
         map: map,
         position: place.geometry.location
     });
-    
+
     //adds each place item to  the markersClear array
     markersClear.push(marker);
-    
+
     //adds the infowindow to each marker as a popup when the marker is clicked
     google.maps.event.addListener(marker, 'click', function() {
         infowindow.setContent(`<h4>${place.name}</h4> <p><b>Rating:</b> ${place.rating}</p><p><b>Type:</b> ${document.getElementById('textSearchType').innerHTML}</p><p>See step 4 area for more details</p>`);
@@ -211,7 +251,7 @@ function resultsTextDisplay(place) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
             if (place) {
                 document.getElementById('resultsRow').innerHTML += "<div class='row newResultsRow'><div class = 'col-md-4 newResultsCol'>" + "<h4 class='resultNames'>" + place.name + "</h4>" + "<p>" + "<b>" + "Rating: " + "</b>" +
-                    place.rating + " Stars" + "</p>" + "</div>" + "<div class = 'col-md-4'>" + "<p>" + place.formatted_address + "</p>" + "</div>" +
+                    rating + " Stars" + "</p>" + "</div>" + "<div class = 'col-md-4'>" + "<p>" + place.formatted_address + "</p>" + "</div>" +
                     "<div class = 'col-md-4 newResultsCol'>" + "<p>" + "<b>" + "Contact: " + "</b>" + place.formatted_phone_number + "</p>" + "<p>" + "<b>" + "Web: " + "</b>" + place.website + "</p>" + "</p>" + "</div>" + "</div>";
             }
         }
@@ -233,13 +273,7 @@ function clearResults() {
     place = "";
     center = "";
     updatedType = [null];
-    
+
     clearMap();
     resetFields();
 }
-
-
-
-
-
-
