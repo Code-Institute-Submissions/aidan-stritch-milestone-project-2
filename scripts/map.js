@@ -32,7 +32,6 @@ function initMap() {
     buttonSelectSearchType();
 }
 
-
 /* this function handles button clicks for the search type buttons and updates the neccesary variables and elements to the chosen result*/
 function buttonSelectSearchType() {
     document.getElementById('attraction').onclick = function() {

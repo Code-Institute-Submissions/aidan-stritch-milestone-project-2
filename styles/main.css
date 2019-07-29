@@ -103,13 +103,14 @@ section {
     color: black;
 }
 
-#clearResults {
+#clearResults,
+#showMap {
     width: 175px;
     height: 30px;
     font-weight: bold;
     font-size: 18px;
     text-align: center;
-    left: 40%;
+    left: 30%;
 }
 
 #showResults,
@@ -201,14 +202,14 @@ input[type="submit"] {
 #cityName {
     width: 300px;
     float: left;
-    clear:right;
+    clear: right;
     margin-right: 500px;
 }
 
 .cityForm-button {
     max-width: 200px;
     clear: left;
-    
+
 }
 
 .form-control {
@@ -487,13 +488,15 @@ h2 {
 
 
     #clearResults,
+    #showMap,
     .city-form-button {
         width: 150px;
         height: 35px;
         font-size: 16px;
     }
 
-    #clearResults {
+    #clearResults,
+    #showMap {
         left: 0%;
     }
 

@@ -88,7 +88,6 @@
                     <form id="cityForm" onsubmit="return false">
                         <input type="text" class="form-control" name="city" id="cityName" placeholder="Search by city name..." />
                         <input type="submit" value="Select this city" class="cityForm-button" />
-
                     </form>
                 </div>
             </div>
@@ -123,7 +122,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <button id="clearResults" onclick="clearResults();">Reset Search</button>
+                    <button id="showMap">Show on Map</button>
+                    <button id="clearResults">Reset Search</button>
                 </div>
             </div>
 
@@ -132,14 +132,14 @@
         <div class="row">
             <div class="col-md-12 step-three">
                 <!-- this area shows the google map with the results for the chosen type and city -->
-                <h2>Step 3: <i class="fa fa-map-marker"></i> See your results on our map <i class="fa fa-check-circle step-three-tick"></i><button id="showResults" onclick="requestLocations();" class="mainButtons">Show</button></h2>
+                <h2>Step 3: <i class="fa fa-map-marker"></i> See your results on our map <i class="fa fa-check-circle step-three-tick"></i><button id="showResults" class="mainButtons">Show</button></h2>
                 <div id="map"></div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12 step-four">
                 <!-- in this area, the customer sees the text form of the results giving additonal information for each -->
-                <h2>Step 4: <i class="fa fa-list"></i> Read more about your results <i class="fa fa-check-circle step-four-tick"></i><button id="showTextResults" onclick="requestLocations();" class="mainButtons">Show</button></h2>
+                <h2>Step 4: <i class="fa fa-list"></i> Read more about your results <i class="fa fa-check-circle step-four-tick"></i><button id="showTextResults" class="mainButtons">Show</button></h2>
 
                 <div class="results-area">
                     <div class="result-headings">
@@ -201,7 +201,7 @@
         </div>
         <div class="row">
             <div class="col-md-12 mainButtons" id="second-clear-button">
-                <button id="clearResultsBottonTwo" onclick="clearResults();">Reset</button>
+                <button id="clearResultsBottonTwo">Reset</button>
             </div>
         </div>
     </section>
