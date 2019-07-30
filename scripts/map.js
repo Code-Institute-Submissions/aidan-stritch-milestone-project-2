@@ -11,11 +11,11 @@ var city = [];
 var search = [];
 
 //create objects for the popular cities
-var cityOne = { id: "dublin", Location: "Dublin, Ireland", latlng: { lat: 53.3498, lng: -6.2603 } };
-var cityTwo = { id: "milan", Location: "Milan, Italy", latlng: { lat: 45.4642, lng: 9.1900 } };
-var cityThree = { id: "paris", Location: "Paris, France", latlng: { lat: 48.8566, lng: 2.3522 } };
-var cityFour = { id: "newYork", Location: "New York, United States", latlng: { lat: 40.7128, lng: -74.0060 } };
-var cityFive = { id: "berlin", Location: "Berlin, Germany", latlng: { lat: 52.5200, lng: 13.4050 } };
+var cityOne = { id: "dublin", cityName: "Dublin, Ireland", latlng: { lat: 53.3498, lng: -6.2603 } };
+var cityTwo = { id: "milan", cityName: "Milan, Italy", latlng: { lat: 45.4642, lng: 9.1900 } };
+var cityThree = { id: "paris", cityName: "Paris, France", latlng: { lat: 48.8566, lng: 2.3522 } };
+var cityFour = { id: "newYork", cityName: "New York, United States", latlng: { lat: 40.7128, lng: -74.0060 } };
+var cityFive = { id: "berlin", cityName: "Berlin, Germany", latlng: { lat: 52.5200, lng: 13.4050 } };
 
 //create objects for the search types
 var searchOne = { id: "attraction", title: "Attractions", typeList: ['art_gallery', 'aquarium', 'zoo', 'stadium', 'museum', 'park', 'casino', 'amusement_park', 'point_of_interest'] };
@@ -53,86 +53,38 @@ function initMap() {
 }
 
 /* this function handles button clicks for the search type buttons and updates the neccesary variables and elements to the chosen result*/
-function buttonSelectSearchType() {
+function buttonSelectSearchType(buttonID) {
 
-    document.getElementById('attraction' || 'accom' || 'bar' || 'all').onclick = function() {
-        var i = 0;
-        
-        for (i = 0; i < search.length; i++) {
-            console.log(search[i].id, search[i].title);
-            
-            //if statement ... if element clicked id = search[i].id then
+    var i = 0;
+
+    for (i = 0; i < search.length; i++) {
+
+        //if statement ... if element clicked id = search[i].id then we change the items to show the chosen item
+        if (search[i].id == buttonID) {
             document.getElementById('textSearchType').innerHTML = search[i].title;
             document.getElementById('search_type').value = search[i].title;
             updatedType = search[i].typeList;
             $('.step-two-tick').show();
         }
-
-    };
-
-
-
-    /*
-    document.getElementById('attraction' || 'accom' || 'bar' || 'all').onclick = function() {
-        document.getElementById('textSearchType').innerHTML = "Attractions";
-        document.getElementById('search_type').value = "Attractions";
-        updatedType = ['art_gallery', 'aquarium', 'zoo', 'stadium', 'museum', 'park', 'casino', 'amusement_park', 'point_of_interest'];
-        $('.step-two-tick').show();
-    };
-    document.getElementById('accom').onclick = function() {
-        document.getElementById('textSearchType').innerHTML = "Accomodation";
-        document.getElementById('search_type').value = "Accomodation";
-        updatedType = ['campground', 'lodging', 'rv_park', 'room', 'premise'];
-        $('.step-two-tick').show();
-    };
-    document.getElementById('bar').onclick = function() {
-        document.getElementById('textSearchType').innerHTML = "Bars & Restaurants";
-        document.getElementById('search_type').value = "Bars & Restaurants";
-        updatedType = ['bar', 'restaurant', 'night_club', 'food'];
-        $('.step-two-tick').show();
-    };
-    document.getElementById('all').onclick = function() {
-        document.getElementById('textSearchType').innerHTML = "Attractions, Accomodation, Bars & Restaurants";
-        document.getElementById('search_type').value = "Attractions, Accomodation, Bars & Restaurants";
-        updatedType = ['bar', 'food', 'art_gallery', 'zoo', 'stadium', 'museum', 'amusement_park', 'point_of_interest', 'lodging', 'premise'];
-        $('.step-two-tick').show();
-    };
-    
-    */
+    }
 }
 
 /* this function handles button clicks for the popular buttons and updates the neccesary variables and elements to the chosen result*/
-function buttonSelectCity() {
-    document.getElementById('dublin').onclick = function() {
-        document.getElementById('textCity').innerHTML = "Dublin, Ireland";
-        document.getElementById('city_name').value = "Dublin, Ireland";
-        center = { lat: 53.3498, lng: -6.2603 };
-        $('.step-one-tick').show();
-    };
-    document.getElementById('milan').onclick = function() {
-        document.getElementById('textCity').innerHTML = "Milan, Italy";
-        document.getElementById('city_name').value = "Milan, Italy";
-        center = { lat: 45.4642, lng: 9.1900 };
-        $('.step-one-tick').show();
-    };
-    document.getElementById('paris').onclick = function() {
-        document.getElementById('textCity').innerHTML = "Paris, France";
-        document.getElementById('city_name').value = "Paris, France";
-        center = { lat: 48.8566, lng: 2.3522 };
-        $('.step-one-tick').show();
-    };
-    document.getElementById('newYork').onclick = function() {
-        document.getElementById('textCity').innerHTML = "New York, United States";
-        document.getElementById('city_name').value = "New York, United States";
-        center = { lat: 40.7128, lng: -74.0060 };
-        $('.step-one-tick').show();
-    };
-    document.getElementById('berlin').onclick = function() {
-        document.getElementById('textCity').innerHTML = "Berlin, Germany";
-        document.getElementById('city_name').value = "Berlin, Germany";
-        center = { lat: 52.5200, lng: 13.4050 };
-        $('.step-one-tick').show();
-    };
+function buttonSelectCity(cityButtonID) {
+    console.log(cityButtonID)
+    var i = 0;
+
+    for (i = 0; i < city.length; i++) {
+
+        //if statement ... if element clicked id = search[i].id then we change the items to show the chosen item
+        if (city[i].id == cityButtonID) {
+            document.getElementById('textCity').innerHTML = city[i].cityName;
+            document.getElementById('city_name').value = city[i].cityName;
+            center = city[i].latlng;
+            $('.step-one-tick').show();
+            
+        }
+    }
 }
 
 /* this function handles the text input and the autocomplete functionality so that the user can select a specific city */

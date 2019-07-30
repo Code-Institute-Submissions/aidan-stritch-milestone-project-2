@@ -103,6 +103,50 @@ $('html').bind('keypress', function(enterKeyPress) {
 });
 
 //when either of the clear/reset buttons are clicked, it invokes the clearResults() function in maps.js file
-document.getElementById('clearResultsBottonTwo'|| 'clearResults').onclick = function() {
+document.getElementById('clearResultsBottonTwo').onclick = function() {
     clearResults();
+};
+
+document.getElementById('clearResults').onclick = function() {
+    clearResults();
+};
+
+//when the user clicks on an option for the search type in step 2, it calls the buttonSelectSearchType() function and passes the id of the button clicked
+
+document.getElementById('attraction').onclick = function() {
+    buttonSelectSearchType(this.id);
+};
+
+document.getElementById('accom').onclick = function() {
+    buttonSelectSearchType(this.id);
+};
+
+document.getElementById('bar').onclick = function() {
+    buttonSelectSearchType(this.id);
+};
+
+document.getElementById('all').onclick = function() {
+    buttonSelectSearchType(this.id);
+};
+
+//when the user clicks on an option for the city in step 2, it calls the buttonSelectCity() function and passes the id of the button clicked
+
+document.getElementById('dublin').onclick = function() {
+    buttonSelectCity(this.id);
+};
+
+document.getElementById('milan').onclick = function() {
+    buttonSelectCity(this.id);
+};
+
+document.getElementById('paris').onclick = function() {
+    buttonSelectCity(this.id);
+};
+
+document.getElementById('newYork').onclick = function() {
+    buttonSelectCity(this.id);
+};
+
+document.getElementById('berlin').onclick = function() {
+    buttonSelectCity(this.id);
 };
