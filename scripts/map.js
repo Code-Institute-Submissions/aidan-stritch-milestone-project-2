@@ -54,9 +54,8 @@ function initMap() {
 
 /* this function handles button clicks for the search type buttons and updates the neccesary variables and elements to the chosen result*/
 function buttonSelectSearchType(buttonID) {
-
     var i = 0;
-
+    
     for (i = 0; i < search.length; i++) {
 
         //if statement ... if element clicked id = search[i].id then we change the items to show the chosen item
@@ -71,7 +70,6 @@ function buttonSelectSearchType(buttonID) {
 
 /* this function handles button clicks for the popular buttons and updates the neccesary variables and elements to the chosen result*/
 function buttonSelectCity(cityButtonID) {
-    console.log(cityButtonID)
     var i = 0;
 
     for (i = 0; i < city.length; i++) {
@@ -82,7 +80,7 @@ function buttonSelectCity(cityButtonID) {
             document.getElementById('city_name').value = city[i].cityName;
             center = city[i].latlng;
             $('.step-one-tick').show();
-            
+
         }
     }
 }
@@ -134,13 +132,18 @@ function requestLocations() {
             types: updatedType
         };
 
-        console.log(updatedType);
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch(request, callback);
     }
     /* if either option is not selected, user is prompted to select them before continuing */
     else {
         alert("Please select a city AND a search type before searching");
+        $('.results-area').hide();
+        $('.email-form-area').hide();
+        $('#map').hide();
+        $('.step-three-tick').hide();
+        $('.step-four-tick').hide();
+        $('.step-five-tick').hide();
     }
 }
 
@@ -202,8 +205,10 @@ function resultsTextDisplay(place) {
     service.getDetails({ placeId: newPlace }, function(place, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
             if (place) {
+                
+                console.log(newPlace);
                 document.getElementById('resultsRow').innerHTML += "<div class='row newResultsRow'><div class = 'col-md-4 newResultsCol'>" + "<h4 class='resultNames'>" + place.name + "</h4>" + "<p>" + "<b>" + "Rating: " + "</b>" +
-                    rating + " Stars" + "</p>" + "</div>" + "<div class = 'col-md-4'>" + "<p>" + place.formatted_address + "</p>" + "</div>" +
+                    place.rating + " Stars" + "</p>" + "</div>" + "<div class = 'col-md-4'>" + "<p>" + place.formatted_address + "</p>" + "</div>" +
                     "<div class = 'col-md-4 newResultsCol'>" + "<p>" + "<b>" + "Contact: " + "</b>" + place.formatted_phone_number + "</p>" + "<p>" + "<b>" + "Web: " + "</b>" + place.website + "</p>" + "</p>" + "</div>" + "</div>";
             }
         }

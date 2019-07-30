@@ -19,66 +19,67 @@ $("#clearResults, #clearResultsBottonTwo").click(function() {
 });
 
 $('#showResults, #showTextResults, #sendEmail, #showMap').click(function() {
-    if (document.getElementById('textCity').innerHTML != "None" && document.getElementById('textSearchType').innerHTML != "None") {
-        if (this.id == 'showResults') {
-            //when the showResults button is clicked, the map area is shown and results and email area divs are hidden tick is shown
-            $('.results-area').hide();
-            $('.email-form-area').hide();
-            $('.step-three-tick').show();
-            $('#map').show();
+    if (this.id == 'showResults') {
+        //when the showResults button is clicked, the map area is shown and results and email area divs are hidden tick is shown
+        $('.results-area').hide();
+        $('.email-form-area').hide();
+        $('.step-three-tick').show();
+        $('#map').show();
 
-            //when this button is clicked, the button is hidden from view to neaten view space and other buttons are made visible
-            $('#showResults').hide();
-            $('#showTextResults').show();
-            $('#sendEmail').show();
-            
-            
-            //when this button is clicked, it invokes the requestLocations() function in maps.js file
-            requestLocations();
-        }
-        else if (this.id == 'showMap') {
-            //when the showMap button is clicked, the map area is shown and results and email area divs are hidden tick is shown
-            $('.results-area').hide();
-            $('.email-form-area').hide();
-            $('.step-three-tick').show();
-            $('#map').show();
+        //when this button is clicked, the button is hidden from view to neaten view space and other buttons are made visible
+        $('#showResults').hide();
+        $('#showTextResults').show();
+        $('#sendEmail').show();
 
-            //when this button is clicked, the button is hidden from view to neaten view space and other buttons are made visible
-            $('#showResults').hide();
-            $('#showTextResults').show();
-            $('#sendEmail').show();
-            
-            //when this button is clicked, it invokes the requestLocations() function in maps.js file
-            requestLocations();
-        }
-        else if (this.id == 'showTextResults') {
-            //when the showTextResults button is clicked, the map and email area divs are hidden and the results area shown and tick is shown
-            $('#map').hide();
-            $('.email-form-area').hide();
-            $('.results-area').show();
-            $('.step-four-tick').show();
 
-            //when this button is clicked, the button is hidden from view to neaten view space and other buttons are made visible
-            $('#showResults').show();
-            $('#showTextResults').hide();
-            $('#sendEmail').show();
-            
-            //when this button is clicked, it invokes the requestLocations() function in maps.js file
-            requestLocations();
-        }
-        else if (this.id == 'sendEmail') {
-            //when the sendEmail button is clicked, the map and results area divs are hidden and the email area shown and tick is shown
-            $('#map').hide();
-            $('.results-area').hide();
-            $('.email-form-area').show();
-            $('.step-five-tick').show();
-
-            //when this button is clicked, the button is hidden from view to neaten view space and other buttons are made visible
-            $('#showResults').show();
-            $('#showTextResults').show();
-            $('#sendEmail').hide();
-        }
+        //when this button is clicked, it invokes the requestLocations() function in maps.js file
+        requestLocations();
     }
+    else if (this.id == 'showMap') {
+        //when the showMap button is clicked, the map area is shown and results and email area divs are hidden tick is shown
+        $('.results-area').hide();
+        $('.email-form-area').hide();
+        $('.step-three-tick').show();
+        $('#map').show();
+
+        //when this button is clicked, the button is hidden from view to neaten view space and other buttons are made visible
+        $('#showResults').hide();
+        $('#showTextResults').show();
+        $('#sendEmail').show();
+
+        //when this button is clicked, it invokes the requestLocations() function in maps.js file
+        requestLocations();
+    }
+    else if (this.id == 'showTextResults') {
+        console.log("this works");
+
+        //when the showTextResults button is clicked, the map and email area divs are hidden and the results area shown and tick is shown
+        $('#map').hide();
+        $('.email-form-area').hide();
+        $('.results-area').show();
+        $('.step-four-tick').show();
+
+        //when this button is clicked, the button is hidden from view to neaten view space and other buttons are made visible
+        $('#showResults').show();
+        $('#showTextResults').hide();
+        $('#sendEmail').show();
+
+        //when this button is clicked, it invokes the requestLocations() function in maps.js file
+        requestLocations();
+    }
+    else if (this.id == 'sendEmail') {
+        //when the sendEmail button is clicked, the map and results area divs are hidden and the email area shown and tick is shown
+        $('#map').hide();
+        $('.results-area').hide();
+        $('.email-form-area').show();
+        $('.step-five-tick').show();
+
+        //when this button is clicked, the button is hidden from view to neaten view space and other buttons are made visible
+        $('#showResults').show();
+        $('#showTextResults').show();
+        $('#sendEmail').hide();
+    }
+
 });
 
 //this function resets the input fields and forms so that the user can start a new search
